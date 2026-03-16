@@ -379,6 +379,26 @@ type = "file"
 user_modifiable = false
 
 # ══════════════════════════════════════════════════════════════════════════════
+# PR REPORT TEMPLATES
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "pr_code_review_template"
+description = "PR code review report format template"
+source = "artifacts/PR-CODE-REVIEW-TEMPLATE/template.md"
+default_path = "artifacts/PR-CODE-REVIEW-TEMPLATE/template.md"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "pr_status_report_template"
+description = "PR status report format template"
+source = "artifacts/PR-STATUS-REPORT-TEMPLATE/template.md"
+default_path = "artifacts/PR-STATUS-REPORT-TEMPLATE/template.md"
+type = "file"
+user_modifiable = false
+
+# ══════════════════════════════════════════════════════════════════════════════
 # KIT-LEVEL FILES
 # ══════════════════════════════════════════════════════════════════════════════
 
