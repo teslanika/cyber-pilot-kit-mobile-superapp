@@ -127,26 +127,41 @@ cypilot generate FEATURE-MOBILE --path subapps/student/capabilities/notification
 ## Project Structure
 
 ```
-my-superapp/
+constructor-mobile/
 ├── architecture/
 │   ├── PRD.md                    # Platform PRD (L0)
 │   ├── DESIGN.md                 # Platform DESIGN
 │   └── DECOMPOSITION.md          # Platform → SubApps
 │
+├── constructor-sdk/              # KMP shared code
+│   └── feature/
+│       └── learn/
+│           └── IMPL.md           # KMP implementation tracking
+│
+├── android-app/                  # Android application
+│   └── feature/
+│       └── learn/
+│           └── IMPL.md           # Android implementation tracking
+│
+├── ios-app/                      # iOS application
+│   └── Features/
+│       └── Learn/
+│           └── IMPL.md           # iOS implementation tracking
+│
 └── subapps/
-    └── student/
+    └── learn/
         ├── PRD.md                # SubApp PRD (L1)
         ├── DESIGN.md             # SubApp DESIGN
         ├── DECOMPOSITION.md      # SubApp → Epics
         │
-        └── capabilities/
-            └── notification-history/
+        └── epics/
+            └── course-catalog/
                 ├── PRD.md        # Epic PRD (L2)
                 ├── DESIGN.md     # Epic DESIGN
                 ├── DECOMPOSITION.md
                 │
                 └── features/
-                    └── badge/
+                    └── course-list/
                         └── FEATURE.md  # Feature (L3)
 ```
 
