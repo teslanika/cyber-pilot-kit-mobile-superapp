@@ -459,6 +459,164 @@
             font-size: 13px;
         }
 
+        /* Rationale Section */
+        .rationale-section {
+            padding: 60px 0;
+            background: var(--bg-secondary);
+        }
+
+        .rationale-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .rationale-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .rationale-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--accent-blue);
+        }
+
+        .rationale-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .rationale-table {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rationale-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .rationale-level {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .rationale-scope {
+            color: var(--text-muted);
+        }
+
+        .cascade-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .cascade-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .cascade-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .cascade-item code {
+            font-size: 11px;
+            color: var(--accent-green);
+        }
+
+        .cascade-arrow {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .mvi-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 16px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .mvi-box {
+            padding: 6px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .mvi-arrow {
+            color: var(--text-muted);
+        }
+
+        .rationale-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rationale-benefits li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .rationale-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .rationale-benefits li::before {
+            content: "✓ ";
+            color: var(--accent-green);
+        }
+
+        .evolution-note {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .evolution-note h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .evolution-note p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -497,6 +655,7 @@
                     <a href="#features">Features</a>
                     <a href="#hierarchy">Hierarchy</a>
                     <a href="#artifacts">Artifacts</a>
+                    <a href="#rationale">Why</a>
                     <a href="#quickstart">Quick Start</a>
                     <a href="https://github.com/teslanika/cyber-pilot-kit-mobile-superapp">GitHub</a>
                 </nav>
@@ -744,6 +903,95 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <section id="rationale" class="rationale-section">
+            <div class="container">
+                <h2 class="section-title">Design Rationale</h2>
+                <p class="section-subtitle">Why we built it this way</p>
+                
+                <div class="rationale-grid">
+                    <div class="rationale-card">
+                        <h3>Why 4 Levels?</h3>
+                        <p>Standard SDLC works for monolithic apps, but <strong>SuperApps</strong> contain 5-10+ mini-apps with 10-50+ features each. Different teams own different SubApps and need isolated documentation.</p>
+                        <div class="rationale-table">
+                            <div class="rationale-row">
+                                <span class="rationale-level">L0: Platform</span>
+                                <span class="rationale-scope">Entire app, shared infrastructure</span>
+                            </div>
+                            <div class="rationale-row">
+                                <span class="rationale-level">L1: SubApp</span>
+                                <span class="rationale-scope">Single mini-app domain</span>
+                            </div>
+                            <div class="rationale-row">
+                                <span class="rationale-level">L2: Epic</span>
+                                <span class="rationale-scope">User-facing capability</span>
+                            </div>
+                            <div class="rationale-row">
+                                <span class="rationale-level">L3: Feature</span>
+                                <span class="rationale-scope">Single implementable behavior</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rationale-card">
+                        <h3>Why Cascading FR?</h3>
+                        <p>Requirements often get "lost" between high-level goals and implementation. <strong>Cascading traceability</strong> ensures every platform requirement reaches code.</p>
+                        <div class="cascade-example">
+                            <div class="cascade-item">
+                                <span class="cascade-label">Platform FR</span>
+                                <code>cpt-platform-fr-offline</code>
+                            </div>
+                            <div class="cascade-arrow">↓</div>
+                            <div class="cascade-item">
+                                <span class="cascade-label">SubApp FR</span>
+                                <code>cpt-learn-fr-offline-courses</code>
+                            </div>
+                            <div class="cascade-arrow">↓</div>
+                            <div class="cascade-item">
+                                <span class="cascade-label">Feature Flow</span>
+                                <code>cpt-learn-flow-load-cached</code>
+                            </div>
+                            <div class="cascade-arrow">↓</div>
+                            <div class="cascade-item">
+                                <span class="cascade-label">Code Marker</span>
+                                <code>@cpt-flow:...:p1</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rationale-card">
+                        <h3>Why MVI Pattern?</h3>
+                        <p>After evaluating MVVM, MVC, Redux — <strong>MVI</strong> was chosen for unidirectional data flow, cross-platform consistency, and direct mapping from CDSL flows to Intents.</p>
+                        <div class="mvi-diagram">
+                            <span class="mvi-box">State</span>
+                            <span class="mvi-arrow">→</span>
+                            <span class="mvi-box">UI</span>
+                            <span class="mvi-arrow">→</span>
+                            <span class="mvi-box">Intent</span>
+                            <span class="mvi-arrow">→</span>
+                            <span class="mvi-box">Reducer</span>
+                            <span class="mvi-arrow">→</span>
+                            <span class="mvi-box">State</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rationale-card">
+                        <h3>Why Block Markers?</h3>
+                        <p>Simple <code>@cpt-impl</code> shows "this file implements X". <strong>Block markers</strong> (<code>@cpt-begin/@cpt-end</code>) show which exact lines implement which CDSL instruction.</p>
+                        <ul class="rationale-benefits">
+                            <li>Checkbox Cascade: all markers exist → mark step [x]</li>
+                            <li>Code Review: see which design step each block implements</li>
+                            <li>Refactoring Safety: markers stay with the logic</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="evolution-note">
+                    <h4>Evolution from SDLC Kit</h4>
+                    <p>This kit started as an extension of the standard SDLC Kit, then diverged to address mobile-specific needs: 4-level hierarchy for SuperApp scale, MVI pattern for state management, platform-specific implementation sections for KMP/Android/iOS separation.</p>
+                </div>
             </div>
         </section>
     </main>

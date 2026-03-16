@@ -182,10 +182,137 @@ cypilot validate --check=feature-impl-coverage
 | **State Management** | MVI (Model-View-Intent) |
 | **Architecture** | Clean Architecture, Modular |
 
-## References
+## Design Rationale
 
-- [Cyber Pilot](https://github.com/cyberfabric/cyber-pilot) — Core framework
-- [SDLC Kit](https://github.com/cyberfabric/cyber-pilot-kit-sdlc) — Base SDLC artifacts
+### Why 4 Levels?
+
+Standard SDLC approaches (PRD → DESIGN → FEATURE → CODE) work well for monolithic apps, but **SuperApps** present unique challenges:
+
+1. **Scale**: A SuperApp contains 5-10+ mini-apps, each with 10-50+ features
+2. **Team Structure**: Different teams own different SubApps, need isolated documentation
+3. **Requirements Cascade**: Platform-level requirements (e.g., "offline support") must be traced down to every SubApp that implements them
+4. **Shared Kernel vs Domain Logic**: Auth, push notifications, deep links are shared; course content, proctoring logic are domain-specific
+
+The **4-level hierarchy** emerged from real-world mobile development:
+
+| Level | Scope | Team | Example |
+|-------|-------|------|---------|
+| **L0: Platform** | Entire app, shared infrastructure | Platform team | "App must work offline" |
+| **L1: SubApp** | Single mini-app domain | Feature team | "Student SubApp needs course access" |
+| **L2: Epic** | User-facing capability | Feature team | "Notification history screen" |
+| **L3: Feature** | Single implementable behavior | Developer | "Unread badge counter" |
+
+### Why Cascading FR Traceability?
+
+In mobile development, requirements often get "lost" between high-level goals and actual implementation:
+
+```
+Product Manager: "The app should work offline"
+Developer: "Which screens? What data? How fresh?"
+```
+
+**Cascading FR traceability** solves this by requiring explicit links at each level:
+
+```
+Platform FR: cpt-platform-fr-offline-support
+    ↓ "refined by"
+SubApp FR: cpt-learn-fr-offline-courses
+    ↓ "detailed by"  
+Epic Story: cpt-learn-course-catalog-story-cache-courses
+    ↓ "specified by"
+Feature Flow: cpt-learn-flow-course-list-load-cached
+    ↓ "implemented by"
+Code: @cpt-flow:cpt-learn-flow-course-list-load-cached:p1
+```
+
+Benefits:
+- **Impact Analysis**: Change platform FR → see all affected SubApps/Features
+- **Coverage Check**: Ensure every platform requirement reaches code
+- **Audit Trail**: For compliance, security reviews
+
+### Why MVI Pattern?
+
+Mobile apps require consistent state management across platforms. After evaluating MVVM, MVC, Redux:
+
+**MVI (Model-View-Intent)** was chosen because:
+
+1. **Unidirectional Data Flow**: State → UI → Intent → Reducer → State
+2. **Cross-Platform**: Same pattern in KMP, Compose, SwiftUI
+3. **Testability**: Pure functions (reducer), predictable state transitions
+4. **Design-to-Code Mapping**: CDSL flows map directly to Intents
+
+```kotlin
+// FEATURE-MOBILE defines:
+sealed class CourseListIntent {
+    object Load : CourseListIntent()      // maps to CDSL flow: load
+    object Refresh : CourseListIntent()   // maps to CDSL flow: refresh
+}
+
+// Code implements with markers:
+// @cpt-flow:cpt-learn-flow-course-list-load:p1
+fun processIntent(intent: CourseListIntent) { ... }
+```
+
+### Why Platform-Specific Implementation Sections?
+
+KMP shares logic, but **UI is inherently platform-specific**:
+
+| Concern | KMP Shared | Android | iOS |
+|---------|------------|---------|-----|
+| Business Logic | ✅ ViewModel, UseCase | - | - |
+| State | ✅ StateFlow | collectAsStateWithLifecycle | Combine wrapper |
+| Navigation | Decompose/Voyager | NavController | NavigationStack |
+| DI | Koin | Hilt | Manual/Factory |
+| UI | - | Compose | SwiftUI |
+
+FEATURE-MOBILE includes separate implementation sections because:
+- **Different APIs**: Compose `LazyColumn` vs SwiftUI `List`
+- **Different Patterns**: `@Composable` vs `View` protocol
+- **Different Edge Cases**: Android lifecycle vs iOS scene phases
+
+### Why Block Markers (`@cpt-begin`/`@cpt-end`)?
+
+Simple `@cpt-impl` markers show "this file implements X", but don't show **which code implements which CDSL instruction**.
+
+Block markers provide **line-level traceability**:
+
+```kotlin
+// @cpt-flow:cpt-learn-flow-course-list-load:p1
+fun loadCourses() {
+    // @cpt-begin:cpt-learn-flow-course-list-load:p1:inst-kmp-1
+    viewModelScope.launch {
+        _state.update { it.copy(isLoading = true) }
+    // @cpt-end:cpt-learn-flow-course-list-load:p1:inst-kmp-1
+    
+    // @cpt-begin:cpt-learn-flow-course-list-load:p1:inst-kmp-2
+        val result = repository.getCourses()
+    // @cpt-end:cpt-learn-flow-course-list-load:p1:inst-kmp-2
+    
+    // @cpt-begin:cpt-learn-flow-course-list-load:p1:inst-kmp-3
+        _state.update { it.copy(courses = result, isLoading = false) }
+    // @cpt-end:cpt-learn-flow-course-list-load:p1:inst-kmp-3
+    }
+}
+```
+
+Benefits:
+- **Checkbox Cascade**: When all `inst-*` markers exist → mark CDSL step `[x]`
+- **Code Review**: Reviewer sees exactly which design step each block implements
+- **Refactoring Safety**: Move/rename code, markers stay with the logic
+
+### Evolution from SDLC Kit
+
+This kit started as an extension of the standard [SDLC Kit](https://github.com/cyberfabric/cyber-pilot-kit-sdlc), then diverged to address mobile-specific needs:
+
+| SDLC Kit | Mobile SuperApp Kit | Reason |
+|----------|---------------------|--------|
+| 1-level hierarchy | 4-level hierarchy | SuperApp scale |
+| PRD, DESIGN, FEATURE | PRD-*, DESIGN-*, DECOMPOSITION-* per level | Team isolation |
+| Generic FEATURE | FEATURE-MOBILE with MVI | Mobile state management |
+| CODE markers | Platform-specific IMPL markers | KMP/Android/iOS separation |
+| Single codebase rules | Platform-specific rules | Different patterns per platform |
+
+The kit reuses SDLC concepts (CDSL, traceability, validation) while adding mobile-specific structure.
 
 ## License
 
