@@ -1,0 +1,407 @@
+# Cypilot Mobile SuperApp Kit — Declarative Installation Manifest
+# Schema: kit-manifest.schema.json v1.0
+
+[manifest]
+version = "1.0"
+root = "{cypilot_path}/config/kits/{slug}"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PRD ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── PRD-SUBAPP artifact files ────────────────────────────────────────────────
+
+[[resources]]
+id = "prd_subapp_template"
+description = "PRD-SUBAPP artifact template (L1: SubApp level requirements)"
+source = "artifacts/PRD-SUBAPP/template.md"
+default_path = "artifacts/PRD-SUBAPP/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "prd_subapp_rules"
+description = "PRD-SUBAPP validation rules"
+source = "artifacts/PRD-SUBAPP/rules.md"
+default_path = "artifacts/PRD-SUBAPP/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "prd_subapp_checklist"
+description = "PRD-SUBAPP review checklist"
+source = "artifacts/PRD-SUBAPP/checklist.md"
+default_path = "artifacts/PRD-SUBAPP/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── PRD-EPIC artifact files ──────────────────────────────────────────────────
+
+[[resources]]
+id = "prd_epic_template"
+description = "PRD-EPIC artifact template (L2: Epic/screen level requirements)"
+source = "artifacts/PRD-EPIC/template.md"
+default_path = "artifacts/PRD-EPIC/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "prd_epic_rules"
+description = "PRD-EPIC validation rules"
+source = "artifacts/PRD-EPIC/rules.md"
+default_path = "artifacts/PRD-EPIC/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "prd_epic_checklist"
+description = "PRD-EPIC review checklist"
+source = "artifacts/PRD-EPIC/checklist.md"
+default_path = "artifacts/PRD-EPIC/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# DESIGN ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── DESIGN-PLATFORM artifact files ───────────────────────────────────────────
+
+[[resources]]
+id = "design_platform_template"
+description = "DESIGN-PLATFORM artifact template (L0: Platform architecture)"
+source = "artifacts/DESIGN-PLATFORM/template.md"
+default_path = "artifacts/DESIGN-PLATFORM/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "design_platform_rules"
+description = "DESIGN-PLATFORM validation rules"
+source = "artifacts/DESIGN-PLATFORM/rules.md"
+default_path = "artifacts/DESIGN-PLATFORM/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "design_platform_checklist"
+description = "DESIGN-PLATFORM review checklist"
+source = "artifacts/DESIGN-PLATFORM/checklist.md"
+default_path = "artifacts/DESIGN-PLATFORM/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── DESIGN-SUBAPP artifact files ─────────────────────────────────────────────
+
+[[resources]]
+id = "design_subapp_template"
+description = "DESIGN-SUBAPP artifact template (L1: SubApp module architecture)"
+source = "artifacts/DESIGN-SUBAPP/template.md"
+default_path = "artifacts/DESIGN-SUBAPP/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "design_subapp_rules"
+description = "DESIGN-SUBAPP validation rules"
+source = "artifacts/DESIGN-SUBAPP/rules.md"
+default_path = "artifacts/DESIGN-SUBAPP/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "design_subapp_checklist"
+description = "DESIGN-SUBAPP review checklist"
+source = "artifacts/DESIGN-SUBAPP/checklist.md"
+default_path = "artifacts/DESIGN-SUBAPP/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── DESIGN-EPIC artifact files ───────────────────────────────────────────────
+
+[[resources]]
+id = "design_epic_template"
+description = "DESIGN-EPIC artifact template (L2: Screen/flow component design)"
+source = "artifacts/DESIGN-EPIC/template.md"
+default_path = "artifacts/DESIGN-EPIC/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "design_epic_rules"
+description = "DESIGN-EPIC validation rules"
+source = "artifacts/DESIGN-EPIC/rules.md"
+default_path = "artifacts/DESIGN-EPIC/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "design_epic_checklist"
+description = "DESIGN-EPIC review checklist"
+source = "artifacts/DESIGN-EPIC/checklist.md"
+default_path = "artifacts/DESIGN-EPIC/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# DECOMPOSITION ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── DECOMPOSITION-PLATFORM artifact files ────────────────────────────────────
+
+[[resources]]
+id = "decomposition_platform_template"
+description = "DECOMPOSITION-PLATFORM template (Platform → SubApps)"
+source = "artifacts/DECOMPOSITION-PLATFORM/template.md"
+default_path = "artifacts/DECOMPOSITION-PLATFORM/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "decomposition_platform_rules"
+description = "DECOMPOSITION-PLATFORM validation rules"
+source = "artifacts/DECOMPOSITION-PLATFORM/rules.md"
+default_path = "artifacts/DECOMPOSITION-PLATFORM/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "decomposition_platform_checklist"
+description = "DECOMPOSITION-PLATFORM review checklist"
+source = "artifacts/DECOMPOSITION-PLATFORM/checklist.md"
+default_path = "artifacts/DECOMPOSITION-PLATFORM/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── DECOMPOSITION-SUBAPP artifact files ──────────────────────────────────────
+
+[[resources]]
+id = "decomposition_subapp_template"
+description = "DECOMPOSITION-SUBAPP template (SubApp → Epics)"
+source = "artifacts/DECOMPOSITION-SUBAPP/template.md"
+default_path = "artifacts/DECOMPOSITION-SUBAPP/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "decomposition_subapp_rules"
+description = "DECOMPOSITION-SUBAPP validation rules"
+source = "artifacts/DECOMPOSITION-SUBAPP/rules.md"
+default_path = "artifacts/DECOMPOSITION-SUBAPP/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "decomposition_subapp_checklist"
+description = "DECOMPOSITION-SUBAPP review checklist"
+source = "artifacts/DECOMPOSITION-SUBAPP/checklist.md"
+default_path = "artifacts/DECOMPOSITION-SUBAPP/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── DECOMPOSITION-EPIC artifact files ────────────────────────────────────────
+
+[[resources]]
+id = "decomposition_epic_template"
+description = "DECOMPOSITION-EPIC template (Epic → Features)"
+source = "artifacts/DECOMPOSITION-EPIC/template.md"
+default_path = "artifacts/DECOMPOSITION-EPIC/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "decomposition_epic_rules"
+description = "DECOMPOSITION-EPIC validation rules"
+source = "artifacts/DECOMPOSITION-EPIC/rules.md"
+default_path = "artifacts/DECOMPOSITION-EPIC/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "decomposition_epic_checklist"
+description = "DECOMPOSITION-EPIC review checklist"
+source = "artifacts/DECOMPOSITION-EPIC/checklist.md"
+default_path = "artifacts/DECOMPOSITION-EPIC/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FEATURE ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── FEATURE-MOBILE artifact files ────────────────────────────────────────────
+
+[[resources]]
+id = "feature_mobile_template"
+description = "FEATURE-MOBILE template with CDSL flows and platform sections"
+source = "artifacts/FEATURE-MOBILE/template.md"
+default_path = "artifacts/FEATURE-MOBILE/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "feature_mobile_rules"
+description = "FEATURE-MOBILE validation rules"
+source = "artifacts/FEATURE-MOBILE/rules.md"
+default_path = "artifacts/FEATURE-MOBILE/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "feature_mobile_checklist"
+description = "FEATURE-MOBILE review checklist"
+source = "artifacts/FEATURE-MOBILE/checklist.md"
+default_path = "artifacts/FEATURE-MOBILE/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# IMPLEMENTATION ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── IMPL-KMP artifact files ──────────────────────────────────────────────────
+
+[[resources]]
+id = "impl_kmp_template"
+description = "IMPL-KMP template (Kotlin Multiplatform implementation reference)"
+source = "artifacts/IMPL-KMP/template.md"
+default_path = "artifacts/IMPL-KMP/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "impl_kmp_rules"
+description = "IMPL-KMP validation rules"
+source = "artifacts/IMPL-KMP/rules.md"
+default_path = "artifacts/IMPL-KMP/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "impl_kmp_checklist"
+description = "IMPL-KMP review checklist"
+source = "artifacts/IMPL-KMP/checklist.md"
+default_path = "artifacts/IMPL-KMP/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── IMPL-ANDROID artifact files ──────────────────────────────────────────────
+
+[[resources]]
+id = "impl_android_template"
+description = "IMPL-ANDROID template (Android/Compose implementation reference)"
+source = "artifacts/IMPL-ANDROID/template.md"
+default_path = "artifacts/IMPL-ANDROID/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "impl_android_rules"
+description = "IMPL-ANDROID validation rules"
+source = "artifacts/IMPL-ANDROID/rules.md"
+default_path = "artifacts/IMPL-ANDROID/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "impl_android_checklist"
+description = "IMPL-ANDROID review checklist"
+source = "artifacts/IMPL-ANDROID/checklist.md"
+default_path = "artifacts/IMPL-ANDROID/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ── IMPL-IOS artifact files ──────────────────────────────────────────────────
+
+[[resources]]
+id = "impl_ios_template"
+description = "IMPL-IOS template (iOS/SwiftUI implementation reference)"
+source = "artifacts/IMPL-IOS/template.md"
+default_path = "artifacts/IMPL-IOS/template.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "impl_ios_rules"
+description = "IMPL-IOS validation rules"
+source = "artifacts/IMPL-IOS/rules.md"
+default_path = "artifacts/IMPL-IOS/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "impl_ios_checklist"
+description = "IMPL-IOS review checklist"
+source = "artifacts/IMPL-IOS/checklist.md"
+default_path = "artifacts/IMPL-IOS/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CODEBASE FILES
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "codebase_rules"
+description = "Mobile codebase implementation rules (KMP, Android, iOS)"
+source = "codebase/rules.md"
+default_path = "codebase/rules.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "codebase_checklist"
+description = "Mobile code review checklist"
+source = "codebase/checklist.md"
+default_path = "codebase/checklist.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# WORKFLOW FILES
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "workflow_pr_review"
+description = "Mobile PR review workflow"
+source = "workflows/pr-review.md"
+default_path = "workflows/pr-review.md"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "workflow_pr_status"
+description = "Mobile PR status report workflow"
+source = "workflows/pr-status.md"
+default_path = "workflows/pr-status.md"
+type = "file"
+user_modifiable = false
+
+# ══════════════════════════════════════════════════════════════════════════════
+# KIT-LEVEL FILES
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "constraints"
+description = "Kit structural constraints (multi-level hierarchy, ID kinds, traceability)"
+source = "constraints.toml"
+default_path = "constraints.toml"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "skill"
+description = "Kit SKILL.md for agent navigation and workflow routing"
+source = "SKILL.md"
+default_path = "SKILL.md"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "agents"
+description = "Kit AGENTS.md for agent integration entry points"
+source = "AGENTS.md"
+default_path = "AGENTS.md"
+type = "file"
+user_modifiable = false

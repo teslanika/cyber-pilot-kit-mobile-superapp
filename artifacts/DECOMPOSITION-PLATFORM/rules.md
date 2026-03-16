@@ -1,0 +1,233 @@
+# DECOMPOSITION-PLATFORM Rules
+
+**Artifact**: DECOMPOSITION-PLATFORM  
+**Kit**: mobile-superapp  
+**Level**: L0 (Platform)
+
+**Dependencies**:
+- `{decomposition_platform_template}` — structural reference
+- `{decomposition_platform_checklist}` — semantic quality criteria
+- `{design_platform_template}` — parent Platform DESIGN reference
+- `{platform_prd}` — Platform PRD reference
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Requirements](#requirements)
+3. [Tasks](#tasks)
+4. [Validation](#validation)
+5. [Error Handling](#error-handling)
+6. [Next Steps](#next-steps)
+
+---
+
+## Prerequisites
+
+### Load Dependencies
+
+- [ ] Load `{decomposition_platform_template}` for structure
+- [ ] Load `{decomposition_platform_checklist}` for semantic guidance
+- [ ] Read Platform PRD for requirements context
+- [ ] Read Platform DESIGN for architectural context
+- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
+
+---
+
+## Requirements
+
+### Structural
+
+- [ ] DECOMPOSITION-PLATFORM follows `{decomposition_platform_template}` structure
+- [ ] All required sections present and non-empty:
+  - Overview (parent documents reference)
+  - SubApp Entries (all SubApps with full details)
+  - Shared Kernel Components
+  - SubApp Dependencies
+  - Release Roadmap
+- [ ] All IDs follow `cpt-{platform}-subapp-{slug}` convention
+- [ ] Each SubApp entry has complete metadata:
+  - Purpose, Target Users, Depends On
+  - Scope (in/out), Requirements Covered
+  - Platform Components, Integration Points
+  - Target Release
+- [ ] No placeholder content (TODO, TBD, FIXME)
+- [ ] No duplicate IDs within document
+
+### Mobile-Specific
+
+- [ ] Each SubApp documents Kernel dependencies (Auth, Storage, Network)
+- [ ] Platform components reference DESIGN-PLATFORM IDs
+- [ ] Integration points match DESIGN-PLATFORM integrations
+- [ ] SubApps are self-contained (loosely coupled)
+- [ ] Communication between SubApps via deep links and events only
+
+### Traceability
+
+- [ ] Every SubApp traces to Platform FRs it covers
+- [ ] Platform components from DESIGN are allocated to SubApps
+- [ ] Shared Kernel components table shows which SubApps use each
+- [ ] Requirements coverage is explicit (with priority)
+- [ ] Links to parent documents (PRD, DESIGN)
+
+### Versioning
+
+- [ ] When editing existing DECOMPOSITION: increment version in document header
+- [ ] When adding/removing SubApp: document rationale
+
+---
+
+## Tasks
+
+### Phase 1: Setup
+
+- [ ] Load `{decomposition_platform_template}` for structure
+- [ ] Load `{decomposition_platform_checklist}` for semantic guidance
+- [ ] Read Platform PRD for requirements
+- [ ] Read Platform DESIGN for components and integrations
+- [ ] Identify natural SubApp boundaries from user actors and capabilities
+
+### Phase 2: Content Creation
+
+Apply checklist semantics during creation:
+
+| Checklist Category | Generation Task |
+|-------------------|-----------------|
+| Overview | Link to parent PRD and DESIGN |
+| SubApp Entries | Create entry for each SubApp with full metadata |
+| Shared Kernel | Document Kernel components and which SubApps use them |
+| Dependencies | Create dependency diagram, document rationale |
+| Release Roadmap | Plan quarterly releases with milestones |
+
+**SubApp Entry Checklist**:
+
+For each SubApp, document:
+- [ ] Purpose (few sentences)
+- [ ] Target Users (actor ID)
+- [ ] Depends On (Kernel + other SubApps if any)
+- [ ] Scope (in-scope and out-of-scope items)
+- [ ] Requirements Covered (Platform FRs with priority)
+- [ ] Platform Components (IDs from DESIGN)
+- [ ] Integration Points (external integrations)
+- [ ] Target Release (quarter)
+
+**Partial Completion Handling**:
+
+If DECOMPOSITION-PLATFORM cannot be completed in a single session:
+1. Checkpoint progress with completed SubApp entries
+2. Add `status: DRAFT` to document header
+3. Mark incomplete SubApps with `INCOMPLETE: {reason}`
+4. Document resumption point
+
+### Phase 3: IDs and References
+
+- [ ] Generate overall status ID: `cpt-{platform}-status-overall`
+- [ ] Generate SubApp IDs: `cpt-{platform}-subapp-{slug}`
+- [ ] Link to Platform FR IDs
+- [ ] Link to Platform component IDs
+- [ ] Link to Platform integration IDs
+- [ ] Verify uniqueness with `cypilot list-ids`
+
+### Phase 4: Quality Check
+
+- [ ] Self-review against `{decomposition_platform_checklist}` MUST HAVE items
+- [ ] Ensure no MUST NOT HAVE violations
+- [ ] Verify all Platform FRs are covered by at least one SubApp
+- [ ] Verify all DESIGN components are allocated
+- [ ] Verify SubApp boundaries don't overlap
+- [ ] Verify dependency graph is acyclic (except Kernel)
+
+### Phase 5: Table of Contents
+
+- [ ] Run `cypilot toc <path>` to generate/update Table of Contents
+- [ ] Verify TOC is present and complete
+
+---
+
+## Validation
+
+### Phase 1: Structural Validation
+
+- [ ] Run `cypilot validate --artifact <path>` for:
+  - Template structure compliance
+  - ID format validation
+  - Cross-reference validity
+  - No placeholders
+
+### Phase 2: Semantic Validation
+
+- [ ] Read `{decomposition_platform_checklist}` in full
+- [ ] For each MUST HAVE item: check if requirement is met
+- [ ] For each MUST NOT HAVE item: scan document for violations
+
+### Phase 3: Decomposition-Specific Validation
+
+- [ ] All Platform FRs have SubApp coverage
+- [ ] All DESIGN components are allocated to SubApps or Kernel
+- [ ] SubApp dependencies are justified
+- [ ] No circular dependencies (except through Kernel)
+- [ ] Release roadmap is realistic
+- [ ] Kernel components are shared correctly
+
+### Validation Report Format
+
+```
+DECOMPOSITION-PLATFORM Validation Report
+════════════════════════════════════════
+
+Structural: PASS/FAIL
+Semantic: PASS/FAIL (N issues)
+Decomposition-Specific: PASS/FAIL (N issues)
+
+Coverage:
+- Platform FRs covered: N/M (X%)
+- DESIGN components allocated: N/M (X%)
+
+Issues:
+- [SEVERITY] CHECKLIST-ID: Description
+```
+
+---
+
+## Error Handling
+
+### Missing Platform DESIGN
+
+- [ ] If Platform DESIGN not found:
+  - Option 1: Run `/cypilot-generate DESIGN-PLATFORM` first (recommended)
+  - Option 2: Continue without DESIGN (component allocation will be incomplete)
+  - Document "DESIGN pending" in DECOMPOSITION header
+
+### Missing Platform PRD
+
+- [ ] If Platform PRD not found:
+  - Option 1: Run `/cypilot-generate PRD-PLATFORM` first
+  - Option 2: Continue without PRD (requirements coverage will be incomplete)
+  - Document requirements assumptions made
+
+### SubApp Boundary Uncertainty
+
+- [ ] If uncertain about SubApp boundaries:
+  - Ask user for guidance
+  - Consider user actor boundaries (Student, Instructor, Admin)
+  - Consider capability groupings (Learn, Assess, Communicate)
+  - Document decision rationale
+
+### Escalation
+
+- [ ] Ask user when SubApp scope is unclear
+- [ ] Ask user when release priorities conflict
+- [ ] Ask user when dependency decisions need business input
+
+---
+
+## Next Steps
+
+### Options
+
+- [ ] DECOMPOSITION-PLATFORM complete → `/cypilot-generate PRD-SUBAPP` — create SubApp PRD
+- [ ] DECOMPOSITION-PLATFORM complete → `/cypilot-generate DESIGN-SUBAPP` — create SubApp DESIGN
+- [ ] DESIGN missing → `/cypilot-generate DESIGN-PLATFORM` — create Platform DESIGN first
+- [ ] PRD missing → `/cypilot-generate PRD-PLATFORM` — create Platform PRD first
+- [ ] DECOMPOSITION needs revision → continue editing DECOMPOSITION-PLATFORM
+- [ ] Ready for SubApp work → create SubApp folder structure
