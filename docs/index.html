@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypilot Mobile SuperApp Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-purple: #a371f7;
+            --accent-orange: #d29922;
+            --accent-red: #f85149;
+            --accent-cyan: #39c5cf;
+            --border-color: #30363d;
+            --gradient-start: #58a6ff;
+            --gradient-end: #a371f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary);
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-tertiary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--accent-green);
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-muted);
+        }
+
+        /* Hierarchy Diagram */
+        .hierarchy-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+
+        .hierarchy-diagram {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 48px;
+            overflow-x: auto;
+        }
+
+        .hierarchy-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            min-width: 800px;
+        }
+
+        .level-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .level-label {
+            width: 120px;
+            flex-shrink: 0;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .level-cards {
+            display: flex;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .artifact-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+            white-space: nowrap;
+        }
+
+        .artifact-card.prd { border-left: 3px solid var(--accent-blue); }
+        .artifact-card.design { border-left: 3px solid var(--accent-purple); }
+        .artifact-card.decomp { border-left: 3px solid var(--accent-orange); }
+        .artifact-card.feature { border-left: 3px solid var(--accent-green); }
+        .artifact-card.impl { border-left: 3px solid var(--accent-cyan); }
+
+        .level-arrow {
+            color: var(--text-muted);
+            font-size: 20px;
+        }
+
+        /* Features Grid */
+        .features-section {
+            padding: 60px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--text-muted);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Quick Start */
+        .quickstart-section {
+            padding: 60px 0;
+        }
+
+        .code-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .code-header {
+            background: var(--bg-tertiary);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot.red { background: #ff5f56; }
+        .code-dot.yellow { background: #ffbd2e; }
+        .code-dot.green { background: #27c93f; }
+
+        .code-title {
+            margin-left: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .code-content {
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .code-line {
+            display: flex;
+        }
+
+        .code-prompt {
+            color: var(--accent-green);
+            margin-right: 8px;
+        }
+
+        .code-command {
+            color: var(--text-primary);
+        }
+
+        .code-comment {
+            color: var(--text-muted);
+            margin-left: 16px;
+        }
+
+        /* Artifacts Table */
+        .artifacts-section {
+            padding: 60px 0;
+        }
+
+        .artifacts-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .artifacts-table th,
+        .artifacts-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .artifacts-table th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .artifacts-table td {
+            font-size: 14px;
+        }
+
+        .artifacts-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .artifacts-table code {
+            background: var(--bg-tertiary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .level-badge.l0 { background: rgba(88, 166, 255, 0.2); color: var(--accent-blue); }
+        .level-badge.l1 { background: rgba(163, 113, 247, 0.2); color: var(--accent-purple); }
+        .level-badge.l2 { background: rgba(210, 153, 34, 0.2); color: var(--accent-orange); }
+        .level-badge.l3 { background: rgba(63, 185, 80, 0.2); color: var(--accent-green); }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hierarchy-diagram {
+                padding: 24px;
+            }
+
+            .level-label {
+                width: 80px;
+                font-size: 12px;
+            }
+
+            .artifact-card {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">📱</div>
+                    <span class="logo-text">Mobile SuperApp Kit</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#hierarchy">Hierarchy</a>
+                    <a href="#artifacts">Artifacts</a>
+                    <a href="#quickstart">Quick Start</a>
+                    <a href="https://github.com/teslanika/cyber-pilot-kit-mobile-superapp">GitHub</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    <span>✨</span>
+                    <span>Cypilot Kit v1.0</span>
+                </div>
+                <h1>Mobile SuperApp Kit</h1>
+                <p class="hero-subtitle">
+                    4-level documentation hierarchy for mobile apps with cascading requirements traceability. 
+                    KMP + Android + iOS.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/teslanika/cyber-pilot-kit-mobile-superapp" class="btn btn-primary">
+                        <span>⭐</span>
+                        <span>View on GitHub</span>
+                    </a>
+                    <a href="#quickstart" class="btn btn-secondary">
+                        <span>🚀</span>
+                        <span>Quick Start</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="hierarchy" class="hierarchy-section">
+            <div class="container">
+                <h2 class="section-title">4-Level Hierarchy</h2>
+                <p class="section-subtitle">Platform → SubApp → Epic → Feature with cascading traceability</p>
+                
+                <div class="hierarchy-diagram">
+                    <div class="hierarchy-levels">
+                        <div class="level-row">
+                            <div class="level-label">L0: Platform</div>
+                            <div class="level-cards">
+                                <div class="artifact-card prd">PRD-PLATFORM</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card design">DESIGN-PLATFORM</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card decomp">DECOMPOSITION-PLATFORM</div>
+                            </div>
+                        </div>
+                        <div class="level-row">
+                            <div class="level-label">L1: SubApp</div>
+                            <div class="level-cards">
+                                <div class="artifact-card prd">PRD-SUBAPP</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card design">DESIGN-SUBAPP</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card decomp">DECOMPOSITION-SUBAPP</div>
+                            </div>
+                        </div>
+                        <div class="level-row">
+                            <div class="level-label">L2: Epic</div>
+                            <div class="level-cards">
+                                <div class="artifact-card prd">PRD-EPIC</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card design">DESIGN-EPIC</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card decomp">DECOMPOSITION-EPIC</div>
+                            </div>
+                        </div>
+                        <div class="level-row">
+                            <div class="level-label">L3: Feature</div>
+                            <div class="level-cards">
+                                <div class="artifact-card feature">FEATURE-MOBILE</div>
+                                <span class="level-arrow">→</span>
+                                <div class="artifact-card impl">IMPL (KMP/Android/iOS)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Built for mobile development with KMP, Compose, and SwiftUI</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Cascading Traceability</h3>
+                        <p>Requirements flow from Platform FR → SubApp FR → Epic Story → Feature → Code with full traceability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>MVI Pattern Support</h3>
+                        <p>Built-in State, Intent, Effect definitions in FEATURE-MOBILE templates for consistent architecture.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Platform Sections</h3>
+                        <p>Separate implementation sections for KMP shared code, Android Compose, and iOS SwiftUI.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Code Markers</h3>
+                        <p>@cpt-impl and @cpt-begin/@cpt-end markers for full code-to-design traceability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>PR Review Prompts</h3>
+                        <p>Platform-specific review prompts for KMP, Android, iOS, and documentation artifacts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Comprehensive Guides</h3>
+                        <p>QUICKSTART, GREENFIELD, BROWNFIELD, and TAXONOMY guides for any adoption scenario.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quickstart" class="quickstart-section">
+            <div class="container">
+                <h2 class="section-title">Quick Start</h2>
+                <p class="section-subtitle">Get started in minutes</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <div class="code-dot red"></div>
+                        <div class="code-dot yellow"></div>
+                        <div class="code-dot green"></div>
+                        <span class="code-title">Terminal</span>
+                    </div>
+                    <div class="code-content">
+                        <div class="code-line">
+                            <span class="code-prompt">$</span>
+                            <span class="code-command">cpt kit install mobile-superapp</span>
+                            <span class="code-comment"># Install the kit</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-prompt">$</span>
+                            <span class="code-command">cypilot on</span>
+                            <span class="code-comment"># Enable in chat</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-prompt">></span>
+                            <span class="code-command">cypilot make PRD-PLATFORM</span>
+                            <span class="code-comment"># Start designing</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-prompt">></span>
+                            <span class="code-command">cypilot make FEATURE-MOBILE for auth</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="code-prompt">></span>
+                            <span class="code-command">cypilot implement auth</span>
+                            <span class="code-comment"># Generate code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="artifacts" class="artifacts-section">
+            <div class="container">
+                <h2 class="section-title">Artifact Types</h2>
+                <p class="section-subtitle">12 artifact types across 4 hierarchy levels</p>
+                
+                <table class="artifacts-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Artifact</th>
+                            <th>Purpose</th>
+                            <th>ID Pattern</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="level-badge l0">L0</span></td>
+                            <td><code>PRD-PLATFORM</code></td>
+                            <td>Platform-wide requirements</td>
+                            <td><code>cpt-platform-fr-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l0">L0</span></td>
+                            <td><code>DESIGN-PLATFORM</code></td>
+                            <td>Platform architecture</td>
+                            <td><code>cpt-platform-component-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l0">L0</span></td>
+                            <td><code>DECOMPOSITION-PLATFORM</code></td>
+                            <td>SubApp breakdown</td>
+                            <td><code>cpt-platform-subapp-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l1">L1</span></td>
+                            <td><code>PRD-SUBAPP</code></td>
+                            <td>SubApp requirements</td>
+                            <td><code>cpt-{subapp}-fr-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l1">L1</span></td>
+                            <td><code>DESIGN-SUBAPP</code></td>
+                            <td>SubApp architecture</td>
+                            <td><code>cpt-{subapp}-component-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l1">L1</span></td>
+                            <td><code>DECOMPOSITION-SUBAPP</code></td>
+                            <td>Epic breakdown</td>
+                            <td><code>cpt-{subapp}-epic-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l2">L2</span></td>
+                            <td><code>PRD-EPIC</code></td>
+                            <td>Epic user stories</td>
+                            <td><code>cpt-{subapp}-{epic}-story-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l2">L2</span></td>
+                            <td><code>DESIGN-EPIC</code></td>
+                            <td>Epic architecture</td>
+                            <td><code>cpt-{subapp}-{epic}-component-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l2">L2</span></td>
+                            <td><code>DECOMPOSITION-EPIC</code></td>
+                            <td>Feature breakdown</td>
+                            <td><code>cpt-{subapp}-{epic}-feature-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l3">L3</span></td>
+                            <td><code>FEATURE-MOBILE</code></td>
+                            <td>MVI feature design</td>
+                            <td><code>cpt-{subapp}-flow-{feature}-{slug}</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge l3">L3</span></td>
+                            <td><code>IMPL</code></td>
+                            <td>Implementation tracking</td>
+                            <td><code>@cpt-impl cpt-{...}</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/teslanika/cyber-pilot-kit-mobile-superapp">GitHub</a>
+                    <a href="https://github.com/teslanika/cyber-pilot-kit-mobile-superapp/blob/main/guides/QUICKSTART.md">Documentation</a>
+                    <a href="https://github.com/teslanika/cyber-pilot-kit-mobile-superapp/blob/main/LICENSE">MIT License</a>
+                </div>
+                <div class="footer-copy">
+                    Made with Cypilot 🚀
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

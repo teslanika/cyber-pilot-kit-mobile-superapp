@@ -1,0 +1,16 @@
+title: Cypilot Mobile SuperApp Kit
+description: 4-level documentation hierarchy for mobile apps with cascading requirements traceability
+baseurl: ""
+url: "https://teslanika.github.io/cyber-pilot-kit-mobile-superapp"
+
+theme: null
+plugins: []
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+include:
+  - index.html
