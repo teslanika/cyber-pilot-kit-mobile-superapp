@@ -423,6 +423,96 @@
         .level-badge.l2 { background: rgba(210, 153, 34, 0.2); color: var(--accent-orange); }
         .level-badge.l3 { background: rgba(63, 185, 80, 0.2); color: var(--accent-green); }
 
+        /* Artifacts by Level */
+        .artifacts-by-level {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .level-group {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .level-header.l0-bg { background: rgba(88, 166, 255, 0.08); }
+        .level-header.l1-bg { background: rgba(163, 113, 247, 0.08); }
+        .level-header.l2-bg { background: rgba(210, 153, 34, 0.08); }
+        .level-header.l3-bg { background: rgba(63, 185, 80, 0.08); }
+
+        .level-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .level-desc {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        .level-artifacts {
+            padding: 8px 0;
+        }
+
+        .artifact-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            gap: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .artifact-row:last-child {
+            border-bottom: none;
+        }
+
+        .artifact-row:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .artifact-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            background: var(--bg-tertiary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: var(--text-primary);
+            min-width: 200px;
+        }
+
+        .artifact-purpose {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .artifacts-note {
+            margin-top: 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .artifacts-note code {
+            background: var(--bg-tertiary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            margin: 0 4px;
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -822,87 +912,106 @@
 
         <section id="artifacts" class="artifacts-section">
             <div class="container">
-                <h2 class="section-title">Artifact Types</h2>
-                <p class="section-subtitle">12 artifact types across 4 hierarchy levels</p>
+                <h2 class="section-title">What the Kit Provides</h2>
+                <p class="section-subtitle">13 artifact types organized by hierarchy level</p>
                 
-                <table class="artifacts-table">
-                    <thead>
-                        <tr>
-                            <th>Level</th>
-                            <th>Artifact</th>
-                            <th>Purpose</th>
-                            <th>ID Pattern</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="level-badge l0">L0</span></td>
-                            <td><code>PRD-PLATFORM</code></td>
-                            <td>Platform-wide requirements</td>
-                            <td><code>cpt-platform-fr-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l0">L0</span></td>
-                            <td><code>DESIGN-PLATFORM</code></td>
-                            <td>Platform architecture</td>
-                            <td><code>cpt-platform-component-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l0">L0</span></td>
-                            <td><code>DECOMPOSITION-PLATFORM</code></td>
-                            <td>SubApp breakdown</td>
-                            <td><code>cpt-platform-subapp-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l1">L1</span></td>
-                            <td><code>PRD-SUBAPP</code></td>
-                            <td>SubApp requirements</td>
-                            <td><code>cpt-{subapp}-fr-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l1">L1</span></td>
-                            <td><code>DESIGN-SUBAPP</code></td>
-                            <td>SubApp architecture</td>
-                            <td><code>cpt-{subapp}-component-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l1">L1</span></td>
-                            <td><code>DECOMPOSITION-SUBAPP</code></td>
-                            <td>Epic breakdown</td>
-                            <td><code>cpt-{subapp}-epic-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l2">L2</span></td>
-                            <td><code>PRD-EPIC</code></td>
-                            <td>Epic user stories</td>
-                            <td><code>cpt-{subapp}-{epic}-story-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l2">L2</span></td>
-                            <td><code>DESIGN-EPIC</code></td>
-                            <td>Epic architecture</td>
-                            <td><code>cpt-{subapp}-{epic}-component-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l2">L2</span></td>
-                            <td><code>DECOMPOSITION-EPIC</code></td>
-                            <td>Feature breakdown</td>
-                            <td><code>cpt-{subapp}-{epic}-feature-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l3">L3</span></td>
-                            <td><code>FEATURE-MOBILE</code></td>
-                            <td>MVI feature design</td>
-                            <td><code>cpt-{subapp}-flow-{feature}-{slug}</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="level-badge l3">L3</span></td>
-                            <td><code>IMPL</code></td>
-                            <td>Implementation tracking</td>
-                            <td><code>@cpt-impl cpt-{...}</code></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="artifacts-by-level">
+                    <div class="level-group">
+                        <div class="level-header l0-bg">
+                            <span class="level-badge l0">L0</span>
+                            <span class="level-name">Platform</span>
+                            <span class="level-desc">Entire app, shared infrastructure</span>
+                        </div>
+                        <div class="level-artifacts">
+                            <div class="artifact-row">
+                                <code class="artifact-name">PRD-PLATFORM</code>
+                                <span class="artifact-purpose">Platform-wide requirements (actors, FRs, NFRs)</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">DESIGN-PLATFORM</code>
+                                <span class="artifact-purpose">Platform architecture (KMP modules, shared components)</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">DECOMPOSITION-PLATFORM</code>
+                                <span class="artifact-purpose">Platform → SubApps breakdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="level-group">
+                        <div class="level-header l1-bg">
+                            <span class="level-badge l1">L1</span>
+                            <span class="level-name">SubApp</span>
+                            <span class="level-desc">Single mini-app domain</span>
+                        </div>
+                        <div class="level-artifacts">
+                            <div class="artifact-row">
+                                <code class="artifact-name">PRD-SUBAPP</code>
+                                <span class="artifact-purpose">SubApp domain requirements</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">DESIGN-SUBAPP</code>
+                                <span class="artifact-purpose">SubApp architecture (ViewModels, repositories)</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">DECOMPOSITION-SUBAPP</code>
+                                <span class="artifact-purpose">SubApp → Epics breakdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="level-group">
+                        <div class="level-header l2-bg">
+                            <span class="level-badge l2">L2</span>
+                            <span class="level-name">Epic</span>
+                            <span class="level-desc">User-facing capability</span>
+                        </div>
+                        <div class="level-artifacts">
+                            <div class="artifact-row">
+                                <code class="artifact-name">PRD-EPIC</code>
+                                <span class="artifact-purpose">Epic user stories and acceptance criteria</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">DESIGN-EPIC</code>
+                                <span class="artifact-purpose">Epic components and sequences</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">DECOMPOSITION-EPIC</code>
+                                <span class="artifact-purpose">Epic → Features breakdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="level-group">
+                        <div class="level-header l3-bg">
+                            <span class="level-badge l3">L3</span>
+                            <span class="level-name">Feature</span>
+                            <span class="level-desc">Single implementable behavior</span>
+                        </div>
+                        <div class="level-artifacts">
+                            <div class="artifact-row">
+                                <code class="artifact-name">FEATURE-MOBILE</code>
+                                <span class="artifact-purpose">MVI design (State, Intent, Effect, CDSL flows)</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">IMPL-KMP</code>
+                                <span class="artifact-purpose">KMP shared implementation tracking</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">IMPL-ANDROID</code>
+                                <span class="artifact-purpose">Android/Compose implementation tracking</span>
+                            </div>
+                            <div class="artifact-row">
+                                <code class="artifact-name">IMPL-IOS</code>
+                                <span class="artifact-purpose">iOS/SwiftUI implementation tracking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artifacts-note">
+                    Each artifact includes: <code>template.md</code> <code>rules.md</code> <code>checklist.md</code>
+                </div>
             </div>
         </section>
 

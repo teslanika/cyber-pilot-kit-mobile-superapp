@@ -62,13 +62,21 @@ Code: @cpt-impl:cpt-student-feature-notification-badge
 
 ## What the Kit Provides
 
-| Category | Artifacts |
-|----------|-----------|
-| **PRD** | PRD-SUBAPP, PRD-EPIC |
-| **DESIGN** | DESIGN-PLATFORM, DESIGN-SUBAPP, DESIGN-EPIC |
-| **DECOMPOSITION** | DECOMPOSITION-PLATFORM, DECOMPOSITION-SUBAPP, DECOMPOSITION-EPIC |
-| **FEATURE** | FEATURE-MOBILE (with CDSL flows) |
-| **IMPL** | IMPL-KMP, IMPL-ANDROID, IMPL-IOS |
+| Level | Artifact | Purpose |
+|-------|----------|---------|
+| **L0: Platform** | `PRD-PLATFORM` | Platform-wide requirements (actors, FRs, NFRs) |
+| | `DESIGN-PLATFORM` | Platform architecture (KMP modules, shared components) |
+| | `DECOMPOSITION-PLATFORM` | Platform → SubApps breakdown |
+| **L1: SubApp** | `PRD-SUBAPP` | SubApp domain requirements |
+| | `DESIGN-SUBAPP` | SubApp architecture (ViewModels, repositories) |
+| | `DECOMPOSITION-SUBAPP` | SubApp → Epics breakdown |
+| **L2: Epic** | `PRD-EPIC` | Epic user stories and acceptance criteria |
+| | `DESIGN-EPIC` | Epic components and sequences |
+| | `DECOMPOSITION-EPIC` | Epic → Features breakdown |
+| **L3: Feature** | `FEATURE-MOBILE` | MVI design (State, Intent, Effect, CDSL flows) |
+| | `IMPL-KMP` | KMP shared implementation tracking |
+| | `IMPL-ANDROID` | Android/Compose implementation tracking |
+| | `IMPL-IOS` | iOS/SwiftUI implementation tracking |
 
 Each artifact type includes:
 - `template.md` — Document structure
