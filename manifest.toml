@@ -405,3 +405,131 @@ source = "AGENTS.md"
 default_path = "AGENTS.md"
 type = "file"
 user_modifiable = false
+
+# ══════════════════════════════════════════════════════════════════════════════
+# GUIDES
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "guide_quickstart"
+description = "Quick start guide for Mobile SuperApp Kit"
+source = "guides/QUICKSTART.md"
+default_path = "guides/QUICKSTART.md"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "guide_greenfield"
+description = "Greenfield project guide (new mobile app)"
+source = "guides/GREENFIELD.md"
+default_path = "guides/GREENFIELD.md"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "guide_brownfield"
+description = "Brownfield project guide (existing mobile codebase)"
+source = "guides/BROWNFIELD.md"
+default_path = "guides/BROWNFIELD.md"
+type = "file"
+user_modifiable = false
+
+[[resources]]
+id = "guide_taxonomy"
+description = "Artifact taxonomy and ID patterns"
+source = "guides/TAXONOMY.md"
+default_path = "guides/TAXONOMY.md"
+type = "file"
+user_modifiable = false
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SCRIPTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "scripts_pr_review_config"
+description = "PR review configuration"
+source = "scripts/pr-review.toml"
+default_path = "scripts/pr-review.toml"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_mobile_code_review"
+description = "Mobile code review prompt"
+source = "scripts/prompts/pr/mobile-code-review.md"
+default_path = "scripts/prompts/pr/mobile-code-review.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_kmp_review"
+description = "KMP code review prompt"
+source = "scripts/prompts/pr/kmp-review.md"
+default_path = "scripts/prompts/pr/kmp-review.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_android_review"
+description = "Android/Compose code review prompt"
+source = "scripts/prompts/pr/android-review.md"
+default_path = "scripts/prompts/pr/android-review.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_ios_review"
+description = "iOS/SwiftUI code review prompt"
+source = "scripts/prompts/pr/ios-review.md"
+default_path = "scripts/prompts/pr/ios-review.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_prd_review"
+description = "PRD review prompt"
+source = "scripts/prompts/pr/prd-review.md"
+default_path = "scripts/prompts/pr/prd-review.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_design_review"
+description = "Design review prompt"
+source = "scripts/prompts/pr/design-review.md"
+default_path = "scripts/prompts/pr/design-review.md"
+type = "file"
+user_modifiable = true
+
+[[resources]]
+id = "scripts_prompt_feature_review"
+description = "FEATURE-MOBILE review prompt"
+source = "scripts/prompts/pr/feature-review.md"
+default_path = "scripts/prompts/pr/feature-review.md"
+type = "file"
+user_modifiable = true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# EXAMPLES
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "example_feature_course_list"
+description = "Example FEATURE-MOBILE: Course List with MVI and platform sections"
+source = "examples/FEATURE-MOBILE/course-list.md"
+default_path = "examples/FEATURE-MOBILE/course-list.md"
+type = "file"
+user_modifiable = false
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CHANGELOG
+# ══════════════════════════════════════════════════════════════════════════════
+
+[[resources]]
+id = "whatsnew"
+description = "Kit changelog"
+source = "whatsnew.toml"
+default_path = "whatsnew.toml"
+type = "file"
+user_modifiable = false

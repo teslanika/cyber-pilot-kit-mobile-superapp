@@ -1,0 +1,62 @@
+# Mobile SuperApp Kit Changelog
+
+[[releases]]
+version = "1.0.0"
+date = "2026-03-16"
+summary = "Initial release of Mobile SuperApp Kit"
+
+[[releases.changes]]
+type = "added"
+description = "4-level documentation hierarchy: Platform → SubApp → Epic → Feature"
+
+[[releases.changes]]
+type = "added"
+description = "12 artifact types with mobile-specific templates"
+
+[[releases.changes]]
+type = "added"
+description = "Cascading FR traceability across all hierarchy levels"
+
+[[releases.changes]]
+type = "added"
+description = "MVI pattern support in FEATURE-MOBILE (State, Intent, Effect)"
+
+[[releases.changes]]
+type = "added"
+description = "Platform-specific implementation sections (KMP, Android Compose, iOS SwiftUI)"
+
+[[releases.changes]]
+type = "added"
+description = "Mobile codebase rules with traceability markers (@cpt-impl, @cpt-begin/@cpt-end)"
+
+[[releases.changes]]
+type = "added"
+description = "Mobile code review checklists (KMP, Android, iOS)"
+
+[[releases.changes]]
+type = "added"
+description = "PR review prompts for mobile platforms"
+
+[[releases.changes]]
+type = "added"
+description = "Guides: QUICKSTART, GREENFIELD, BROWNFIELD, TAXONOMY"
+
+[[releases.changes]]
+type = "added"
+description = "Example FEATURE-MOBILE: course-list with complete MVI and platform sections"
+
+[[releases.changes]]
+type = "added"
+description = "Engineering principles integration (TDD, SOLID, DRY, KISS, YAGNI)"
+
+[[releases.changes]]
+type = "added"
+description = "Expert Panel Review with mobile-specific experts"
+
+[[releases.changes]]
+type = "added"
+description = "Checkbox Cascade rules for 4-level hierarchy"
+
+[[releases.changes]]
+type = "added"
+description = "Traceability Mode selection (FULL vs DOCS-ONLY)"
