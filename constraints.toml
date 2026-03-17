@@ -311,59 +311,64 @@ example = "cpt-ios-home-view-main"
 [traceability]
 
 # --- DOCUMENT-LEVEL TRACEABILITY ---
+# Note: TOML inline tables must be single-line
 
 # Platform level
-"architecture/PRD.md" = { 
-    traces_from = [], 
-    traces_to = ["architecture/DESIGN.md", "architecture/DECOMPOSITION.md", "subapps/*/PRD.md"] 
-}
-"architecture/DESIGN.md" = { 
-    traces_from = ["architecture/PRD.md"], 
-    traces_to = ["architecture/DECOMPOSITION.md", "subapps/*/DESIGN.md"] 
-}
-"architecture/DECOMPOSITION.md" = { 
-    traces_from = ["architecture/DESIGN.md"], 
-    traces_to = ["subapps/*/PRD.md"] 
-}
+[traceability."architecture/PRD.md"]
+traces_from = []
+traces_to = ["architecture/DESIGN.md", "architecture/DECOMPOSITION.md", "subapps/*/PRD.md"]
+
+[traceability."architecture/DESIGN.md"]
+traces_from = ["architecture/PRD.md"]
+traces_to = ["architecture/DECOMPOSITION.md", "subapps/*/DESIGN.md"]
+
+[traceability."architecture/DECOMPOSITION.md"]
+traces_from = ["architecture/DESIGN.md"]
+traces_to = ["subapps/*/PRD.md"]
 
 # SubApp level
-"subapps/*/PRD.md" = { 
-    traces_from = ["architecture/PRD.md", "architecture/DECOMPOSITION.md"], 
-    traces_to = ["subapps/*/DESIGN.md", "subapps/*/DECOMPOSITION.md", "subapps/*/*/*/PRD.md"] 
-}
-"subapps/*/DESIGN.md" = { 
-    traces_from = ["architecture/DESIGN.md", "subapps/*/PRD.md"], 
-    traces_to = ["subapps/*/DECOMPOSITION.md", "subapps/*/*/*/DESIGN.md"] 
-}
-"subapps/*/DECOMPOSITION.md" = { 
-    traces_from = ["subapps/*/DESIGN.md"], 
-    traces_to = ["subapps/*/*/*/PRD.md"] 
-}
+[traceability."subapps/*/PRD.md"]
+traces_from = ["architecture/PRD.md", "architecture/DECOMPOSITION.md"]
+traces_to = ["subapps/*/DESIGN.md", "subapps/*/DECOMPOSITION.md", "subapps/*/*/*/PRD.md"]
+
+[traceability."subapps/*/DESIGN.md"]
+traces_from = ["architecture/DESIGN.md", "subapps/*/PRD.md"]
+traces_to = ["subapps/*/DECOMPOSITION.md", "subapps/*/*/*/DESIGN.md"]
+
+[traceability."subapps/*/DECOMPOSITION.md"]
+traces_from = ["subapps/*/DESIGN.md"]
+traces_to = ["subapps/*/*/*/PRD.md"]
 
 # Epic level
-"subapps/*/*/*/PRD.md" = { 
-    traces_from = ["subapps/*/PRD.md", "subapps/*/DECOMPOSITION.md"], 
-    traces_to = ["subapps/*/*/*/DESIGN.md", "subapps/*/*/*/DECOMPOSITION.md"] 
-}
-"subapps/*/*/*/DESIGN.md" = { 
-    traces_from = ["subapps/*/DESIGN.md", "subapps/*/*/*/PRD.md"], 
-    traces_to = ["subapps/*/*/*/DECOMPOSITION.md", "subapps/*/*/*/features/*/FEATURE.md"] 
-}
-"subapps/*/*/*/DECOMPOSITION.md" = { 
-    traces_from = ["subapps/*/*/*/DESIGN.md"], 
-    traces_to = ["subapps/*/*/*/features/*/FEATURE.md"] 
-}
+[traceability."subapps/*/*/*/PRD.md"]
+traces_from = ["subapps/*/PRD.md", "subapps/*/DECOMPOSITION.md"]
+traces_to = ["subapps/*/*/*/DESIGN.md", "subapps/*/*/*/DECOMPOSITION.md"]
+
+[traceability."subapps/*/*/*/DESIGN.md"]
+traces_from = ["subapps/*/DESIGN.md", "subapps/*/*/*/PRD.md"]
+traces_to = ["subapps/*/*/*/DECOMPOSITION.md", "subapps/*/*/*/features/*/FEATURE.md"]
+
+[traceability."subapps/*/*/*/DECOMPOSITION.md"]
+traces_from = ["subapps/*/*/*/DESIGN.md"]
+traces_to = ["subapps/*/*/*/features/*/FEATURE.md"]
 
 # Feature level
-"subapps/*/*/*/features/*/FEATURE.md" = { 
-    traces_from = ["subapps/*/*/*/DECOMPOSITION.md", "subapps/*/*/*/DESIGN.md"], 
-    traces_to = ["constructor-sdk/feature/*/IMPL.md", "android-app/feature/*/IMPL.md", "ios-app/Features/*/IMPL.md", "code"] 
-}
+[traceability."subapps/*/*/*/features/*/FEATURE.md"]
+traces_from = ["subapps/*/*/*/DECOMPOSITION.md", "subapps/*/*/*/DESIGN.md"]
+traces_to = ["constructor-sdk/feature/*/IMPL.md", "android-app/feature/*/IMPL.md", "ios-app/Features/*/IMPL.md", "code"]
 
 # Implementation level
-"constructor-sdk/feature/*/IMPL.md" = { traces_from = ["subapps/*/*/*/features/*/FEATURE.md"], traces_to = ["code"] }
-"android-app/feature/*/IMPL.md" = { traces_from = ["subapps/*/*/*/features/*/FEATURE.md"], traces_to = ["code"] }
-"ios-app/Features/*/IMPL.md" = { traces_from = ["subapps/*/*/*/features/*/FEATURE.md"], traces_to = ["code"] }
+[traceability."constructor-sdk/feature/*/IMPL.md"]
+traces_from = ["subapps/*/*/*/features/*/FEATURE.md"]
+traces_to = ["code"]
+
+[traceability."android-app/feature/*/IMPL.md"]
+traces_from = ["subapps/*/*/*/features/*/FEATURE.md"]
+traces_to = ["code"]
+
+[traceability."ios-app/Features/*/IMPL.md"]
+traces_from = ["subapps/*/*/*/features/*/FEATURE.md"]
+traces_to = ["code"]
 
 # --- REQUIREMENT-LEVEL TRACEABILITY (FR Cascade) ---
 
