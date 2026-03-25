@@ -121,6 +121,34 @@ cypilot validate --check=platform-fr-coverage
 cypilot validate --check=feature-impl-coverage
 ```
 
+### Language Check (run after every artifact generation)
+
+```bash
+# Check entire architecture tree (default)
+python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py
+
+# Check a specific file or directory
+python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py architecture/subapps/student/
+
+# Quiet mode — violations only, no summary header
+python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py -q architecture/
+```
+
+Script: `{kit_path}/scripts/check-language.py`
+
+**`allowed_languages` config** (top of the script):
+```python
+allowed_languages: list[str] = [
+    "en",   # English — Latin script only (current policy)
+    # "ru", # Uncomment to allow Russian / Cyrillic
+    # "tr", # Turkish — already covered by Latin, no change needed
+    # "ar", # Arabic
+    # "zh", # Chinese (CJK)
+]
+```
+
+Exit codes: `0` = all clean, `1` = violations found.
+
 ### ID Operations
 ```bash
 cypilot list-ids --kind feature
@@ -135,18 +163,21 @@ cypilot where-used --id <id>
 2. Create `architecture/DESIGN.md` using DESIGN-PLATFORM template
 3. Create `architecture/DECOMPOSITION.md` listing SubApps
 4. Create `architecture/adr/` for platform decisions
+5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/`
 
 ### Generate SubApp
 1. Create `subapps/{subapp}/PRD.md` using PRD-SUBAPP template
 2. Create `subapps/{subapp}/DESIGN.md` using DESIGN-SUBAPP template
 3. Create `subapps/{subapp}/DECOMPOSITION.md` listing Epics
 4. Create epics in `screens/`, `capabilities/`, `flows/`
+5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/subapps/{subapp}/`
 
 ### Generate Epic
 1. Create `subapps/{subapp}/{category}/{epic}/PRD.md` using PRD-EPIC template
 2. Create `DESIGN.md` using DESIGN-EPIC template
 3. Create `DECOMPOSITION.md` listing Features
 4. Create features in `features/`
+5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/subapps/{subapp}/{category}/{epic}/`
 
 ### Generate Feature
 1. Create `features/{feature}/FEATURE.md` using FEATURE-MOBILE template
@@ -154,6 +185,7 @@ cypilot where-used --id <id>
    - `constructor-sdk/feature/{module}/IMPL.md`
    - `android-app/feature/{module}/IMPL.md`
    - `ios-app/Features/{Module}/IMPL.md`
+3. **Run language check**: `python3 {kit_path}/scripts/check-language.py`
 
 ## Level Detection
 
