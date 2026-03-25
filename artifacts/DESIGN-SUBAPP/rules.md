@@ -5,9 +5,9 @@
 **Level**: L1 (SubApp)
 
 **Dependencies**:
-- `{design_subapp_template}` — structural reference
-- `{design_subapp_checklist}` — semantic quality criteria
-- `{prd_subapp_template}` — parent PRD reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — parent PRD reference
 
 ## Table of Contents
 
@@ -24,11 +24,11 @@
 
 ### Load Dependencies
 
-- [ ] Load `{design_subapp_template}` for structure
-- [ ] Load `{design_subapp_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` for semantic guidance
 - [ ] Read parent SubApp PRD for context
 - [ ] Read Platform DESIGN for architectural context
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -37,7 +37,7 @@
 
 ### Structural
 
-- [ ] DESIGN-SUBAPP follows `{design_subapp_template}` structure
+- [ ] DESIGN-SUBAPP follows `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` structure
 - [ ] All required sections present and non-empty:
   - SubApp Overview (purpose, capabilities, architecture drivers)
   - Module Structure (KMP, Android, iOS modules)
@@ -82,8 +82,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{design_subapp_template}` for structure
-- [ ] Load `{design_subapp_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` for semantic guidance
 - [ ] Read SubApp PRD for requirements
 - [ ] Read Platform DESIGN for architectural context
 
@@ -122,7 +122,7 @@ If DESIGN-SUBAPP cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{design_subapp_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify PRD traceability
 - [ ] Verify Platform DESIGN alignment
@@ -146,7 +146,7 @@ If DESIGN-SUBAPP cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{design_subapp_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

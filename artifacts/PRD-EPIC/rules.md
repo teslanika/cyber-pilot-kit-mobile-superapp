@@ -5,9 +5,9 @@
 **Level**: L2 (Epic)
 
 **Dependencies**:
-- `{prd_epic_template}` — structural reference
-- `{prd_epic_checklist}` — semantic quality criteria
-- `{prd_subapp_template}` — parent SubApp PRD reference
+- `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — parent SubApp PRD reference
 
 ## Table of Contents
 
@@ -24,11 +24,11 @@
 
 ### Load Dependencies
 
-- [ ] Load `{prd_epic_template}` for structure
-- [ ] Load `{prd_epic_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` for semantic guidance
 - [ ] Read parent SubApp PRD for context
 - [ ] Read SubApp DESIGN for architectural context
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -37,7 +37,7 @@
 
 ### Structural
 
-- [ ] PRD-EPIC follows `{prd_epic_template}` structure
+- [ ] PRD-EPIC follows `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (purpose, scope, epic type, traces to parent)
   - Actors & Context (actors, entry points)
@@ -85,8 +85,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{prd_epic_template}` for structure
-- [ ] Load `{prd_epic_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` for semantic guidance
 - [ ] Read SubApp PRD for parent requirements
 - [ ] Read SubApp DESIGN for architectural patterns
 - [ ] Identify which SubApp FRs this Epic details
@@ -126,7 +126,7 @@ If PRD-EPIC cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{prd_epic_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify every FR is implementable at Epic scope
 - [ ] Verify all states have UI behavior defined
@@ -151,7 +151,7 @@ If PRD-EPIC cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{prd_epic_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

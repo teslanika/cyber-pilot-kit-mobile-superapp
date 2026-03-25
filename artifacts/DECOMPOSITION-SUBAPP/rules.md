@@ -5,10 +5,10 @@
 **Level**: L1 (SubApp)
 
 **Dependencies**:
-- `{decomposition_subapp_template}` — structural reference
-- `{decomposition_subapp_checklist}` — semantic quality criteria
-- `{design_subapp_template}` — parent SubApp DESIGN reference
-- `{prd_subapp_template}` — SubApp PRD reference
+- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` — parent SubApp DESIGN reference
+- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — SubApp PRD reference
 
 ## Table of Contents
 
@@ -25,12 +25,12 @@
 
 ### Load Dependencies
 
-- [ ] Load `{decomposition_subapp_template}` for structure
-- [ ] Load `{decomposition_subapp_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` for semantic guidance
 - [ ] Read SubApp PRD for requirements context
 - [ ] Read SubApp DESIGN for architectural context
 - [ ] Read Platform DECOMPOSITION for SubApp boundaries
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -39,7 +39,7 @@
 
 ### Structural
 
-- [ ] DECOMPOSITION-SUBAPP follows `{decomposition_subapp_template}` structure
+- [ ] DECOMPOSITION-SUBAPP follows `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (parent documents reference)
   - Epic Entries (organized by category: Screens, Capabilities, Flows)
@@ -85,8 +85,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{decomposition_subapp_template}` for structure
-- [ ] Load `{decomposition_subapp_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` for semantic guidance
 - [ ] Read SubApp PRD for requirements
 - [ ] Read SubApp DESIGN for components
 - [ ] Identify natural Epic boundaries from screens, capabilities, and flows
@@ -136,7 +136,7 @@ If DECOMPOSITION-SUBAPP cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{decomposition_subapp_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify all SubApp FRs are covered by at least one Epic
 - [ ] Verify all DESIGN components are allocated
@@ -162,7 +162,7 @@ If DECOMPOSITION-SUBAPP cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{decomposition_subapp_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

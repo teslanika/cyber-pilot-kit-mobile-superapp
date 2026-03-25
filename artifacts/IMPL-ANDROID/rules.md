@@ -5,11 +5,11 @@
 **Level**: Implementation (Android UI)
 
 **Dependencies**:
-- `{impl_android_template}` — structural reference
-- `{impl_android_checklist}` — semantic quality criteria
-- `{feature_mobile_template}` — parent FEATURE reference
-- `{design_epic_template}` — Epic DESIGN reference
-- `{impl_kmp_template}` — KMP shared logic reference
+- `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/template.md` — parent FEATURE reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` — Epic DESIGN reference
+- `config/kits/mobile-superapp/artifacts/IMPL-KMP/template.md` — KMP shared logic reference
 
 ## Table of Contents
 
@@ -26,12 +26,12 @@
 
 ### Load Dependencies
 
-- [ ] Load `{impl_android_template}` for structure
-- [ ] Load `{impl_android_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/checklist.md` for semantic guidance
 - [ ] Read parent FEATURE-MOBILE for CDSL specifications
 - [ ] Read Epic DESIGN for component definitions
 - [ ] Read IMPL-KMP for shared logic reference
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -40,7 +40,7 @@
 
 ### Structural
 
-- [ ] IMPL-ANDROID follows `{impl_android_template}` structure
+- [ ] IMPL-ANDROID follows `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (module path)
   - References (Feature, Epic DESIGN, SubApp DESIGN)
@@ -94,8 +94,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{impl_android_template}` for structure
-- [ ] Load `{impl_android_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/checklist.md` for semantic guidance
 - [ ] Read FEATURE-MOBILE Section 3.2 (Android UI)
 - [ ] Read Epic DESIGN for Android component definitions
 - [ ] Read IMPL-KMP for shared ViewModel reference
@@ -145,7 +145,7 @@ If IMPL-ANDROID cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{impl_android_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify all FEATURE Section 3.2 steps have impl markers
 - [ ] Verify all Epic DESIGN Android components are mapped

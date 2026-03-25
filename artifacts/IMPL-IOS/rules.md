@@ -5,11 +5,11 @@
 **Level**: Implementation (iOS UI)
 
 **Dependencies**:
-- `{impl_ios_template}` — structural reference
-- `{impl_ios_checklist}` — semantic quality criteria
-- `{feature_mobile_template}` — parent FEATURE reference
-- `{design_epic_template}` — Epic DESIGN reference
-- `{impl_kmp_template}` — KMP shared logic reference
+- `config/kits/mobile-superapp/artifacts/IMPL-IOS/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/IMPL-IOS/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/template.md` — parent FEATURE reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` — Epic DESIGN reference
+- `config/kits/mobile-superapp/artifacts/IMPL-KMP/template.md` — KMP shared logic reference
 
 ## Table of Contents
 
@@ -26,12 +26,12 @@
 
 ### Load Dependencies
 
-- [ ] Load `{impl_ios_template}` for structure
-- [ ] Load `{impl_ios_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-IOS/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-IOS/checklist.md` for semantic guidance
 - [ ] Read parent FEATURE-MOBILE for CDSL specifications
 - [ ] Read Epic DESIGN for component definitions
 - [ ] Read IMPL-KMP for shared logic reference
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -40,7 +40,7 @@
 
 ### Structural
 
-- [ ] IMPL-IOS follows `{impl_ios_template}` structure
+- [ ] IMPL-IOS follows `config/kits/mobile-superapp/artifacts/IMPL-IOS/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (module path)
   - References (Feature, Epic DESIGN, SubApp DESIGN)
@@ -100,8 +100,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{impl_ios_template}` for structure
-- [ ] Load `{impl_ios_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-IOS/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-IOS/checklist.md` for semantic guidance
 - [ ] Read FEATURE-MOBILE Section 3.3 (iOS UI)
 - [ ] Read Epic DESIGN for iOS component definitions
 - [ ] Read IMPL-KMP for shared ViewModel reference
@@ -172,7 +172,7 @@ If IMPL-IOS cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{impl_ios_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/IMPL-IOS/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify all FEATURE Section 3.3 steps have impl markers
 - [ ] Verify all Epic DESIGN iOS components are mapped

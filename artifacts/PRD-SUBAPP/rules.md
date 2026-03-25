@@ -5,8 +5,8 @@
 **Level**: L1 (SubApp)
 
 **Dependencies**:
-- `{prd_subapp_template}` — structural reference
-- `{prd_subapp_checklist}` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` — semantic quality criteria
 - `{platform_prd}` — parent Platform PRD reference
 
 ## Table of Contents
@@ -24,10 +24,10 @@
 
 ### Load Dependencies
 
-- [ ] Load `{prd_subapp_template}` for structure
-- [ ] Load `{prd_subapp_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` for semantic guidance
 - [ ] Read parent Platform PRD for context
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -36,7 +36,7 @@
 
 ### Structural
 
-- [ ] PRD-SUBAPP follows `{prd_subapp_template}` structure
+- [ ] PRD-SUBAPP follows `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (purpose, scope, traces to platform)
   - Actors (primary actors with SubApp-specific context)
@@ -82,8 +82,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{prd_subapp_template}` for structure
-- [ ] Load `{prd_subapp_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for parent requirements
 - [ ] Identify which Platform FRs this SubApp refines
 
@@ -121,7 +121,7 @@ If PRD-SUBAPP cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{prd_subapp_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify every FR is testable (measurable acceptance criteria)
 - [ ] Verify Platform traceability is complete
@@ -145,7 +145,7 @@ If PRD-SUBAPP cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{prd_subapp_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

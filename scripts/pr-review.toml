@@ -17,26 +17,26 @@ data_dir = ".prs"
 [[prompts]]
 description = "Mobile Code Review"
 prompt_file = "{scripts}/prompts/pr/mobile-code-review.md"
-checklist   = "{codebase_checklist}"
+checklist   = "config/kits/mobile-superapp/codebase/checklist.md"
 # coding_guidelines = "docs/mobile-coding-guidelines.md"
 # security_guidelines = "docs/mobile-security-guidelines.md"
 
 [[prompts]]
 description = "KMP Code Review"
 prompt_file = "{scripts}/prompts/pr/kmp-review.md"
-checklist   = "{codebase_checklist}"
+checklist   = "config/kits/mobile-superapp/codebase/checklist.md"
 # kmp_conventions = "docs/kmp-conventions.md"
 
 [[prompts]]
 description = "Android Code Review"
 prompt_file = "{scripts}/prompts/pr/android-review.md"
-checklist   = "{codebase_checklist}"
+checklist   = "config/kits/mobile-superapp/codebase/checklist.md"
 # compose_guidelines = "docs/compose-guidelines.md"
 
 [[prompts]]
 description = "iOS Code Review"
 prompt_file = "{scripts}/prompts/pr/ios-review.md"
-checklist   = "{codebase_checklist}"
+checklist   = "config/kits/mobile-superapp/codebase/checklist.md"
 # swiftui_guidelines = "docs/swiftui-guidelines.md"
 
 [[prompts]]

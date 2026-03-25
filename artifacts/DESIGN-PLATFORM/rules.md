@@ -5,8 +5,8 @@
 **Level**: L0 (Platform)
 
 **Dependencies**:
-- `{design_platform_template}` — structural reference
-- `{design_platform_checklist}` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/checklist.md` — semantic quality criteria
 - `{platform_prd}` — parent Platform PRD reference
 
 ## Table of Contents
@@ -24,10 +24,10 @@
 
 ### Load Dependencies
 
-- [ ] Load `{design_platform_template}` for structure
-- [ ] Load `{design_platform_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for requirements
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -36,7 +36,7 @@
 
 ### Structural
 
-- [ ] DESIGN-PLATFORM follows `{design_platform_template}` structure
+- [ ] DESIGN-PLATFORM follows `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/template.md` structure
 - [ ] All required sections present and non-empty:
   - Platform Architecture Overview (vision, drivers, layers)
   - Cross-Platform Strategy (native vs WebView, KMP scope, code sharing)
@@ -85,8 +85,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{design_platform_template}` for structure
-- [ ] Load `{design_platform_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for requirements
 - [ ] Identify key architecture drivers from PRD
 
@@ -124,7 +124,7 @@ If DESIGN-PLATFORM cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{design_platform_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify PRD traceability complete
 - [ ] Verify all layers have clear responsibility
@@ -149,7 +149,7 @@ If DESIGN-PLATFORM cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{design_platform_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

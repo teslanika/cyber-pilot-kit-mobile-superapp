@@ -5,7 +5,7 @@
 **Scope**: KMP, Android (Compose), iOS (SwiftUI)
 
 **Dependencies**:
-- `{codebase_checklist}` — semantic quality criteria
+- `config/kits/mobile-superapp/codebase/checklist.md` — semantic quality criteria
 
 ## Table of Contents
 
@@ -24,12 +24,12 @@
 
 - [ ] Read project `AGENTS.md` for code conventions
 - [ ] Load source artifact/description (FEATURE-MOBILE preferred)
-- [ ] Load `{codebase_checklist}` for quality guidance
+- [ ] Load `config/kits/mobile-superapp/codebase/checklist.md` for quality guidance
 - [ ] Load `{cypilot_path}/.core/requirements/code-checklist.md` for generic code quality checks
 - [ ] If FEATURE source: identify all IDs with `to_code="true"` attribute
 - [ ] Determine Traceability Mode (FULL vs DOCS-ONLY)
 - [ ] If Traceability Mode FULL: load `{cypilot_path}/.core/architecture/specs/traceability.md`
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 
 **Source** (one of, in priority order):
 1. FEATURE-MOBILE design — registered artifact with `to_code="true"` IDs
@@ -151,7 +151,7 @@ PRD/DESIGN: referenced IDs [x] when ALL downstream refs [x]
 
 ### Quality
 
-**Reference**: `{codebase_checklist}` for detailed criteria
+**Reference**: `config/kits/mobile-superapp/codebase/checklist.md` for detailed criteria
 
 - [ ] Code passes quality checklist
 - [ ] Functions/methods are appropriately sized
@@ -174,7 +174,7 @@ PRD/DESIGN: referenced IDs [x] when ALL downstream refs [x]
 **Load Context**:
 - [ ] Read project `AGENTS.md` for code conventions
 - [ ] Load source artifact/description
-- [ ] Load `{codebase_checklist}` for quality guidance
+- [ ] Load `config/kits/mobile-superapp/codebase/checklist.md` for quality guidance
 - [ ] Determine Traceability Mode
 - [ ] Plan implementation order by platform (KMP → Android → iOS)
 
@@ -243,7 +243,7 @@ After each work package, sync checkboxes:
 
 ### Phase 5: Quality Check
 
-- [ ] Self-review against `{codebase_checklist}`
+- [ ] Self-review against `config/kits/mobile-superapp/codebase/checklist.md`
 - [ ] If Traceability Mode FULL: verify all `to_code="true"` IDs have markers
 - [ ] If Traceability Mode FULL: ensure no orphaned markers
 - [ ] Run tests to verify implementation

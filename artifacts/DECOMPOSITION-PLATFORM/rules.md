@@ -5,9 +5,9 @@
 **Level**: L0 (Platform)
 
 **Dependencies**:
-- `{decomposition_platform_template}` — structural reference
-- `{decomposition_platform_checklist}` — semantic quality criteria
-- `{design_platform_template}` — parent Platform DESIGN reference
+- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/DESIGN-PLATFORM/template.md` — parent Platform DESIGN reference
 - `{platform_prd}` — Platform PRD reference
 
 ## Table of Contents
@@ -25,11 +25,11 @@
 
 ### Load Dependencies
 
-- [ ] Load `{decomposition_platform_template}` for structure
-- [ ] Load `{decomposition_platform_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for requirements context
 - [ ] Read Platform DESIGN for architectural context
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -38,7 +38,7 @@
 
 ### Structural
 
-- [ ] DECOMPOSITION-PLATFORM follows `{decomposition_platform_template}` structure
+- [ ] DECOMPOSITION-PLATFORM follows `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (parent documents reference)
   - SubApp Entries (all SubApps with full details)
@@ -81,8 +81,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{decomposition_platform_template}` for structure
-- [ ] Load `{decomposition_platform_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for requirements
 - [ ] Read Platform DESIGN for components and integrations
 - [ ] Identify natural SubApp boundaries from user actors and capabilities
@@ -130,7 +130,7 @@ If DECOMPOSITION-PLATFORM cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{decomposition_platform_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify all Platform FRs are covered by at least one SubApp
 - [ ] Verify all DESIGN components are allocated
@@ -156,7 +156,7 @@ If DECOMPOSITION-PLATFORM cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{decomposition_platform_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

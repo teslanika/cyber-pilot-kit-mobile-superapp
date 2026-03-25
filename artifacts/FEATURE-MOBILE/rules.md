@@ -5,10 +5,10 @@
 **Level**: L3 (Feature)
 
 **Dependencies**:
-- `{feature_mobile_template}` — structural reference
-- `{feature_mobile_checklist}` — semantic quality criteria
-- `{prd_epic_template}` — parent Epic PRD reference
-- `{design_epic_template}` — parent Epic DESIGN reference
+- `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` — parent Epic PRD reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` — parent Epic DESIGN reference
 
 ## Table of Contents
 
@@ -25,12 +25,12 @@
 
 ### Load Dependencies
 
-- [ ] Load `{feature_mobile_template}` for structure
-- [ ] Load `{feature_mobile_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/checklist.md` for semantic guidance
 - [ ] Read Epic PRD for requirements context
 - [ ] Read Epic DESIGN for architectural context
 - [ ] Read Epic DECOMPOSITION for feature boundaries
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 - [ ] Load `{cypilot_path}/.core/architecture/specs/cdsl.md` for CDSL syntax
 
@@ -40,7 +40,7 @@
 
 ### Structural
 
-- [ ] FEATURE-MOBILE follows `{feature_mobile_template}` structure
+- [ ] FEATURE-MOBILE follows `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/template.md` structure
 - [ ] All required sections present and non-empty:
   - Feature Context (overview, purpose, actors, references)
   - Actor Flows (CDSL) — user-facing interactions
@@ -99,8 +99,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{feature_mobile_template}` for structure
-- [ ] Load `{feature_mobile_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/checklist.md` for semantic guidance
 - [ ] Load CDSL syntax reference
 - [ ] Read Epic PRD for requirements
 - [ ] Read Epic DESIGN for components and use cases
@@ -165,7 +165,7 @@ If FEATURE-MOBILE cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{feature_mobile_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify CDSL syntax is correct
 - [ ] Verify all flows have success and error scenarios
@@ -192,7 +192,7 @@ If FEATURE-MOBILE cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{feature_mobile_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/FEATURE-MOBILE/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 

@@ -5,10 +5,10 @@
 **Level**: L2 (Epic)
 
 **Dependencies**:
-- `{design_epic_template}` — structural reference
-- `{design_epic_checklist}` — semantic quality criteria
-- `{prd_epic_template}` — parent Epic PRD reference
-- `{design_subapp_template}` — parent SubApp DESIGN reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` — parent Epic PRD reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` — parent SubApp DESIGN reference
 
 ## Table of Contents
 
@@ -25,11 +25,11 @@
 
 ### Load Dependencies
 
-- [ ] Load `{design_epic_template}` for structure
-- [ ] Load `{design_epic_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` for semantic guidance
 - [ ] Read parent Epic PRD for requirements
 - [ ] Read parent SubApp DESIGN for architectural context
-- [ ] Load `{constraints}` for kit-level constraints
+- [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
 ---
@@ -38,7 +38,7 @@
 
 ### Structural
 
-- [ ] DESIGN-EPIC follows `{design_epic_template}` structure
+- [ ] DESIGN-EPIC follows `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` structure
 - [ ] All required sections present and non-empty:
   - Epic Overview (purpose, requirements coverage, drivers)
   - Component Architecture (diagram, screens, widgets)
@@ -87,8 +87,8 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `{design_epic_template}` for structure
-- [ ] Load `{design_epic_checklist}` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` for semantic guidance
 - [ ] Read Epic PRD for requirements
 - [ ] Read SubApp DESIGN for architectural patterns
 - [ ] Identify which Epic FRs this DESIGN addresses
@@ -133,7 +133,7 @@ If DESIGN-EPIC cannot be completed in a single session:
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `{design_epic_checklist}` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify Epic PRD traceability
 - [ ] Verify SubApp DESIGN alignment
@@ -158,7 +158,7 @@ If DESIGN-EPIC cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `{design_epic_checklist}` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 
