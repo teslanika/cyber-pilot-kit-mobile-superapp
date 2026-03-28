@@ -34,6 +34,21 @@ ALWAYS open and follow `{kit_path}/artifacts/IMPL-IOS/template.md` WHEN creating
 ### Validation
 ALWAYS open and follow `{kit_path}/constraints.toml` WHEN validating mobile-superapp artifacts
 
+### Language Check (mandatory post-generation step)
+ALWAYS run the language check script immediately after writing or editing any `.md` artifact:
+
+```bash
+python3 {kit_path}/scripts/check-language.py <path-to-artifact>
+```
+
+WHEN the script exits with code 1 (violations found):
+1. Show the violation report to the user
+2. Fix all flagged lines in the artifact (translate to English)
+3. Re-run the script to confirm exit code 0
+4. Only then proceed to `cpt validate`
+
+NEVER skip this step even when the artifact content looks correct — the check catches subtle copy-paste or template residue from non-English sources.
+
 ## Level Detection
 
 WHEN artifact path matches `architecture/` → Platform level (L0)
