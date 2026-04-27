@@ -145,7 +145,7 @@ FEATURE: flow cpt-learn-flow-course-list-load [x]
     ↓
 DECOMPOSITION-EPIC: feature course-list [x]
     ↓
-DECOMPOSITION-SUBAPP: epic course-catalog [x]
+DECOMPOSITION-MINIAPP: epic course-catalog [x]
 ```
 
 ## Validation

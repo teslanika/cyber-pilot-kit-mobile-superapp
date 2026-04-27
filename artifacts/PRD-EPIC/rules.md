@@ -7,7 +7,7 @@
 **Dependencies**:
 - `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` — structural reference
 - `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` — semantic quality criteria
-- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — parent SubApp PRD reference
+- `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` — parent MiniApp PRD reference
 
 ## Table of Contents
 
@@ -26,8 +26,8 @@
 
 - [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` for structure
 - [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` for semantic guidance
-- [ ] Read parent SubApp PRD for context
-- [ ] Read SubApp DESIGN for architectural context
+- [ ] Read parent MiniApp PRD for context
+- [ ] Read MiniApp DESIGN for architectural context
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
@@ -46,8 +46,8 @@
   - Data Requirements (required data, API contracts)
   - Traceability Matrix
   - Acceptance Criteria
-- [ ] All IDs follow `cpt-{subapp}-epic-{epic}-{kind}-{slug}` convention
-- [ ] References to SubApp PRD are valid
+- [ ] All IDs follow `cpt-{miniapp}-epic-{epic}-{kind}-{slug}` convention
+- [ ] References to MiniApp PRD are valid
 - [ ] Epic type is specified: Screen | Capability | Flow | Widget
 - [ ] No placeholder content (TODO, TBD, FIXME)
 - [ ] No duplicate IDs within document
@@ -57,7 +57,7 @@
 - [ ] Screen states defined (Loading, Content, Empty, Error, Offline)
 - [ ] Entry points include:
   - Navigation (tab bar, menu, parent screen)
-  - Deep links with format `constructor://{subapp}/{epic}?{params}`
+  - Deep links with format `constructor://{miniapp}/{epic}?{params}`
   - Push notifications (if applicable)
 - [ ] UI layout uses platform-appropriate patterns
 - [ ] Interactions are touch-optimized (tap, swipe, long press)
@@ -65,14 +65,14 @@
 
 ### Traceability
 
-- [ ] Every Epic FR traces to SubApp PRD FR (details relationship)
+- [ ] Every Epic FR traces to MiniApp PRD FR (details relationship)
 - [ ] Epic-specific FRs are tagged `epic-specific` with rationale
-- [ ] Widget IDs use `cpt-{subapp}-{epic}-widget-{slug}` format
+- [ ] Widget IDs use `cpt-{miniapp}-{epic}-widget-{slug}` format
 - [ ] Indirect Platform trace documented
 - [ ] Traceability matrix documents:
-  - SubApp FR → Epic FR coverage
+  - MiniApp FR → Epic FR coverage
   - Epic FR → Feature mapping (planned)
-- [ ] Full traceability chain shown (Platform → SubApp → Epic)
+- [ ] Full traceability chain shown (Platform → MiniApp → Epic)
 
 ### Versioning
 
@@ -87,9 +87,9 @@
 
 - [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` for structure
 - [ ] Load `config/kits/mobile-superapp/artifacts/PRD-EPIC/checklist.md` for semantic guidance
-- [ ] Read SubApp PRD for parent requirements
-- [ ] Read SubApp DESIGN for architectural patterns
-- [ ] Identify which SubApp FRs this Epic details
+- [ ] Read MiniApp PRD for parent requirements
+- [ ] Read MiniApp DESIGN for architectural patterns
+- [ ] Identify which MiniApp FRs this Epic details
 
 ### Phase 2: Content Creation
 
@@ -104,7 +104,7 @@ Apply checklist semantics during creation:
 | Error Handling | Document error types, messages, recovery actions |
 | UI/UX | Design screen layout, components, interactions |
 | Data | Specify required data, sources, caching, API contracts |
-| Traceability | Build coverage matrix for SubApp → Epic |
+| Traceability | Build coverage matrix for MiniApp → Epic |
 
 **Partial Completion Handling**:
 
@@ -116,11 +116,11 @@ If PRD-EPIC cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate Epic PRD anchor: `cpt-{subapp}-epic-{epic}-prd`
-- [ ] Generate Epic FR IDs: `cpt-{subapp}-epic-{epic}-fr-{slug}`
-- [ ] Generate state ID: `cpt-{subapp}-epic-{epic}-state`
-- [ ] Generate widget IDs: `cpt-{subapp}-{epic}-widget-{slug}`
-- [ ] Link to SubApp PRD requirements
+- [ ] Generate Epic PRD anchor: `cpt-{miniapp}-epic-{epic}-prd`
+- [ ] Generate Epic FR IDs: `cpt-{miniapp}-epic-{epic}-fr-{slug}`
+- [ ] Generate state ID: `cpt-{miniapp}-epic-{epic}-state`
+- [ ] Generate widget IDs: `cpt-{miniapp}-{epic}-widget-{slug}`
+- [ ] Link to MiniApp PRD requirements
 - [ ] Document indirect Platform trace
 - [ ] Verify uniqueness with `cypilot list-ids`
 
@@ -130,7 +130,7 @@ If PRD-EPIC cannot be completed in a single session:
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify every FR is implementable at Epic scope
 - [ ] Verify all states have UI behavior defined
-- [ ] Verify SubApp traceability is complete
+- [ ] Verify MiniApp traceability is complete
 
 ### Phase 5: Table of Contents
 
@@ -182,17 +182,17 @@ Issues:
 
 ## Error Handling
 
-### Missing SubApp PRD
+### Missing MiniApp PRD
 
-- [ ] If parent SubApp PRD not found:
-  - Option 1: Run `/cypilot-generate PRD-SUBAPP` first (recommended)
-  - Option 2: Continue without SubApp PRD (Epic will lack traceability)
-  - Document "SubApp PRD pending" in Epic PRD header
+- [ ] If parent MiniApp PRD not found:
+  - Option 1: Run `/cypilot-generate PRD-MINIAPP` first (recommended)
+  - Option 2: Continue without MiniApp PRD (Epic will lack traceability)
+  - Document "MiniApp PRD pending" in Epic PRD header
 
-### Missing SubApp DESIGN
+### Missing MiniApp DESIGN
 
-- [ ] If SubApp DESIGN not found:
-  - Option 1: Run `/cypilot-generate DESIGN-SUBAPP` first
+- [ ] If MiniApp DESIGN not found:
+  - Option 1: Run `/cypilot-generate DESIGN-MINIAPP` first
   - Option 2: Continue with assumptions documented
   - Document architectural assumptions made
 
@@ -200,7 +200,7 @@ Issues:
 
 - [ ] If uncertain about what belongs in this Epic:
   - Ask user for scope clarification
-  - Reference SubApp DECOMPOSITION for epic boundaries
+  - Reference MiniApp DECOMPOSITION for epic boundaries
   - Mark scope section for review
 
 ### Escalation
@@ -216,7 +216,7 @@ Issues:
 ### Options
 
 - [ ] PRD-EPIC complete → `/cypilot-generate DESIGN-EPIC` — create Epic technical design
-- [ ] Need SubApp context → `/cypilot-generate PRD-SUBAPP` — create SubApp PRD first
+- [ ] Need MiniApp context → `/cypilot-generate PRD-MINIAPP` — create MiniApp PRD first
 - [ ] PRD needs revision → continue editing PRD-EPIC
 - [ ] Ready for features → `/cypilot-generate DECOMPOSITION-EPIC` — decompose into features
 - [ ] Ready for implementation → `/cypilot-generate FEATURE-MOBILE` — create feature spec

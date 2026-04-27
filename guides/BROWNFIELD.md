@@ -12,7 +12,7 @@ Adopt Cypilot incrementally — start with what makes sense for your mobile proj
 
 Unlike greenfield projects, **brownfield has no required order**. You can:
 
-- Start with **any level** — Platform, SubApp, Epic, or Feature
+- Start with **any level** — Platform, MiniApp, Epic, or Feature
 - Work **top-down** (Platform → Feature → CODE) or **bottom-up** (CODE → Feature → Platform)
 - Adopt **incrementally** — use only what you need, add more later
 - Use **code-only mode** — just Cypilot's code generation with MVI pattern guidance
@@ -53,20 +53,20 @@ You want to document existing mobile features, then build up.
 4. cypilot make DESIGN-EPIC from DECOMPOSITION-EPIC
    → Creates DESIGN-EPIC from structure
 
-5. (optional) Continue up to SubApp and Platform levels
+5. (optional) Continue up to MiniApp and Platform levels
 ```
 
 **When to use**: You want to document what exists without changing code.
 
-### Scenario C: SubApp-First (Middle-Out)
+### Scenario C: MiniApp-First (Middle-Out)
 
-You want to capture SubApp architecture, then decompose into features.
+You want to capture MiniApp architecture, then decompose into features.
 
 ```
-1. cypilot reverse DESIGN-SUBAPP for learn from codebase
-   → Extracts Learn SubApp architecture from code
+1. cypilot reverse DESIGN-MINIAPP for learn from codebase
+   → Extracts Learn MiniApp architecture from code
 
-2. cypilot make DECOMPOSITION-SUBAPP for learn
+2. cypilot make DECOMPOSITION-MINIAPP for learn
    → Creates Epic breakdown
 
 3. cypilot make FEATURE-MOBILE for {slug}
@@ -76,7 +76,7 @@ You want to capture SubApp architecture, then decompose into features.
    → Implements with traceability markers
 ```
 
-**When to use**: You want architectural control over a specific SubApp.
+**When to use**: You want architectural control over a specific MiniApp.
 
 ### Scenario D: Full Top-Down
 
@@ -105,7 +105,7 @@ Start minimal, add artifacts as needed.
 Week 1: cypilot implement {feature}        → Code-only, with MVI checklist
 Week 2: cypilot make FEATURE-MOBILE        → Add features for complex work
 Week 3: cypilot make DECOMPOSITION-EPIC    → Organize features into epics
-Later:  cypilot make DESIGN-SUBAPP         → Document SubApp architecture
+Later:  cypilot make DESIGN-MINIAPP         → Document MiniApp architecture
 ```
 
 **When to use**: You want low-friction adoption with growing benefits.
@@ -119,7 +119,7 @@ Later:  cypilot make DESIGN-SUBAPP         → Document SubApp architecture
 | Prompt | What happens |
 |--------|--------------|
 | `cypilot reverse FEATURE-MOBILE from shared/feature/auth/` | Creates FEATURE from KMP module |
-| `cypilot reverse DESIGN-SUBAPP from shared/feature/learn/` | Creates SubApp design from module |
+| `cypilot reverse DESIGN-MINIAPP from shared/feature/learn/` | Creates MiniApp design from module |
 | `cypilot reverse DESIGN-PLATFORM from shared/` | Documents platform architecture |
 
 ### From Existing Android Code
@@ -141,8 +141,8 @@ Later:  cypilot make DESIGN-SUBAPP         → Document SubApp architecture
 | Prompt | What happens |
 |--------|--------------|
 | `cypilot make PRD-PLATFORM from README` | Creates PRD from README |
-| `cypilot make DESIGN-SUBAPP from docs/architecture.md` | Creates design from existing docs |
-| `cypilot import OpenAPI as DESIGN-SUBAPP` | Converts API spec into design |
+| `cypilot make DESIGN-MINIAPP from docs/architecture.md` | Creates design from existing docs |
+| `cypilot import OpenAPI as DESIGN-MINIAPP` | Converts API spec into design |
 
 ---
 
@@ -152,8 +152,8 @@ Later:  cypilot make DESIGN-SUBAPP         → Document SubApp architecture
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot add subapp notifications to platform` | Adds SubApp to platform decomposition |
-| `cypilot add epic push-notifications to subapp notifications` | Adds Epic to SubApp |
+| `cypilot add miniapp notifications to platform` | Adds MiniApp to platform decomposition |
+| `cypilot add epic push-notifications to miniapp notifications` | Adds Epic to MiniApp |
 | `cypilot add feature notification-list to epic push-notifications` | Adds Feature to Epic |
 
 ### 2. Create FEATURE-MOBILE
@@ -169,7 +169,7 @@ cypilot make FEATURE-MOBILE for notification-list
 Context:
 - Feature: Notification List
 - Epic: Push Notifications
-- SubApp: Notifications
+- MiniApp: Notifications
 - Existing code: shared/feature/notifications/
 - States: Loading, Content(notifications), Empty
 - Intents: Load, MarkRead, Delete
@@ -191,9 +191,9 @@ When code and design drift apart:
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot compare DESIGN-SUBAPP for learn to code` | Shows drift |
+| `cypilot compare DESIGN-MINIAPP for learn to code` | Shows drift |
 | `cypilot compare FEATURE-MOBILE for course-list to code` | Shows feature drift |
-| `cypilot sync DESIGN-SUBAPP for learn from code` | Updates design from code |
+| `cypilot sync DESIGN-MINIAPP for learn from code` | Updates design from code |
 | `cypilot sync FEATURE-MOBILE for course-list from code` | Updates feature from code |
 | `cypilot sync code with FEATURE-MOBILE for course-list` | Updates code from feature |
 
@@ -266,15 +266,15 @@ cypilot update PRD-PLATFORM
 cypilot validate PRD-PLATFORM
 cypilot propagate PRD-PLATFORM changes to DESIGN-PLATFORM
 cypilot validate DESIGN-PLATFORM
-# Continue down through affected SubApps/Epics/Features
+# Continue down through affected MiniApps/Epics/Features
 ```
 
-### SubApp Design Changed
+### MiniApp Design Changed
 
 ```
-cypilot update DESIGN-SUBAPP for learn
-cypilot validate DESIGN-SUBAPP for learn
-cypilot propagate DESIGN-SUBAPP changes to affected epics
+cypilot update DESIGN-MINIAPP for learn
+cypilot validate DESIGN-MINIAPP for learn
+cypilot propagate DESIGN-MINIAPP changes to affected epics
 # Continue down through affected Epics/Features
 ```
 

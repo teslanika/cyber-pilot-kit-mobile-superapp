@@ -1,13 +1,13 @@
-# DESIGN-SUBAPP Rules
+# DESIGN-MINIAPP Rules
 
-**Artifact**: DESIGN-SUBAPP  
+**Artifact**: DESIGN-MINIAPP  
 **Kit**: mobile-superapp  
-**Level**: L1 (SubApp)
+**Level**: L1 (MiniApp)
 
 **Dependencies**:
-- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` — structural reference
-- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` — semantic quality criteria
-- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — parent PRD reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` — parent PRD reference
 
 ## Table of Contents
 
@@ -24,9 +24,9 @@
 
 ### Load Dependencies
 
-- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` for structure
-- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` for semantic guidance
-- [ ] Read parent SubApp PRD for context
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/checklist.md` for semantic guidance
+- [ ] Read parent MiniApp PRD for context
 - [ ] Read Platform DESIGN for architectural context
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
@@ -37,9 +37,9 @@
 
 ### Structural
 
-- [ ] DESIGN-SUBAPP follows `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` structure
+- [ ] DESIGN-MINIAPP follows `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/template.md` structure
 - [ ] All required sections present and non-empty:
-  - SubApp Overview (purpose, capabilities, architecture drivers)
+  - MiniApp Overview (purpose, capabilities, architecture drivers)
   - Module Structure (KMP, Android, iOS modules)
   - Navigation Architecture
   - State Management (MVI pattern)
@@ -47,8 +47,8 @@
   - API Layer
   - Kernel Integration
   - Traceability
-- [ ] All IDs follow `cpt-{subapp}-{kind}-{slug}` convention
-- [ ] References to SubApp PRD are valid
+- [ ] All IDs follow `cpt-{miniapp}-{kind}-{slug}` convention
+- [ ] References to MiniApp PRD are valid
 - [ ] References to Platform DESIGN are valid
 - [ ] No placeholder content (TODO, TBD, FIXME)
 - [ ] No duplicate IDs within document
@@ -56,18 +56,18 @@
 ### Mobile-Specific
 
 - [ ] Module structure covers all three platforms:
-  - KMP shared logic (`constructor-sdk/feature/{subapp}/`)
-  - Android UI (`android-app/feature/{subapp}/`)
-  - iOS UI (`ios-app/Features/{SubApp}/`)
+  - KMP shared logic (`constructor-sdk/feature/{miniapp}/`)
+  - Android UI (`android-app/feature/{miniapp}/`)
+  - iOS UI (`ios-app/Features/{MiniApp}/`)
 - [ ] MVI pattern documented with State, Intent, Effect classes
 - [ ] Navigation graph includes deep link support
 - [ ] Kernel integration specifies required services (Auth, Storage, Network)
-- [ ] SubApp contract interface implementation documented
+- [ ] MiniApp contract interface implementation documented
 
 ### Traceability
 
-- [ ] Every SubApp capability traces to a SubApp PRD FR
-- [ ] NFR allocation traces to SubApp PRD NFRs
+- [ ] Every MiniApp capability traces to a MiniApp PRD FR
+- [ ] NFR allocation traces to MiniApp PRD NFRs
 - [ ] Module components trace to Platform DESIGN patterns
 - [ ] ADR references provided for key decisions
 
@@ -82,9 +82,9 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` for structure
-- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` for semantic guidance
-- [ ] Read SubApp PRD for requirements
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/checklist.md` for semantic guidance
+- [ ] Read MiniApp PRD for requirements
 - [ ] Read Platform DESIGN for architectural context
 
 ### Phase 2: Content Creation
@@ -93,17 +93,17 @@ Apply checklist semantics during creation:
 
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
-| SubApp Overview | Document purpose, capabilities mapping, NFR allocation |
+| MiniApp Overview | Document purpose, capabilities mapping, NFR allocation |
 | Module Structure | Define KMP/Android/iOS module organization |
 | Navigation | Design navigation graph, deep links, screen inventory |
 | State Management | Define MVI pattern with State/Intent/Effect |
 | Domain Model | Define entities, repository interfaces |
 | API Layer | Document BFF endpoints, WebSocket connections |
-| Kernel Integration | Specify kernel services usage, SubApp contract |
+| Kernel Integration | Specify kernel services usage, MiniApp contract |
 
 **Partial Completion Handling**:
 
-If DESIGN-SUBAPP cannot be completed in a single session:
+If DESIGN-MINIAPP cannot be completed in a single session:
 1. Checkpoint progress with completed sections
 2. Add `status: DRAFT` to document header
 3. Mark incomplete sections with `INCOMPLETE: {reason}`
@@ -111,18 +111,18 @@ If DESIGN-SUBAPP cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate component IDs: `cpt-{subapp}-component-{slug}`
-- [ ] Generate entity IDs: `cpt-{subapp}-entity-{slug}`
-- [ ] Generate repo IDs: `cpt-{subapp}-repo-{slug}`
-- [ ] Generate navigation IDs: `cpt-{subapp}-component-navigation`
-- [ ] Link to SubApp PRD capabilities
+- [ ] Generate component IDs: `cpt-{miniapp}-component-{slug}`
+- [ ] Generate entity IDs: `cpt-{miniapp}-entity-{slug}`
+- [ ] Generate repo IDs: `cpt-{miniapp}-repo-{slug}`
+- [ ] Generate navigation IDs: `cpt-{miniapp}-component-navigation`
+- [ ] Link to MiniApp PRD capabilities
 - [ ] Reference Platform DESIGN principles
 - [ ] Reference relevant ADRs
 - [ ] Verify uniqueness with `cypilot list-ids`
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify PRD traceability
 - [ ] Verify Platform DESIGN alignment
@@ -146,7 +146,7 @@ If DESIGN-SUBAPP cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/checklist.md` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 
@@ -156,12 +156,12 @@ If DESIGN-SUBAPP cannot be completed in a single session:
 - [ ] MVI pattern is consistently applied
 - [ ] Navigation includes deep link handling
 - [ ] Kernel integration is complete
-- [ ] SubApp contract interface is implemented
+- [ ] MiniApp contract interface is implemented
 
 ### Validation Report Format
 
 ```
-DESIGN-SUBAPP Validation Report
+DESIGN-MINIAPP Validation Report
 ═══════════════════════════════
 
 Structural: PASS/FAIL
@@ -176,10 +176,10 @@ Issues:
 
 ## Error Handling
 
-### Missing SubApp PRD
+### Missing MiniApp PRD
 
-- [ ] If parent SubApp PRD not found:
-  - Option 1: Run `/cypilot-generate PRD-SUBAPP` first (recommended)
+- [ ] If parent MiniApp PRD not found:
+  - Option 1: Run `/cypilot-generate PRD-MINIAPP` first (recommended)
   - Option 2: Continue without PRD (DESIGN will lack traceability)
   - Document "PRD pending" in DESIGN header
 
@@ -202,8 +202,8 @@ Issues:
 
 ### Options
 
-- [ ] DESIGN-SUBAPP complete → `/cypilot-generate DECOMPOSITION-SUBAPP` — create epics manifest
+- [ ] DESIGN-MINIAPP complete → `/cypilot-generate DECOMPOSITION-MINIAPP` — create epics manifest
 - [ ] Need architecture decision → `/cypilot-generate ADR` — document key decision
-- [ ] PRD missing/incomplete → `/cypilot-generate PRD-SUBAPP` — create/update PRD first
-- [ ] DESIGN needs revision → continue editing DESIGN-SUBAPP
+- [ ] PRD missing/incomplete → `/cypilot-generate PRD-MINIAPP` — create/update PRD first
+- [ ] DESIGN needs revision → continue editing DESIGN-MINIAPP
 - [ ] Ready for Epic → `/cypilot-generate PRD-EPIC` — create Epic-level PRD

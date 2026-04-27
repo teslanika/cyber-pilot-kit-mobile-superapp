@@ -1,6 +1,6 @@
-# PRD — {SubApp Name} SubApp
+# PRD — {MiniApp Name} MiniApp
 
-> **Level**: L1 (SubApp)  
+> **Level**: L1 (MiniApp)  
 > **Parent**: [Platform PRD](../../architecture/PRD.md) `cpt-superapp-prd`  
 > **Version**: 1.0  
 > **Status**: Draft
@@ -11,7 +11,7 @@
 
 ### 1.1 Purpose
 
-This PRD defines requirements for the **{SubApp Name}** SubApp within the Constructor Mobile SuperApp.
+This PRD defines requirements for the **{MiniApp Name}** MiniApp within the Constructor Mobile SuperApp.
 
 ### 1.2 Scope
 
@@ -26,7 +26,7 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 | Platform Requirement | Relation | Description |
 |---------------------|----------|-------------|
-| `cpt-superapp-fr-{slug}` | refines | {How this SubApp refines Platform FR} |
+| `cpt-superapp-fr-{slug}` | refines | {How this MiniApp refines Platform FR} |
 | `cpt-superapp-nfr-{slug}` | inherits | {Which Platform NFRs apply} |
 
 ---
@@ -35,10 +35,10 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 ### 2.1 Primary Actors
 
-| Actor ID | Role | SubApp-Specific Context |
+| Actor ID | Role | MiniApp-Specific Context |
 |----------|------|------------------------|
-| `cpt-superapp-actor-student` | Primary | {How student uses this SubApp} |
-| `cpt-superapp-actor-instructor` | Secondary | {How instructor uses this SubApp} |
+| `cpt-superapp-actor-student` | Primary | {How student uses this MiniApp} |
+| `cpt-superapp-actor-instructor` | Secondary | {How instructor uses this MiniApp} |
 
 ---
 
@@ -48,7 +48,7 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 #### FR-01: {Feature Name}
 
-**ID**: `cpt-{subapp}-fr-{slug}`
+**ID**: `cpt-{miniapp}-fr-{slug}`
 
 **Traces To:** `cpt-superapp-fr-{parent-slug}` (refines)
 
@@ -61,28 +61,28 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 ---
 
-#### FR-02: {SubApp-Specific Feature}
+#### FR-02: {MiniApp-Specific Feature}
 
-**ID**: `cpt-{subapp}-fr-{slug}`
+**ID**: `cpt-{miniapp}-fr-{slug}`
 
-**Tags**: `subapp-specific`
+**Tags**: `miniapp-specific`
 
-**Traces To:** — (SubApp-specific requirement)
+**Traces To:** — (MiniApp-specific requirement)
 
 | Attribute | Value |
 |-----------|-------|
 | Priority | P2 |
 | Actor | `cpt-superapp-actor-{actor}` |
-| Description | {SubApp-specific capability not from Platform} |
-| Rationale | {Why this is needed at SubApp level only} |
+| Description | {MiniApp-specific capability not from Platform} |
+| Rationale | {Why this is needed at MiniApp level only} |
 
 ---
 
-### 3.2 SubApp-Level NFRs
+### 3.2 MiniApp-Level NFRs
 
 #### NFR-01: {Quality Attribute}
 
-**ID**: `cpt-{subapp}-nfr-{slug}`
+**ID**: `cpt-{miniapp}-nfr-{slug}`
 
 **Traces To:** `cpt-superapp-nfr-{parent-slug}` (extends)
 
@@ -91,7 +91,7 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 | Category | Performance / Security / Usability |
 | Metric | {Measurable metric} |
 | Target | {Specific target value} |
-| Rationale | {Why SubApp needs stricter/different requirement} |
+| Rationale | {Why MiniApp needs stricter/different requirement} |
 
 ---
 
@@ -99,9 +99,9 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 ### UC-01: {Use Case Name}
 
-**ID**: `cpt-{subapp}-usecase-{slug}`
+**ID**: `cpt-{miniapp}-usecase-{slug}`
 
-**Traces To:** `cpt-{subapp}-fr-{slug}`
+**Traces To:** `cpt-{miniapp}-fr-{slug}`
 
 | Attribute | Value |
 |-----------|-------|
@@ -132,26 +132,26 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 ## 6. Traceability Matrix
 
-### 6.1 Platform FR → SubApp FR Coverage
+### 6.1 Platform FR → MiniApp FR Coverage
 
-| Platform FR | SubApp FRs | Coverage Status |
+| Platform FR | MiniApp FRs | Coverage Status |
 |-------------|-----------|-----------------|
-| `cpt-superapp-fr-{slug-1}` | `cpt-{subapp}-fr-{a}`, `cpt-{subapp}-fr-{b}` | Full |
-| `cpt-superapp-fr-{slug-2}` | `cpt-{subapp}-fr-{c}` | Partial |
+| `cpt-superapp-fr-{slug-1}` | `cpt-{miniapp}-fr-{a}`, `cpt-{miniapp}-fr-{b}` | Full |
+| `cpt-superapp-fr-{slug-2}` | `cpt-{miniapp}-fr-{c}` | Partial |
 | `cpt-superapp-fr-{slug-3}` | — | Not in scope |
 
-### 6.2 SubApp FR → Epic Coverage
+### 6.2 MiniApp FR → Epic Coverage
 
-| SubApp FR | Target Epics | Status |
+| MiniApp FR | Target Epics | Status |
 |-----------|--------------|--------|
-| `cpt-{subapp}-fr-{slug}` | Home, Settings | Planned |
+| `cpt-{miniapp}-fr-{slug}` | Home, Settings | Planned |
 
 ---
 
 ## 7. Acceptance Criteria
 
 - [ ] All Platform FRs in scope are refined
-- [ ] All SubApp FRs have epic-level detailing
+- [ ] All MiniApp FRs have epic-level detailing
 - [ ] All use cases have corresponding features
 - [ ] Traceability matrix complete
 
@@ -161,7 +161,7 @@ This PRD defines requirements for the **{SubApp Name}** SubApp within the Constr
 
 | ID Pattern | Example | Purpose |
 |------------|---------|---------|
-| `cpt-{subapp}-prd` | `cpt-student-prd` | SubApp PRD anchor |
-| `cpt-{subapp}-fr-{slug}` | `cpt-student-fr-course-list` | Functional requirement |
-| `cpt-{subapp}-nfr-{slug}` | `cpt-student-nfr-offline` | Non-functional requirement |
-| `cpt-{subapp}-usecase-{slug}` | `cpt-student-usecase-browse` | Use case |
+| `cpt-{miniapp}-prd` | `cpt-student-prd` | MiniApp PRD anchor |
+| `cpt-{miniapp}-fr-{slug}` | `cpt-student-fr-course-list` | Functional requirement |
+| `cpt-{miniapp}-nfr-{slug}` | `cpt-student-nfr-offline` | Non-functional requirement |
+| `cpt-{miniapp}-usecase-{slug}` | `cpt-student-usecase-browse` | Use case |

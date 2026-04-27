@@ -10,9 +10,9 @@ This document links the iOS implementation to its product documentation.
 
 | Document | Path | ID |
 |----------|------|-----|
-| Feature | [subapps/{subapp}/.../features/{feature}/FEATURE.md](../../subapps/{subapp}/.../features/{feature}/FEATURE.md) | `cpt-{subapp}-feature-{slug}` |
-| Epic DESIGN | [subapps/{subapp}/.../DESIGN.md](../../subapps/{subapp}/.../DESIGN.md) | `cpt-{subapp}-epic-{epic}` |
-| SubApp DESIGN | [subapps/{subapp}/DESIGN.md](../../subapps/{subapp}/DESIGN.md) | `cpt-{subapp}-design` |
+| Feature | [miniapps/{miniapp}/.../features/{feature}/FEATURE.md](../../miniapps/{miniapp}/.../features/{feature}/FEATURE.md) | `cpt-{miniapp}-feature-{slug}` |
+| Epic DESIGN | [miniapps/{miniapp}/.../DESIGN.md](../../miniapps/{miniapp}/.../DESIGN.md) | `cpt-{miniapp}-epic-{epic}` |
+| MiniApp DESIGN | [miniapps/{miniapp}/DESIGN.md](../../miniapps/{miniapp}/DESIGN.md) | `cpt-{miniapp}-design` |
 
 ## Scope
 
@@ -29,10 +29,10 @@ This iOS module implements:
 
 | Design Component ID | Code File | Implementation ID |
 |---------------------|-----------|-------------------|
-| `cpt-{subapp}-{epic}-screen-{slug}` | `Views/{Feature}/{Feature}View.swift` | `@cpt-impl cpt-ios-{module}-view-{slug}` |
-| `cpt-{subapp}-{epic}-widget-{slug}` | `Views/{Feature}/Components/{Widget}.swift` | `@cpt-impl cpt-ios-{module}-widget-{slug}` |
-| `cpt-{subapp}-{epic}-nav` | `Navigation/{Feature}Coordinator.swift` | `@cpt-impl cpt-ios-{module}-nav-{slug}` |
-| `cpt-{subapp}-algo-{feature-slug}-ios` | `Views/{Feature}/{Feature}View.swift` | `@cpt-impl cpt-ios-{module}-ui-{slug}` |
+| `cpt-{miniapp}-{epic}-screen-{slug}` | `Views/{Feature}/{Feature}View.swift` | `@cpt-impl cpt-ios-{module}-view-{slug}` |
+| `cpt-{miniapp}-{epic}-widget-{slug}` | `Views/{Feature}/Components/{Widget}.swift` | `@cpt-impl cpt-ios-{module}-widget-{slug}` |
+| `cpt-{miniapp}-{epic}-nav` | `Navigation/{Feature}Coordinator.swift` | `@cpt-impl cpt-ios-{module}-nav-{slug}` |
+| `cpt-{miniapp}-algo-{feature-slug}-ios` | `Views/{Feature}/{Feature}View.swift` | `@cpt-impl cpt-ios-{module}-ui-{slug}` |
 
 ## Directory Structure
 

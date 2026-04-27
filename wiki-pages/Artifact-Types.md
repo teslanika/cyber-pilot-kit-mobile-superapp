@@ -8,14 +8,14 @@ The Mobile SuperApp Kit provides 13 artifact types organized across 4 hierarchy 
 |-------|----------|---------|------------|
 | **L0: Platform** | `PRD-PLATFORM` | Platform-wide requirements | `cpt-platform-fr-{slug}` |
 | | `DESIGN-PLATFORM` | Platform architecture | `cpt-platform-component-{slug}` |
-| | `DECOMPOSITION-PLATFORM` | SubApp breakdown | `cpt-platform-subapp-{slug}` |
-| **L1: SubApp** | `PRD-SUBAPP` | SubApp requirements | `cpt-{subapp}-fr-{slug}` |
-| | `DESIGN-SUBAPP` | SubApp architecture | `cpt-{subapp}-component-{slug}` |
-| | `DECOMPOSITION-SUBAPP` | Epic breakdown | `cpt-{subapp}-epic-{slug}` |
-| **L2: Epic** | `PRD-EPIC` | User stories | `cpt-{subapp}-{epic}-story-{slug}` |
-| | `DESIGN-EPIC` | Epic architecture | `cpt-{subapp}-{epic}-component-{slug}` |
-| | `DECOMPOSITION-EPIC` | Feature breakdown | `cpt-{subapp}-{epic}-feature-{slug}` |
-| **L3: Feature** | `FEATURE-MOBILE` | MVI feature design | `cpt-{subapp}-flow-{feature}-{slug}` |
+| | `DECOMPOSITION-PLATFORM` | MiniApp breakdown | `cpt-platform-miniapp-{slug}` |
+| **L1: MiniApp** | `PRD-MINIAPP` | MiniApp requirements | `cpt-{miniapp}-fr-{slug}` |
+| | `DESIGN-MINIAPP` | MiniApp architecture | `cpt-{miniapp}-component-{slug}` |
+| | `DECOMPOSITION-MINIAPP` | Epic breakdown | `cpt-{miniapp}-epic-{slug}` |
+| **L2: Epic** | `PRD-EPIC` | User stories | `cpt-{miniapp}-{epic}-story-{slug}` |
+| | `DESIGN-EPIC` | Epic architecture | `cpt-{miniapp}-{epic}-component-{slug}` |
+| | `DECOMPOSITION-EPIC` | Feature breakdown | `cpt-{miniapp}-{epic}-feature-{slug}` |
+| **L3: Feature** | `FEATURE-MOBILE` | MVI feature design | `cpt-{miniapp}-flow-{feature}-{slug}` |
 | | `IMPL-KMP` | KMP implementation | `@cpt-impl cpt-kmp-...` |
 | | `IMPL-ANDROID` | Android implementation | `@cpt-impl cpt-android-...` |
 | | `IMPL-IOS` | iOS implementation | `@cpt-impl cpt-ios-...` |
@@ -51,12 +51,12 @@ Platform-wide product requirements document.
 - `cpt-platform-fr-offline-support`
 - `cpt-platform-nfr-launch-time`
 
-### PRD-SUBAPP
+### PRD-MINIAPP
 
-SubApp-level requirements that refine platform requirements.
+MiniApp-level requirements that refine platform requirements.
 
 **Contains:**
-- SubApp-specific actors
+- MiniApp-specific actors
 - Domain requirements
 - References to Platform FRs
 
@@ -71,7 +71,7 @@ Epic-level user stories and acceptance criteria.
 **Contains:**
 - User stories
 - Acceptance criteria
-- References to SubApp FRs
+- References to MiniApp FRs
 
 **Example IDs:**
 - `cpt-learn-course-catalog-story-view-courses`
@@ -95,9 +95,9 @@ Platform architecture defining shared infrastructure.
 - `cpt-platform-component-auth-service`
 - `cpt-platform-module-constructor-sdk`
 
-### DESIGN-SUBAPP
+### DESIGN-MINIAPP
 
-SubApp architecture within platform constraints.
+MiniApp architecture within platform constraints.
 
 **Contains:**
 - ViewModels
@@ -128,16 +128,16 @@ Epic-level component design.
 
 ### DECOMPOSITION-PLATFORM
 
-Breaks platform into SubApps.
+Breaks platform into MiniApps.
 
 **Contains:**
-- SubApp list with descriptions
-- Dependencies between SubApps
+- MiniApp list with descriptions
+- Dependencies between MiniApps
 - Priority/order
 
-### DECOMPOSITION-SUBAPP
+### DECOMPOSITION-MINIAPP
 
-Breaks SubApp into Epics.
+Breaks MiniApp into Epics.
 
 **Contains:**
 - Epic list with descriptions

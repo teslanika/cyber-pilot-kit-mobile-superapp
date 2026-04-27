@@ -17,28 +17,28 @@ cpt validate-kits .
 
 ## Overview
 
-**Mobile SuperApp Kit** provides a 4-level documentation hierarchy designed specifically for large-scale mobile applications that combine multiple "mini-apps" (SubApps) into a single host application.
+**Mobile SuperApp Kit** provides a 4-level documentation hierarchy designed specifically for large-scale mobile applications that combine multiple "mini-apps" (MiniApps) into a single host application.
 
 ### Key Features
 
-- **4-Level Documentation Hierarchy**: Platform → SubApp → Epic → Feature
+- **4-Level Documentation Hierarchy**: Platform → MiniApp → Epic → Feature
 - **Cascading Requirement Traceability**: Every requirement traces from high-level platform goals down to code
 - **Mobile-Specific Templates**: KMP, Android (Compose), iOS (SwiftUI) implementation patterns
-- **MVI State Management**: Consistent state management across all SubApps
+- **MVI State Management**: Consistent state management across all MiniApps
 
 ### Documentation Hierarchy
 
 ```
 L0: Platform PRD (architecture/PRD.md)
-    └── Shared kernel: Auth, Push, Deep Links, SubApp Container, NFRs
+    └── Shared kernel: Auth, Push, Deep Links, MiniApp Container, NFRs
 
-L1: SubApp PRD (subapps/{subapp}/PRD.md)
+L1: MiniApp PRD (miniapps/{miniapp}/PRD.md)
     └── Domain requirements: Student, Proctor, Groups
 
-L2: Epic PRD (subapps/{subapp}/capabilities/{epic}/PRD.md)
+L2: Epic PRD (miniapps/{miniapp}/capabilities/{epic}/PRD.md)
     └── Screen-level: Notification History, Course Catalog, etc.
 
-L3: Feature (subapps/{subapp}/capabilities/{epic}/features/{feature}/FEATURE.md)
+L3: Feature (miniapps/{miniapp}/capabilities/{epic}/features/{feature}/FEATURE.md)
     └── CDSL specifications with platform-specific implementation
 ```
 
@@ -48,7 +48,7 @@ L3: Feature (subapps/{subapp}/capabilities/{epic}/features/{feature}/FEATURE.md)
 Platform FR: cpt-superapp-fr-inapp-notifications
     │ refined-by
     ▼
-SubApp FR: cpt-student-fr-notifications
+MiniApp FR: cpt-student-fr-notifications
     │ detailed-by
     ▼
 Epic FR: cpt-student-epic-notification-history-fr-badge
@@ -66,10 +66,10 @@ Code: @cpt-impl:cpt-student-feature-notification-badge
 |-------|----------|---------|
 | **L0: Platform** | `PRD-PLATFORM` | Platform-wide requirements (actors, FRs, NFRs) |
 | | `DESIGN-PLATFORM` | Platform architecture (KMP modules, shared components) |
-| | `DECOMPOSITION-PLATFORM` | Platform → SubApps breakdown |
-| **L1: SubApp** | `PRD-SUBAPP` | SubApp domain requirements |
-| | `DESIGN-SUBAPP` | SubApp architecture (ViewModels, repositories) |
-| | `DECOMPOSITION-SUBAPP` | SubApp → Epics breakdown |
+| | `DECOMPOSITION-PLATFORM` | Platform → MiniApps breakdown |
+| **L1: MiniApp** | `PRD-MINIAPP` | MiniApp domain requirements |
+| | `DESIGN-MINIAPP` | MiniApp architecture (ViewModels, repositories) |
+| | `DECOMPOSITION-MINIAPP` | MiniApp → Epics breakdown |
 | **L2: Epic** | `PRD-EPIC` | Epic user stories and acceptance criteria |
 | | `DESIGN-EPIC` | Epic components and sequences |
 | | `DECOMPOSITION-EPIC` | Epic → Features breakdown |
@@ -98,30 +98,30 @@ cypilot generate PRD --path architecture/PRD.md
 cypilot generate DESIGN-PLATFORM --path architecture/DESIGN.md
 ```
 
-### 3. Create SubApp
+### 3. Create MiniApp
 
 ```bash
-# PRD for SubApp
-cypilot generate PRD-SUBAPP --path subapps/student/PRD.md
+# PRD for MiniApp
+cypilot generate PRD-MINIAPP --path miniapps/student/PRD.md
 
-# DESIGN for SubApp
-cypilot generate DESIGN-SUBAPP --path subapps/student/DESIGN.md
+# DESIGN for MiniApp
+cypilot generate DESIGN-MINIAPP --path miniapps/student/DESIGN.md
 ```
 
 ### 4. Create Epic
 
 ```bash
 # PRD for Epic
-cypilot generate PRD-EPIC --path subapps/student/capabilities/notification-history/PRD.md
+cypilot generate PRD-EPIC --path miniapps/student/capabilities/notification-history/PRD.md
 
 # DESIGN for Epic
-cypilot generate DESIGN-EPIC --path subapps/student/capabilities/notification-history/DESIGN.md
+cypilot generate DESIGN-EPIC --path miniapps/student/capabilities/notification-history/DESIGN.md
 ```
 
 ### 5. Create Feature
 
 ```bash
-cypilot generate FEATURE-MOBILE --path subapps/student/capabilities/notification-history/features/badge/FEATURE.md
+cypilot generate FEATURE-MOBILE --path miniapps/student/capabilities/notification-history/features/badge/FEATURE.md
 ```
 
 ## Project Structure
@@ -131,13 +131,13 @@ mobile-superapp/
 ├── architecture/
 │   ├── PRD.md                    # Platform PRD (L0)
 │   ├── DESIGN.md                 # Platform DESIGN
-│   └── DECOMPOSITION.md          # Platform → SubApps
+│   └── DECOMPOSITION.md          # Platform → MiniApps
 │
-└── subapps/
+└── miniapps/
     └── student/
-        ├── PRD.md                # SubApp PRD (L1)
-        ├── DESIGN.md             # SubApp DESIGN
-        ├── DECOMPOSITION.md      # SubApp → Epics
+        ├── PRD.md                # MiniApp PRD (L1)
+        ├── DESIGN.md             # MiniApp DESIGN
+        ├── DECOMPOSITION.md      # MiniApp → Epics
         │
         └── capabilities/
             └── notification-history/
@@ -156,10 +156,10 @@ mobile-superapp/
 |-------|---------|---------|
 | Platform FR | `cpt-{platform}-fr-{slug}` | `cpt-superapp-fr-offline` |
 | Platform Component | `cpt-{platform}-component-{slug}` | `cpt-superapp-component-auth` |
-| SubApp FR | `cpt-{subapp}-fr-{slug}` | `cpt-student-fr-courses` |
-| SubApp Epic | `cpt-{subapp}-epic-{slug}` | `cpt-student-epic-home` |
-| Epic FR | `cpt-{subapp}-epic-{epic}-fr-{slug}` | `cpt-student-epic-home-fr-streak` |
-| Feature | `cpt-{subapp}-feature-{slug}` | `cpt-student-feature-daily-goal` |
+| MiniApp FR | `cpt-{miniapp}-fr-{slug}` | `cpt-student-fr-courses` |
+| MiniApp Epic | `cpt-{miniapp}-epic-{slug}` | `cpt-student-epic-home` |
+| Epic FR | `cpt-{miniapp}-epic-{epic}-fr-{slug}` | `cpt-student-epic-home-fr-streak` |
+| Feature | `cpt-{miniapp}-feature-{slug}` | `cpt-student-feature-daily-goal` |
 | KMP Impl | `cpt-kmp-{module}-{type}-{slug}` | `cpt-kmp-home-usecase-load` |
 | Android Impl | `cpt-android-{module}-{type}-{slug}` | `cpt-android-home-screen-main` |
 | iOS Impl | `cpt-ios-{module}-{type}-{slug}` | `cpt-ios-home-view-main` |
@@ -168,12 +168,12 @@ mobile-superapp/
 
 ```bash
 # Validate single artifact
-cypilot validate --artifact subapps/student/PRD.md
+cypilot validate --artifact miniapps/student/PRD.md
 
 # Validate FR traceability cascade
 cypilot validate --check=fr-cascade
 
-# Check Platform FR → SubApp FR coverage
+# Check Platform FR → MiniApp FR coverage
 cypilot validate --check=platform-fr-coverage
 
 # Check Feature implementation coverage
@@ -197,8 +197,8 @@ cypilot validate --check=feature-impl-coverage
 Standard SDLC approaches (PRD → DESIGN → FEATURE → CODE) work well for monolithic apps, but **SuperApps** present unique challenges:
 
 1. **Scale**: A SuperApp contains 5-10+ mini-apps, each with 10-50+ features
-2. **Team Structure**: Different teams own different SubApps, need isolated documentation
-3. **Requirements Cascade**: Platform-level requirements (e.g., "offline support") must be traced down to every SubApp that implements them
+2. **Team Structure**: Different teams own different MiniApps, need isolated documentation
+3. **Requirements Cascade**: Platform-level requirements (e.g., "offline support") must be traced down to every MiniApp that implements them
 4. **Shared Kernel vs Domain Logic**: Auth, push notifications, deep links are shared; course content, proctoring logic are domain-specific
 
 The **4-level hierarchy** emerged from real-world mobile development:
@@ -206,7 +206,7 @@ The **4-level hierarchy** emerged from real-world mobile development:
 | Level | Scope | Team | Example |
 |-------|-------|------|---------|
 | **L0: Platform** | Entire app, shared infrastructure | Platform team | "App must work offline" |
-| **L1: SubApp** | Single mini-app domain | Feature team | "Student SubApp needs course access" |
+| **L1: MiniApp** | Single mini-app domain | Feature team | "Student MiniApp needs course access" |
 | **L2: Epic** | User-facing capability | Feature team | "Notification history screen" |
 | **L3: Feature** | Single implementable behavior | Developer | "Unread badge counter" |
 
@@ -224,7 +224,7 @@ Developer: "Which screens? What data? How fresh?"
 ```
 Platform FR: cpt-platform-fr-offline-support
     ↓ "refined by"
-SubApp FR: cpt-learn-fr-offline-courses
+MiniApp FR: cpt-learn-fr-offline-courses
     ↓ "detailed by"  
 Epic Story: cpt-learn-course-catalog-story-cache-courses
     ↓ "specified by"
@@ -234,7 +234,7 @@ Code: @cpt-flow:cpt-learn-flow-course-list-load-cached:p1
 ```
 
 Benefits:
-- **Impact Analysis**: Change platform FR → see all affected SubApps/Features
+- **Impact Analysis**: Change platform FR → see all affected MiniApps/Features
 - **Coverage Check**: Ensure every platform requirement reaches code
 - **Audit Trail**: For compliance, security reviews
 

@@ -1,6 +1,6 @@
 # Feature: {Feature Name}
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-featstatus-{feature-slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-featstatus-{feature-slug}`
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@
 
 ## 1. Feature Context
 
-- [ ] `p1` - `cpt-{subapp}-feature-{slug}`
+- [ ] `p1` - `cpt-{miniapp}-feature-{slug}`
 
 ### 1.1 Overview
 
@@ -39,7 +39,7 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 2.1 {Primary Flow Name}
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-flow-{feature-slug}-{slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-flow-{feature-slug}-{slug}`
 
 **Actor**: `cpt-{platform}-actor-{slug}`
 
@@ -63,7 +63,7 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 2.2 {Alternative Flow Name}
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-flow-{feature-slug}-{slug}`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-flow-{feature-slug}-{slug}`
 
 **Actor**: `cpt-{platform}-actor-{slug}`
 
@@ -77,9 +77,9 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 3.1 KMP Shared Logic
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-algo-{feature-slug}-kmp`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-algo-{feature-slug}-kmp`
 
-**Location**: `constructor-sdk/feature/{subapp}/`
+**Location**: `constructor-sdk/feature/{miniapp}/`
 
 **ViewModel Steps**:
 1. [ ] - `p1` - Receive intent from UI - `inst-kmp-1`
@@ -107,9 +107,9 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 3.2 Android UI
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-algo-{feature-slug}-android`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-algo-{feature-slug}-android`
 
-**Location**: `android-app/feature/{subapp}/ui/`
+**Location**: `android-app/feature/{miniapp}/ui/`
 
 **Compose Screen Steps**:
 1. [ ] - `p1` - Collect state from ViewModel - `inst-android-1`
@@ -121,9 +121,9 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 3.3 iOS UI
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-algo-{feature-slug}-ios`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-algo-{feature-slug}-ios`
 
-**Location**: `ios-app/Features/{SubApp}/Views/`
+**Location**: `ios-app/Features/{MiniApp}/Views/`
 
 **SwiftUI View Steps**:
 1. [ ] - `p1` - Observe state from ViewModel - `inst-ios-1`
@@ -135,7 +135,7 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 3.4 WebView Integration (if applicable)
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-algo-{feature-slug}-webview`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-algo-{feature-slug}-webview`
 
 **WebView URL**: `{webview-base-url}/{path}`
 
@@ -153,7 +153,7 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 4.1 {Feature} Screen State Machine
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-state-{feature-slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-state-{feature-slug}`
 
 **States**: Loading, Content, Error, Empty
 
@@ -170,12 +170,12 @@ User-facing interactions that start with an actor (human or external system) and
 
 ### 5.1 {DoD Title 1}
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-dod-{feature-slug}-{slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-dod-{feature-slug}-{slug}`
 
 The system **MUST** {clear description of what to implement}.
 
 **Implements**:
-- `cpt-{subapp}-flow-{feature-slug}-{slug}`
+- `cpt-{miniapp}-flow-{feature-slug}-{slug}`
 
 **Touches**:
 - **KMP**: `{ViewModel}`, `{UseCase}`, `{Repository}`
@@ -190,12 +190,12 @@ The system **MUST** {clear description of what to implement}.
 
 ### 5.2 {DoD Title 2}
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-dod-{feature-slug}-{slug}`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-dod-{feature-slug}-{slug}`
 
 The system **MUST** {description}.
 
 **Implements**:
-- `cpt-{subapp}-flow-{feature-slug}-{slug}`
+- `cpt-{miniapp}-flow-{feature-slug}-{slug}`
 
 **Touches**:
 - **KMP**: {modules}
@@ -231,6 +231,6 @@ The system **MUST** {description}.
 - **Epic DESIGN**: [../DESIGN.md](../DESIGN.md)
 - **DECOMPOSITION**: [../DECOMPOSITION.md](../DECOMPOSITION.md)
 - **Implementation**:
-  - KMP: [constructor-sdk/feature/{subapp}/IMPL.md](../../../../constructor-sdk/feature/{subapp}/IMPL.md)
-  - Android: [android-app/feature/{subapp}/IMPL.md](../../../../android-app/feature/{subapp}/IMPL.md)
-  - iOS: [ios-app/Features/{SubApp}/IMPL.md](../../../../ios-app/Features/{SubApp}/IMPL.md)
+  - KMP: [constructor-sdk/feature/{miniapp}/IMPL.md](../../../../constructor-sdk/feature/{miniapp}/IMPL.md)
+  - Android: [android-app/feature/{miniapp}/IMPL.md](../../../../android-app/feature/{miniapp}/IMPL.md)
+  - iOS: [ios-app/Features/{MiniApp}/IMPL.md](../../../../ios-app/Features/{MiniApp}/IMPL.md)

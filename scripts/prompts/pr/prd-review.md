@@ -1,11 +1,11 @@
-# PRD Review Prompt (Platform / SubApp / Epic)
+# PRD Review Prompt (Platform / MiniApp / Epic)
 
 Review the following PR changes for Product Requirements Document.
 
 ## Focus Areas
 
 ### Structure
-- Correct hierarchy level (Platform, SubApp, or Epic)
+- Correct hierarchy level (Platform, MiniApp, or Epic)
 - All required sections present per template
 - IDs follow kit conventions
 
@@ -22,7 +22,7 @@ Review the following PR changes for Product Requirements Document.
 - Accessibility requirements included
 
 ### Traceability
-- References to parent level (if SubApp/Epic)
+- References to parent level (if MiniApp/Epic)
 - FR/NFR IDs are unique and follow pattern
 - Cascading requirements properly linked
 

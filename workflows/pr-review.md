@@ -25,11 +25,11 @@ This workflow guides AI-assisted PR reviews for mobile SuperApp codebases, ensur
 1. Read PR description
 2. Identify:
    - Feature being implemented
-   - Affected SubApps
+   - Affected MiniApps
    - Platforms changed (KMP, Android, iOS)
 3. Load related documentation:
    - FEATURE.md for the feature
-   - DESIGN.md for the epic/subapp
+   - DESIGN.md for the epic/miniapp
    - IMPL.md for existing implementations
 
 ### Step 2: Traceability Check

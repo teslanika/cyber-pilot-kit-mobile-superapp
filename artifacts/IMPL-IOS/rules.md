@@ -43,7 +43,7 @@
 - [ ] IMPL-IOS follows `config/kits/mobile-superapp/artifacts/IMPL-IOS/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (module path)
-  - References (Feature, Epic DESIGN, SubApp DESIGN)
+  - References (Feature, Epic DESIGN, MiniApp DESIGN)
   - Scope (what iOS module implements)
   - Implementation Notes
   - Traceability Table
@@ -114,7 +114,7 @@ Apply checklist semantics during creation:
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
 | Overview | Document module path |
-| References | Link to FEATURE, Epic DESIGN, SubApp DESIGN |
+| References | Link to FEATURE, Epic DESIGN, MiniApp DESIGN |
 | Scope | Describe what this iOS module implements |
 | Implementation Notes | Document SwiftUI patterns, coordinators |
 | Traceability Table | Map design IDs → code files → impl IDs |
@@ -127,9 +127,9 @@ Apply checklist semantics during creation:
 
 | Design Component ID | Code File | Implementation ID |
 |---------------------|-----------|-------------------|
-| `cpt-{subapp}-{epic}-screen-{slug}` | `Views/{Feature}/{Feature}View.swift` | `@cpt-impl cpt-ios-{module}-view-{slug}` |
-| `cpt-{subapp}-{epic}-widget-{slug}` | `Views/{Feature}/Components/{Widget}.swift` | `@cpt-impl cpt-ios-{module}-widget-{slug}` |
-| `cpt-{subapp}-{epic}-nav` | `Navigation/{Feature}Coordinator.swift` | `@cpt-impl cpt-ios-{module}-nav-{slug}` |
+| `cpt-{miniapp}-{epic}-screen-{slug}` | `Views/{Feature}/{Feature}View.swift` | `@cpt-impl cpt-ios-{module}-view-{slug}` |
+| `cpt-{miniapp}-{epic}-widget-{slug}` | `Views/{Feature}/Components/{Widget}.swift` | `@cpt-impl cpt-ios-{module}-widget-{slug}` |
+| `cpt-{miniapp}-{epic}-nav` | `Navigation/{Feature}Coordinator.swift` | `@cpt-impl cpt-ios-{module}-nav-{slug}` |
 
 **KMP Integration Pattern**:
 
@@ -160,9 +160,9 @@ If IMPL-IOS cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Link to FEATURE ID: `cpt-{subapp}-feature-{slug}`
-- [ ] Link to Epic DESIGN ID: `cpt-{subapp}-epic-{epic}`
-- [ ] Link to SubApp DESIGN ID: `cpt-{subapp}-design`
+- [ ] Link to FEATURE ID: `cpt-{miniapp}-feature-{slug}`
+- [ ] Link to Epic DESIGN ID: `cpt-{miniapp}-epic-{epic}`
+- [ ] Link to MiniApp DESIGN ID: `cpt-{miniapp}-design`
 - [ ] Generate implementation IDs:
   - Views: `@cpt-impl cpt-ios-{module}-view-{slug}`
   - Widgets: `@cpt-impl cpt-ios-{module}-widget-{slug}`

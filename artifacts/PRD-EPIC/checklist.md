@@ -28,7 +28,7 @@ The Epic PRD MUST include:
 
 - [ ] Clear purpose statement
 - [ ] Epic type (Screen, Capability, Flow, Widget)
-- [ ] Link to parent SubApp PRD
+- [ ] Link to parent MiniApp PRD
 - [ ] Link to parent Platform PRD
 - [ ] Version and status metadata
 - [ ] In-scope items list
@@ -40,14 +40,14 @@ The Epic PRD MUST include:
 
 **Priority**: CRITICAL
 
-The PRD MUST include traces to SubApp PRD:
+The PRD MUST include traces to MiniApp PRD:
 
-- [ ] Table mapping Epic to SubApp requirements
+- [ ] Table mapping Epic to MiniApp requirements
 - [ ] Relation type (details) for each trace
-- [ ] `cpt-{subapp}-fr-{slug}` references
+- [ ] `cpt-{miniapp}-fr-{slug}` references
 - [ ] Indirect Platform trace documented
 
-**Why it matters**: Epic requirements must demonstrate they detail SubApp-level FRs.
+**Why it matters**: Epic requirements must demonstrate they detail MiniApp-level FRs.
 
 ### PRD-EPIC-003: Actors and Entry Points
 
@@ -67,15 +67,15 @@ The PRD MUST define:
 
 Each Functional Requirement MUST include:
 
-- [ ] Unique ID following `cpt-{subapp}-epic-{epic}-fr-{slug}` pattern
-- [ ] Traces To field (parent SubApp FR or "Epic-specific")
+- [ ] Unique ID following `cpt-{miniapp}-epic-{epic}-fr-{slug}` pattern
+- [ ] Traces To field (parent MiniApp FR or "Epic-specific")
 - [ ] Priority (P1, P2, P3)
 - [ ] Actor reference
 - [ ] Description (specific behavior)
 - [ ] UI element reference
 - [ ] Acceptance criteria
 
-**Why it matters**: Epic FRs are more detailed than SubApp FRs and closer to implementation.
+**Why it matters**: Epic FRs are more detailed than MiniApp FRs and closer to implementation.
 
 ### PRD-EPIC-005: State Requirements
 
@@ -83,7 +83,7 @@ Each Functional Requirement MUST include:
 
 The PRD MUST define screen states:
 
-- [ ] State table with ID `cpt-{subapp}-epic-{epic}-state`
+- [ ] State table with ID `cpt-{miniapp}-epic-{epic}-state`
 - [ ] All states defined (Loading, Content, Empty, Error, Offline)
 - [ ] Conditions for each state
 - [ ] UI behavior for each state
@@ -109,7 +109,7 @@ The PRD MUST include error handling:
 The PRD MUST include UI requirements:
 
 - [ ] Screen layout wireframe/diagram
-- [ ] Components table with IDs `cpt-{subapp}-{epic}-widget-{slug}`
+- [ ] Components table with IDs `cpt-{miniapp}-{epic}-widget-{slug}`
 - [ ] Interactions table (trigger, result)
 
 **Why it matters**: UI requirements bridge product to design.
@@ -131,9 +131,9 @@ The PRD MUST specify data needs:
 
 The PRD MUST include:
 
-- [ ] SubApp FR → Epic FR coverage table
+- [ ] MiniApp FR → Epic FR coverage table
 - [ ] Epic FR → Feature mapping table
-- [ ] Full traceability chain diagram (Platform → SubApp → Epic)
+- [ ] Full traceability chain diagram (Platform → MiniApp → Epic)
 
 **Why it matters**: Complete traceability ensures coverage validation.
 
@@ -145,11 +145,11 @@ The PRD MUST include:
 
 **Priority**: MEDIUM
 
-Requirements that don't trace to SubApp SHOULD:
+Requirements that don't trace to MiniApp SHOULD:
 
 - [ ] Have `epic-specific` tag
 - [ ] Include rationale for Epic-level only
-- [ ] Document why not in SubApp PRD
+- [ ] Document why not in MiniApp PRD
 
 ### PRD-EPIC-011: Acceptance Criteria Summary
 
@@ -157,7 +157,7 @@ Requirements that don't trace to SubApp SHOULD:
 
 The PRD SHOULD include summary:
 
-- [ ] All SubApp FRs in scope detailed
+- [ ] All MiniApp FRs in scope detailed
 - [ ] All Epic FRs have feature specifications
 - [ ] All states designed
 - [ ] All error scenarios handled
@@ -191,14 +191,14 @@ The PRD MUST NOT contain:
 
 **Why it matters**: PRD defines WHAT, not HOW.
 
-### PRD-EPIC-NO-002: No SubApp Duplication
+### PRD-EPIC-NO-002: No MiniApp Duplication
 
 **Priority**: HIGH
 
 The PRD MUST NOT:
 
-- [ ] Redefine SubApp-level requirements (only detail)
-- [ ] Duplicate SubApp constraints verbatim
+- [ ] Redefine MiniApp-level requirements (only detail)
+- [ ] Duplicate MiniApp constraints verbatim
 - [ ] Redefine actors (only add Epic context)
 
 **Why it matters**: Duplication creates inconsistency.
@@ -261,7 +261,7 @@ Epic PRD MUST specify mobile interactions:
 
 If Epic is deep-linkable:
 
-- [ ] Deep link format specified (`constructor://{subapp}/{epic}`)
+- [ ] Deep link format specified (`constructor://{miniapp}/{epic}`)
 - [ ] Parameters documented
 - [ ] Entry point behavior defined
 

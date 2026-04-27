@@ -15,9 +15,9 @@ Cypilot artifacts registered in `{cypilot_path}/config/artifacts.toml`:
 | Level | Artifacts | Default Location |
 |-------|-----------|------------------|
 | L0: Platform | PRD-PLATFORM, DESIGN-PLATFORM, DECOMPOSITION-PLATFORM | `architecture/platform/` |
-| L1: SubApp | PRD-SUBAPP, DESIGN-SUBAPP, DECOMPOSITION-SUBAPP | `architecture/subapps/{slug}/` |
-| L2: Epic | PRD-EPIC, DESIGN-EPIC, DECOMPOSITION-EPIC | `architecture/subapps/{subapp}/epics/{slug}/` |
-| L3: Feature | FEATURE-MOBILE | `architecture/subapps/{subapp}/epics/{epic}/features/{slug}.md` |
+| L1: MiniApp | PRD-MINIAPP, DESIGN-MINIAPP, DECOMPOSITION-MINIAPP | `architecture/miniapps/{slug}/` |
+| L2: Epic | PRD-EPIC, DESIGN-EPIC, DECOMPOSITION-EPIC | `architecture/miniapps/{miniapp}/epics/{slug}/` |
+| L3: Feature | FEATURE-MOBILE | `architecture/miniapps/{miniapp}/epics/{epic}/features/{slug}.md` |
 
 ---
 
@@ -41,7 +41,7 @@ cypilot make PRD-PLATFORM for Constructor SuperApp
 Context:
 - Product: Educational mobile platform
 - Users: students, instructors, admins
-- SubApps: Learn, Assess, Communicate
+- MiniApps: Learn, Assess, Communicate
 - Platforms: iOS (SwiftUI), Android (Compose), shared KMP
 - Key NFRs: offline-first, <3s launch, 60fps animations
 ```
@@ -88,14 +88,14 @@ Context:
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot make DECOMPOSITION-PLATFORM` | Creates SubApp breakdown |
-| `cypilot decompose platform into subapps` | Alternative phrasing |
+| `cypilot make DECOMPOSITION-PLATFORM` | Creates MiniApp breakdown |
+| `cypilot decompose platform into miniapps` | Alternative phrasing |
 
 **Provide context:**
 ```
 cypilot make DECOMPOSITION-PLATFORM
 Context:
-- SubApps:
+- MiniApps:
   - learn (course catalog, progress, certificates)
   - assess (exams, proctoring, results)
   - communicate (chat, notifications, announcements)
@@ -111,24 +111,24 @@ Context:
 
 ---
 
-### Phase 2: SubApp Level (L1)
+### Phase 2: MiniApp Level (L1)
 
-For each SubApp from DECOMPOSITION-PLATFORM:
+For each MiniApp from DECOMPOSITION-PLATFORM:
 
-#### 2.1 PRD-SUBAPP
+#### 2.1 PRD-MINIAPP
 
 **Create**
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot make PRD-SUBAPP for learn` | Creates Learn SubApp PRD |
-| `cypilot make PRD-SUBAPP for assess` | Creates Assess SubApp PRD |
+| `cypilot make PRD-MINIAPP for learn` | Creates Learn MiniApp PRD |
+| `cypilot make PRD-MINIAPP for assess` | Creates Assess MiniApp PRD |
 
 **Provide context:**
 ```
-cypilot make PRD-SUBAPP for learn
+cypilot make PRD-MINIAPP for learn
 Context:
-- SubApp: Learn
+- MiniApp: Learn
 - Parent: cpt-platform (references platform FRs)
 - Capabilities: course browsing, enrollment, progress tracking, certificates
 - Actors: student, instructor
@@ -139,23 +139,23 @@ Context:
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot validate PRD-SUBAPP for learn` | Full validation |
-| `cypilot validate PRD-SUBAPP for learn refs` | References to platform |
+| `cypilot validate PRD-MINIAPP for learn` | Full validation |
+| `cypilot validate PRD-MINIAPP for learn refs` | References to platform |
 
-#### 2.2 DESIGN-SUBAPP
+#### 2.2 DESIGN-MINIAPP
 
 **Create**
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot make DESIGN-SUBAPP for learn` | Creates SubApp architecture |
-| `cypilot make DESIGN-SUBAPP for learn from PRD-SUBAPP` | From SubApp PRD |
+| `cypilot make DESIGN-MINIAPP for learn` | Creates MiniApp architecture |
+| `cypilot make DESIGN-MINIAPP for learn from PRD-MINIAPP` | From MiniApp PRD |
 
 **Provide context:**
 ```
-cypilot make DESIGN-SUBAPP for learn
+cypilot make DESIGN-MINIAPP for learn
 Context:
-- SubApp: Learn
+- MiniApp: Learn
 - KMP modules: learn-domain, learn-data, learn-presentation
 - Features: course-catalog, course-player, progress-tracker
 - Data: CourseRepository, ProgressRepository
@@ -166,21 +166,21 @@ Context:
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot validate DESIGN-SUBAPP for learn` | Full validation |
-| `cypilot validate DESIGN-SUBAPP for learn refs` | References |
+| `cypilot validate DESIGN-MINIAPP for learn` | Full validation |
+| `cypilot validate DESIGN-MINIAPP for learn refs` | References |
 
-#### 2.3 DECOMPOSITION-SUBAPP
+#### 2.3 DECOMPOSITION-MINIAPP
 
 **Create**
 
 | Prompt | What happens |
 |--------|--------------|
-| `cypilot make DECOMPOSITION-SUBAPP for learn` | Creates Epic breakdown |
-| `cypilot decompose subapp learn into epics` | Alternative phrasing |
+| `cypilot make DECOMPOSITION-MINIAPP for learn` | Creates Epic breakdown |
+| `cypilot decompose miniapp learn into epics` | Alternative phrasing |
 
 **Provide context:**
 ```
-cypilot make DECOMPOSITION-SUBAPP for learn
+cypilot make DECOMPOSITION-MINIAPP for learn
 Context:
 - Epics:
   - course-catalog (browse, search, filter, enroll)
@@ -192,7 +192,7 @@ Context:
 
 ### Phase 3: Epic Level (L2)
 
-For each Epic from DECOMPOSITION-SUBAPP:
+For each Epic from DECOMPOSITION-MINIAPP:
 
 #### 3.1 PRD-EPIC
 
@@ -206,7 +206,7 @@ For each Epic from DECOMPOSITION-SUBAPP:
 cypilot make PRD-EPIC for course-catalog
 Context:
 - Epic: Course Catalog
-- SubApp: Learn
+- MiniApp: Learn
 - User stories: browse courses, search, filter by category, view details, enroll
 - Acceptance criteria per story
 ```
@@ -301,7 +301,7 @@ Context:
 
 ## Iteration Rules
 
-1. **Design flows down**: Platform → SubApp → Epic → Feature
+1. **Design flows down**: Platform → MiniApp → Epic → Feature
 2. **Changes propagate up**: If feature needs platform change, update platform first
 3. **Validate before implementing**: Always validate artifact before using it
 4. **Code matches design**: If code contradicts design, fix design at appropriate level
@@ -317,9 +317,9 @@ Context:
 | 1 | `cypilot make PRD-PLATFORM` | `cypilot validate PRD-PLATFORM` |
 | 2 | `cypilot make DESIGN-PLATFORM` | `cypilot validate DESIGN-PLATFORM` |
 | 3 | `cypilot make DECOMPOSITION-PLATFORM` | `cypilot validate DECOMPOSITION-PLATFORM` |
-| 4 | `cypilot make PRD-SUBAPP for {subapp}` | `cypilot validate PRD-SUBAPP for {subapp}` |
-| 5 | `cypilot make DESIGN-SUBAPP for {subapp}` | `cypilot validate DESIGN-SUBAPP for {subapp}` |
-| 6 | `cypilot make DECOMPOSITION-SUBAPP for {subapp}` | `cypilot validate DECOMPOSITION-SUBAPP for {subapp}` |
+| 4 | `cypilot make PRD-MINIAPP for {miniapp}` | `cypilot validate PRD-MINIAPP for {miniapp}` |
+| 5 | `cypilot make DESIGN-MINIAPP for {miniapp}` | `cypilot validate DESIGN-MINIAPP for {miniapp}` |
+| 6 | `cypilot make DECOMPOSITION-MINIAPP for {miniapp}` | `cypilot validate DECOMPOSITION-MINIAPP for {miniapp}` |
 | 7 | `cypilot make PRD-EPIC for {epic}` | `cypilot validate PRD-EPIC for {epic}` |
 | 8 | `cypilot make DESIGN-EPIC for {epic}` | `cypilot validate DESIGN-EPIC for {epic}` |
 | 9 | `cypilot make DECOMPOSITION-EPIC for {epic}` | `cypilot validate DECOMPOSITION-EPIC for {epic}` |

@@ -8,7 +8,7 @@
 - `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` — structural reference
 - `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` — semantic quality criteria
 - `config/kits/mobile-superapp/artifacts/PRD-EPIC/template.md` — parent Epic PRD reference
-- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` — parent SubApp DESIGN reference
+- `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/template.md` — parent MiniApp DESIGN reference
 
 ## Table of Contents
 
@@ -28,7 +28,7 @@
 - [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` for structure
 - [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` for semantic guidance
 - [ ] Read parent Epic PRD for requirements
-- [ ] Read parent SubApp DESIGN for architectural context
+- [ ] Read parent MiniApp DESIGN for architectural context
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
@@ -48,9 +48,9 @@
   - Platform-Specific Considerations (Android, iOS, WebView)
   - Error Handling (error states, offline behavior)
   - Traceability
-- [ ] All IDs follow `cpt-{subapp}-{epic}-{kind}-{slug}` convention
+- [ ] All IDs follow `cpt-{miniapp}-{epic}-{kind}-{slug}` convention
 - [ ] References to Epic PRD are valid
-- [ ] References to SubApp DESIGN are valid
+- [ ] References to MiniApp DESIGN are valid
 - [ ] Component diagram present (Mermaid flowchart)
 - [ ] No placeholder content (TODO, TBD, FIXME)
 - [ ] No duplicate IDs within document
@@ -74,7 +74,7 @@
 - [ ] ADR references provided for key decisions
 - [ ] Screen/widget IDs link to Epic PRD components
 - [ ] Use case IDs link to Epic PRD requirements
-- [ ] Links to parent documents (Epic PRD, SubApp DESIGN)
+- [ ] Links to parent documents (Epic PRD, MiniApp DESIGN)
 
 ### Versioning
 
@@ -90,7 +90,7 @@
 - [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/template.md` for structure
 - [ ] Load `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` for semantic guidance
 - [ ] Read Epic PRD for requirements
-- [ ] Read SubApp DESIGN for architectural patterns
+- [ ] Read MiniApp DESIGN for architectural patterns
 - [ ] Identify which Epic FRs this DESIGN addresses
 
 ### Phase 2: Content Creation
@@ -117,18 +117,18 @@ If DESIGN-EPIC cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate component overview ID: `cpt-{subapp}-epic-{epic}-component-overview`
-- [ ] Generate screen IDs: `cpt-{subapp}-{epic}-screen-{slug}`
-- [ ] Generate widget IDs: `cpt-{subapp}-{epic}-widget-{slug}`
-- [ ] Generate state ID: `cpt-{subapp}-{epic}-state`
-- [ ] Generate use case IDs: `cpt-{subapp}-{epic}-usecase-{slug}`
-- [ ] Generate repo IDs: `cpt-{subapp}-{epic}-repo-{slug}`
-- [ ] Generate API IDs: `cpt-{subapp}-{epic}-api-{slug}`
-- [ ] Generate nav ID: `cpt-{subapp}-{epic}-nav`
-- [ ] Generate platform IDs: `cpt-{subapp}-{epic}-android`, `cpt-{subapp}-{epic}-ios`
-- [ ] Generate offline ID: `cpt-{subapp}-{epic}-offline`
+- [ ] Generate component overview ID: `cpt-{miniapp}-epic-{epic}-component-overview`
+- [ ] Generate screen IDs: `cpt-{miniapp}-{epic}-screen-{slug}`
+- [ ] Generate widget IDs: `cpt-{miniapp}-{epic}-widget-{slug}`
+- [ ] Generate state ID: `cpt-{miniapp}-{epic}-state`
+- [ ] Generate use case IDs: `cpt-{miniapp}-{epic}-usecase-{slug}`
+- [ ] Generate repo IDs: `cpt-{miniapp}-{epic}-repo-{slug}`
+- [ ] Generate API IDs: `cpt-{miniapp}-{epic}-api-{slug}`
+- [ ] Generate nav ID: `cpt-{miniapp}-{epic}-nav`
+- [ ] Generate platform IDs: `cpt-{miniapp}-{epic}-android`, `cpt-{miniapp}-{epic}-ios`
+- [ ] Generate offline ID: `cpt-{miniapp}-{epic}-offline`
 - [ ] Link to Epic PRD requirements
-- [ ] Reference SubApp DESIGN patterns
+- [ ] Reference MiniApp DESIGN patterns
 - [ ] Verify uniqueness with `cypilot list-ids`
 
 ### Phase 4: Quality Check
@@ -136,7 +136,7 @@ If DESIGN-EPIC cannot be completed in a single session:
 - [ ] Self-review against `config/kits/mobile-superapp/artifacts/DESIGN-EPIC/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify Epic PRD traceability
-- [ ] Verify SubApp DESIGN alignment
+- [ ] Verify MiniApp DESIGN alignment
 - [ ] Verify MVI pattern is consistent
 
 ### Phase 5: Table of Contents
@@ -198,10 +198,10 @@ Issues:
   - Option 2: Continue without PRD (DESIGN will lack traceability)
   - Document "PRD pending" in DESIGN header
 
-### Missing SubApp DESIGN
+### Missing MiniApp DESIGN
 
-- [ ] If parent SubApp DESIGN not found:
-  - Option 1: Run `/cypilot-generate DESIGN-SUBAPP` first
+- [ ] If parent MiniApp DESIGN not found:
+  - Option 1: Run `/cypilot-generate DESIGN-MINIAPP` first
   - Option 2: Continue with assumptions documented
   - Document architectural assumptions made
 
@@ -222,4 +222,4 @@ Issues:
 - [ ] PRD missing/incomplete → `/cypilot-generate PRD-EPIC` — create/update PRD first
 - [ ] DESIGN needs revision → continue editing DESIGN-EPIC
 - [ ] Ready for Feature → `/cypilot-generate FEATURE-MOBILE` — create feature specification
-- [ ] SubApp DESIGN missing → `/cypilot-generate DESIGN-SUBAPP` — create SubApp DESIGN first
+- [ ] MiniApp DESIGN missing → `/cypilot-generate DESIGN-MINIAPP` — create MiniApp DESIGN first

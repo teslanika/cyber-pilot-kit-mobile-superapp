@@ -10,7 +10,7 @@ cpt-{scope}-{kind}-{slug}
 
 Where:
 - `cpt` — Cypilot prefix (required)
-- `{scope}` — Hierarchy context (platform, subapp, epic)
+- `{scope}` — Hierarchy context (platform, miniapp, epic)
 - `{kind}` — Element type (fr, component, flow, etc.)
 - `{slug}` — Kebab-case identifier
 
@@ -25,33 +25,33 @@ Where:
 | NFR | `cpt-platform-nfr-{slug}` | `cpt-platform-nfr-launch-time` |
 | Component | `cpt-platform-component-{slug}` | `cpt-platform-component-auth` |
 | Module | `cpt-platform-module-{slug}` | `cpt-platform-module-sdk` |
-| SubApp | `cpt-platform-subapp-{slug}` | `cpt-platform-subapp-learn` |
+| MiniApp | `cpt-platform-miniapp-{slug}` | `cpt-platform-miniapp-learn` |
 
-### L1: SubApp
+### L1: MiniApp
 
 | Kind | Pattern | Example |
 |------|---------|---------|
-| FR | `cpt-{subapp}-fr-{slug}` | `cpt-learn-fr-browse-courses` |
-| Component | `cpt-{subapp}-component-{slug}` | `cpt-learn-component-repository` |
-| Epic | `cpt-{subapp}-epic-{slug}` | `cpt-learn-epic-course-catalog` |
+| FR | `cpt-{miniapp}-fr-{slug}` | `cpt-learn-fr-browse-courses` |
+| Component | `cpt-{miniapp}-component-{slug}` | `cpt-learn-component-repository` |
+| Epic | `cpt-{miniapp}-epic-{slug}` | `cpt-learn-epic-course-catalog` |
 
 ### L2: Epic
 
 | Kind | Pattern | Example |
 |------|---------|---------|
-| Story | `cpt-{subapp}-{epic}-story-{slug}` | `cpt-learn-course-catalog-story-view` |
-| AC | `cpt-{subapp}-{epic}-ac-{slug}` | `cpt-learn-course-catalog-ac-pagination` |
-| Component | `cpt-{subapp}-{epic}-component-{slug}` | `cpt-learn-course-catalog-component-list` |
-| Feature | `cpt-{subapp}-{epic}-feature-{slug}` | `cpt-learn-course-catalog-feature-search` |
+| Story | `cpt-{miniapp}-{epic}-story-{slug}` | `cpt-learn-course-catalog-story-view` |
+| AC | `cpt-{miniapp}-{epic}-ac-{slug}` | `cpt-learn-course-catalog-ac-pagination` |
+| Component | `cpt-{miniapp}-{epic}-component-{slug}` | `cpt-learn-course-catalog-component-list` |
+| Feature | `cpt-{miniapp}-{epic}-feature-{slug}` | `cpt-learn-course-catalog-feature-search` |
 
 ### L3: Feature
 
 | Kind | Pattern | Example |
 |------|---------|---------|
-| Flow | `cpt-{subapp}-flow-{feature}-{slug}` | `cpt-learn-flow-course-list-load` |
-| Algo | `cpt-{subapp}-algo-{feature}-{slug}` | `cpt-learn-algo-course-list-cache` |
-| State | `cpt-{subapp}-state-{feature}-{slug}` | `cpt-learn-state-course-list-screen` |
-| DoD | `cpt-{subapp}-dod-{feature}-{slug}` | `cpt-learn-dod-course-list-tests` |
+| Flow | `cpt-{miniapp}-flow-{feature}-{slug}` | `cpt-learn-flow-course-list-load` |
+| Algo | `cpt-{miniapp}-algo-{feature}-{slug}` | `cpt-learn-algo-course-list-cache` |
+| State | `cpt-{miniapp}-state-{feature}-{slug}` | `cpt-learn-state-course-list-screen` |
+| DoD | `cpt-{miniapp}-dod-{feature}-{slug}` | `cpt-learn-dod-course-list-tests` |
 
 ### Code Markers
 
@@ -85,7 +85,7 @@ Where:
 
 IDs must be unique within their scope:
 - Platform IDs: unique across platform
-- SubApp IDs: unique within SubApp
+- MiniApp IDs: unique within MiniApp
 - Epic IDs: unique within Epic
 - Feature IDs: unique within Feature
 
@@ -99,6 +99,6 @@ When referencing parent IDs, use the full ID:
 ### Platform References
 - Implements: `cpt-platform-fr-offline-support`
 
-### SubApp References  
+### MiniApp References  
 - Refines: `cpt-learn-fr-offline-courses`
 ```

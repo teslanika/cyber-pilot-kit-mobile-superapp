@@ -40,14 +40,14 @@ checklist   = "config/kits/mobile-superapp/codebase/checklist.md"
 # swiftui_guidelines = "docs/swiftui-guidelines.md"
 
 [[prompts]]
-description = "PRD Review (Platform/SubApp/Epic)"
+description = "PRD Review (Platform/MiniApp/Epic)"
 prompt_file = "{scripts}/prompts/pr/prd-review.md"
 checklist   = "{prd_checklist}"
 template    = "{prd_template}"
 # project_domain = ""
 
 [[prompts]]
-description = "Design Review (Platform/SubApp/Epic)"
+description = "Design Review (Platform/MiniApp/Epic)"
 prompt_file = "{scripts}/prompts/pr/design-review.md"
 checklist   = "{design_checklist}"
 template    = "{design_template}"

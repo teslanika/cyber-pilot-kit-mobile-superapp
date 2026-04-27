@@ -1,7 +1,7 @@
 # PRD — {Epic Name}
 
 > **Level**: L2 (Epic)  
-> **Parent SubApp**: [{SubApp Name} PRD](../../PRD.md) `cpt-{subapp}-prd`  
+> **Parent MiniApp**: [{MiniApp Name} PRD](../../PRD.md) `cpt-{miniapp}-prd`  
 > **Parent Platform**: [Platform PRD](../../../../architecture/PRD.md) `cpt-superapp-prd`  
 > **Version**: 1.0  
 > **Status**: Draft
@@ -12,7 +12,7 @@
 
 ### 1.1 Purpose
 
-This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Name} SubApp.
+This PRD defines requirements for the **{Epic Name}** epic within the {MiniApp Name} MiniApp.
 
 **Epic Type:** Screen | Capability | Flow | Widget
 
@@ -27,13 +27,13 @@ This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Na
 
 ### 1.3 Traces To Parent Requirements
 
-| SubApp Requirement | Relation | Description |
+| MiniApp Requirement | Relation | Description |
 |-------------------|----------|-------------|
-| `cpt-{subapp}-fr-{slug}` | details | {How this Epic details SubApp FR} |
-| `cpt-{subapp}-fr-{slug-2}` | details | {Another SubApp FR this Epic covers} |
+| `cpt-{miniapp}-fr-{slug}` | details | {How this Epic details MiniApp FR} |
+| `cpt-{miniapp}-fr-{slug-2}` | details | {Another MiniApp FR this Epic covers} |
 
 **Indirect Platform Trace:**
-- `cpt-{subapp}-fr-{slug}` → `cpt-superapp-fr-{platform-slug}`
+- `cpt-{miniapp}-fr-{slug}` → `cpt-superapp-fr-{platform-slug}`
 
 ---
 
@@ -61,9 +61,9 @@ This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Na
 
 #### FR-01: {Requirement Name}
 
-**ID**: `cpt-{subapp}-epic-{epic}-fr-{slug}`
+**ID**: `cpt-{miniapp}-epic-{epic}-fr-{slug}`
 
-**Traces To:** `cpt-{subapp}-fr-{parent-slug}` (details)
+**Traces To:** `cpt-{miniapp}-fr-{parent-slug}` (details)
 
 | Attribute | Value |
 |-----------|-------|
@@ -77,7 +77,7 @@ This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Na
 
 #### FR-02: {Epic-Specific Requirement}
 
-**ID**: `cpt-{subapp}-epic-{epic}-fr-{slug}`
+**ID**: `cpt-{miniapp}-epic-{epic}-fr-{slug}`
 
 **Tags**: `epic-specific`
 
@@ -95,7 +95,7 @@ This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Na
 
 #### Screen States
 
-**ID**: `cpt-{subapp}-epic-{epic}-state`
+**ID**: `cpt-{miniapp}-epic-{epic}-state`
 
 | State | Condition | UI Behavior |
 |-------|-----------|-------------|
@@ -137,8 +137,8 @@ This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Na
 
 | Component | ID | Description |
 |-----------|-----|-------------|
-| {Widget Name} | `cpt-{subapp}-{epic}-widget-{slug}` | {Purpose} |
-| {Widget Name 2} | `cpt-{subapp}-{epic}-widget-{slug-2}` | {Purpose} |
+| {Widget Name} | `cpt-{miniapp}-{epic}-widget-{slug}` | {Purpose} |
+| {Widget Name 2} | `cpt-{miniapp}-{epic}-widget-{slug-2}` | {Purpose} |
 
 ### 4.3 Interactions
 
@@ -169,27 +169,27 @@ This PRD defines requirements for the **{Epic Name}** epic within the {SubApp Na
 
 ## 6. Traceability Matrix
 
-### 6.1 SubApp FR → Epic FR Coverage
+### 6.1 MiniApp FR → Epic FR Coverage
 
-| SubApp FR | Epic FRs | Coverage |
+| MiniApp FR | Epic FRs | Coverage |
 |-----------|---------|----------|
-| `cpt-{subapp}-fr-{slug-1}` | `cpt-{subapp}-epic-{epic}-fr-{a}` | Full |
-| `cpt-{subapp}-fr-{slug-2}` | `cpt-{subapp}-epic-{epic}-fr-{b}`, `cpt-{subapp}-epic-{epic}-fr-{c}` | Full |
+| `cpt-{miniapp}-fr-{slug-1}` | `cpt-{miniapp}-epic-{epic}-fr-{a}` | Full |
+| `cpt-{miniapp}-fr-{slug-2}` | `cpt-{miniapp}-epic-{epic}-fr-{b}`, `cpt-{miniapp}-epic-{epic}-fr-{c}` | Full |
 
 ### 6.2 Epic FR → Feature Mapping
 
 | Epic FR | Target Feature | Status |
 |---------|---------------|--------|
-| `cpt-{subapp}-epic-{epic}-fr-{slug}` | `cpt-{subapp}-feature-{feature}` | Planned |
+| `cpt-{miniapp}-epic-{epic}-fr-{slug}` | `cpt-{miniapp}-feature-{feature}` | Planned |
 
 ### 6.3 Full Traceability Chain
 
 ```
-Platform FR                    SubApp FR                      Epic FR
+Platform FR                    MiniApp FR                      Epic FR
 ─────────────                  ─────────                      ───────
-cpt-superapp-fr-{slug}    →    cpt-{subapp}-fr-{slug}    →    cpt-{subapp}-epic-{epic}-fr-{slug}
+cpt-superapp-fr-{slug}    →    cpt-{miniapp}-fr-{slug}    →    cpt-{miniapp}-epic-{epic}-fr-{slug}
      ↓                              ↓                              ↓
-DESIGN-PLATFORM             DESIGN-SUBAPP               DESIGN-EPIC
+DESIGN-PLATFORM             DESIGN-MINIAPP               DESIGN-EPIC
      ↓                              ↓                              ↓
                                                            FEATURE
 ```
@@ -198,7 +198,7 @@ DESIGN-PLATFORM             DESIGN-SUBAPP               DESIGN-EPIC
 
 ## 7. Acceptance Criteria
 
-- [ ] All SubApp FRs in scope are detailed
+- [ ] All MiniApp FRs in scope are detailed
 - [ ] All Epic FRs have feature specifications
 - [ ] All states defined and designed
 - [ ] All error scenarios handled
@@ -210,7 +210,7 @@ DESIGN-PLATFORM             DESIGN-SUBAPP               DESIGN-EPIC
 
 | ID Pattern | Example | Purpose |
 |------------|---------|---------|
-| `cpt-{subapp}-epic-{epic}-prd` | `cpt-student-epic-home-prd` | Epic PRD anchor |
-| `cpt-{subapp}-epic-{epic}-fr-{slug}` | `cpt-student-epic-home-fr-streak` | Functional requirement |
-| `cpt-{subapp}-epic-{epic}-state` | `cpt-student-epic-home-state` | State machine |
-| `cpt-{subapp}-{epic}-widget-{slug}` | `cpt-student-home-widget-progress` | UI component |
+| `cpt-{miniapp}-epic-{epic}-prd` | `cpt-student-epic-home-prd` | Epic PRD anchor |
+| `cpt-{miniapp}-epic-{epic}-fr-{slug}` | `cpt-student-epic-home-fr-streak` | Functional requirement |
+| `cpt-{miniapp}-epic-{epic}-state` | `cpt-student-epic-home-state` | State machine |
+| `cpt-{miniapp}-{epic}-widget-{slug}` | `cpt-student-home-widget-progress` | UI component |

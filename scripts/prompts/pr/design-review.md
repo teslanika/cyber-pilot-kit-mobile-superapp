@@ -1,11 +1,11 @@
-# Design Review Prompt (Platform / SubApp / Epic)
+# Design Review Prompt (Platform / MiniApp / Epic)
 
 Review the following PR changes for Design Document.
 
 ## Focus Areas
 
 ### Architecture
-- Correct hierarchy level (Platform, SubApp, or Epic)
+- Correct hierarchy level (Platform, MiniApp, or Epic)
 - Components clearly defined with responsibilities
 - Interfaces specified
 - Data flow documented
@@ -24,7 +24,7 @@ Review the following PR changes for Design Document.
 
 ### Traceability
 - References PRD FR/NFR IDs
-- References parent design IDs (if SubApp/Epic)
+- References parent design IDs (if MiniApp/Epic)
 - Design IDs follow kit conventions
 
 ### Mobile-Specific Concerns

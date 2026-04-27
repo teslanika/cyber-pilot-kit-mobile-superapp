@@ -29,7 +29,7 @@
 - [ ] Load `config/kits/mobile-superapp/artifacts/IMPL-KMP/checklist.md` for semantic guidance
 - [ ] Read parent FEATURE-MOBILE for CDSL specifications
 - [ ] Read Epic DESIGN for component definitions
-- [ ] Read SubApp DESIGN for shared patterns
+- [ ] Read MiniApp DESIGN for shared patterns
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
@@ -42,7 +42,7 @@
 - [ ] IMPL-KMP follows `config/kits/mobile-superapp/artifacts/IMPL-KMP/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (module path)
-  - References (Feature, Epic DESIGN, SubApp DESIGN)
+  - References (Feature, Epic DESIGN, MiniApp DESIGN)
   - Scope (what KMP module implements)
   - Implementation Notes
   - Traceability Table
@@ -104,7 +104,7 @@ Apply checklist semantics during creation:
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
 | Overview | Document module path |
-| References | Link to FEATURE, Epic DESIGN, SubApp DESIGN |
+| References | Link to FEATURE, Epic DESIGN, MiniApp DESIGN |
 | Scope | Describe what this KMP module implements |
 | Implementation Notes | Document KMP-specific decisions, constraints |
 | Traceability Table | Map design IDs → code files → impl IDs |
@@ -115,8 +115,8 @@ Apply checklist semantics during creation:
 
 | Design Component ID | Code File | Implementation ID |
 |---------------------|-----------|-------------------|
-| `cpt-{subapp}-{epic}-usecase-{slug}` | `src/commonMain/kotlin/.../usecase/{UseCase}.kt` | `@cpt-impl cpt-kmp-{module}-usecase-{slug}` |
-| `cpt-{subapp}-{epic}-state` | `src/commonMain/kotlin/.../presentation/{State}.kt` | `@cpt-impl cpt-kmp-{module}-state-{slug}` |
+| `cpt-{miniapp}-{epic}-usecase-{slug}` | `src/commonMain/kotlin/.../usecase/{UseCase}.kt` | `@cpt-impl cpt-kmp-{module}-usecase-{slug}` |
+| `cpt-{miniapp}-{epic}-state` | `src/commonMain/kotlin/.../presentation/{State}.kt` | `@cpt-impl cpt-kmp-{module}-state-{slug}` |
 
 **Partial Completion Handling**:
 
@@ -127,9 +127,9 @@ If IMPL-KMP cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Link to FEATURE ID: `cpt-{subapp}-feature-{slug}`
-- [ ] Link to Epic DESIGN ID: `cpt-{subapp}-epic-{epic}`
-- [ ] Link to SubApp DESIGN ID: `cpt-{subapp}-design`
+- [ ] Link to FEATURE ID: `cpt-{miniapp}-feature-{slug}`
+- [ ] Link to Epic DESIGN ID: `cpt-{miniapp}-epic-{epic}`
+- [ ] Link to MiniApp DESIGN ID: `cpt-{miniapp}-design`
 - [ ] Generate implementation IDs:
   - Use cases: `@cpt-impl cpt-kmp-{module}-usecase-{slug}`
   - State: `@cpt-impl cpt-kmp-{module}-state-{slug}`

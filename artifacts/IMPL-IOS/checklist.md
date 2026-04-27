@@ -39,7 +39,7 @@ The IMPL MUST include references:
 
 - [ ] Feature reference with path and ID
 - [ ] Epic DESIGN reference with path and ID
-- [ ] SubApp DESIGN reference with path and ID
+- [ ] MiniApp DESIGN reference with path and ID
 
 **Why it matters**: References enable navigation to specifications.
 

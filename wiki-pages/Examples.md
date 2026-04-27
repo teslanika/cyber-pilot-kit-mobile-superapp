@@ -36,15 +36,15 @@ See the full example in the repository:
 | `cpt-platform-nfr-memory` | Memory usage | < 200MB |
 ```
 
-### SubApp PRD (L1)
+### MiniApp PRD (L1)
 
 ```markdown
-# SubApp PRD: Learn
+# MiniApp PRD: Learn
 
 ## Traceability
 
 ### Platform Requirements
-| Platform FR | SubApp FR |
+| Platform FR | MiniApp FR |
 |-------------|-----------|
 | `cpt-platform-fr-offline-support` | `cpt-learn-fr-offline-courses` |
 
@@ -195,12 +195,12 @@ mobile-superapp/
 ├── architecture/
 │   ├── PRD.md                          # Platform PRD
 │   ├── DESIGN.md                       # Platform DESIGN
-│   └── DECOMPOSITION.md                # → SubApps
+│   └── DECOMPOSITION.md                # → MiniApps
 │
-├── subapps/
+├── miniapps/
 │   └── learn/
-│       ├── PRD.md                      # Learn SubApp PRD
-│       ├── DESIGN.md                   # Learn SubApp DESIGN
+│       ├── PRD.md                      # Learn MiniApp PRD
+│       ├── DESIGN.md                   # Learn MiniApp DESIGN
 │       ├── DECOMPOSITION.md            # → Epics
 │       │
 │       └── capabilities/

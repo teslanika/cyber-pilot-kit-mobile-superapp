@@ -12,23 +12,23 @@
 
 {1-2 paragraphs: What this screen/flow/capability provides, what user needs it addresses.}
 
-**Parent SubApp Design**: [../DESIGN.md](../DESIGN.md)
+**Parent MiniApp Design**: [../DESIGN.md](../DESIGN.md)
 
 ### 1.2 Requirements Coverage
 
 | Requirement ID | Requirement | Design Response |
 |----------------|-------------|-----------------|
-| `cpt-{subapp}-epic-{epic}-fr-{slug}` | {Requirement description} | {How this design addresses it} |
+| `cpt-{miniapp}-epic-{epic}-fr-{slug}` | {Requirement description} | {How this design addresses it} |
 
 ### 1.3 Architecture Drivers
 
-**ADRs**: `cpt-{subapp}-adr-{slug}`
+**ADRs**: `cpt-{miniapp}-adr-{slug}`
 
 ## 2. Component Architecture
 
 ### 2.1 Component Diagram
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-epic-{epic}-component-overview`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-epic-{epic}-component-overview`
 
 ```mermaid
 flowchart TB
@@ -64,7 +64,7 @@ flowchart TB
 
 #### {Screen Name}
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-{epic}-screen-{slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-{epic}-screen-{slug}`
 
 **Responsibility**: {What this screen does}
 
@@ -72,15 +72,15 @@ flowchart TB
 
 | Platform | Component | Location |
 |----------|-----------|----------|
-| KMP | `{Epic}ViewModel` | `constructor-sdk/feature/{subapp}/presentation/{epic}/` |
-| Android | `{Epic}Screen` | `android-app/feature/{subapp}/ui/{epic}/` |
-| iOS | `{Epic}View` | `ios-app/Features/{SubApp}/Views/{Epic}/` |
+| KMP | `{Epic}ViewModel` | `constructor-sdk/feature/{miniapp}/presentation/{epic}/` |
+| Android | `{Epic}Screen` | `android-app/feature/{miniapp}/ui/{epic}/` |
+| iOS | `{Epic}View` | `ios-app/Features/{MiniApp}/Views/{Epic}/` |
 
 ### 2.3 Widget Components
 
 #### {Widget Name}
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-widget-{slug}`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-widget-{slug}`
 
 **Responsibility**: {What this widget does}
 
@@ -94,7 +94,7 @@ flowchart TB
 
 ### 3.1 Screen State
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-{epic}-state`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-{epic}-state`
 
 ```kotlin
 data class {Epic}State(
@@ -138,7 +138,7 @@ sealed class {Epic}Effect {
 
 #### {Use Case Name}
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-{epic}-usecase-{slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-{epic}-usecase-{slug}`
 
 **Input**: `{InputType}`
 
@@ -162,7 +162,7 @@ class {UseCase}UseCase(
 
 ### 4.2 Repository Operations
 
-- [ ] `p1` - **ID**: `cpt-{subapp}-{epic}-repo-{slug}`
+- [ ] `p1` - **ID**: `cpt-{miniapp}-{epic}-repo-{slug}`
 
 | Operation | Method | Source | Caching |
 |-----------|--------|--------|---------|
@@ -172,22 +172,22 @@ class {UseCase}UseCase(
 
 ### 4.3 API Contracts
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-api-{slug}`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-api-{slug}`
 
 | Method | Endpoint | Request | Response |
 |--------|----------|---------|----------|
-| `GET` | `/api/v1/mobile/{subapp}/{epic}` | — | `{ResponseDTO}` |
-| `POST` | `/api/v1/mobile/{subapp}/{epic}` | `{RequestDTO}` | `{ResponseDTO}` |
+| `GET` | `/api/v1/mobile/{miniapp}/{epic}` | — | `{ResponseDTO}` |
+| `POST` | `/api/v1/mobile/{miniapp}/{epic}` | `{RequestDTO}` | `{ResponseDTO}` |
 
 ## 5. Navigation
 
 ### 5.1 Screen Navigation
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-nav`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-nav`
 
 **Entry Points:**
 - From: {Previous screen} via {action}
-- Deep link: `constructor://{subapp}/{epic}?{params}`
+- Deep link: `constructor://{miniapp}/{epic}?{params}`
 
 **Exit Points:**
 - To: {Next screen} via {action}
@@ -204,7 +204,7 @@ class {UseCase}UseCase(
 
 ### 6.1 Android
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-android`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-android`
 
 **Compose Specifics:**
 - {Compose-specific implementation notes}
@@ -214,7 +214,7 @@ class {UseCase}UseCase(
 
 ### 6.2 iOS
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-ios`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-ios`
 
 **SwiftUI Specifics:**
 - {SwiftUI-specific implementation notes}
@@ -226,7 +226,7 @@ class {UseCase}UseCase(
 
 {If this epic uses WebView}
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-webview`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-webview`
 
 **WebView URL**: `{webview-base-url}/{path}`
 
@@ -253,7 +253,7 @@ class {UseCase}UseCase(
 
 ### 7.2 Offline Behavior
 
-- [ ] `p2` - **ID**: `cpt-{subapp}-{epic}-offline`
+- [ ] `p2` - **ID**: `cpt-{miniapp}-{epic}-offline`
 
 **Offline Capable**: Yes / No
 
@@ -265,7 +265,7 @@ class {UseCase}UseCase(
 ## 8. Traceability
 
 - **Epic PRD**: [PRD.md](./PRD.md)
-- **SubApp DESIGN**: [../DESIGN.md](../DESIGN.md)
+- **MiniApp DESIGN**: [../DESIGN.md](../DESIGN.md)
 - **ADRs**: [adr/](./adr/)
 - **DECOMPOSITION**: [DECOMPOSITION.md](./DECOMPOSITION.md)
 - **Features**: [features/](./features/)

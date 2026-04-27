@@ -33,7 +33,7 @@
 
 **Source** (one of, in priority order):
 1. FEATURE-MOBILE design — registered artifact with `to_code="true"` IDs
-2. Other Cypilot artifact — PRD-SUBAPP, PRD-EPIC, DESIGN-*, DECOMPOSITION-*
+2. Other Cypilot artifact — PRD-MINIAPP, PRD-EPIC, DESIGN-*, DECOMPOSITION-*
 3. Similar content — user-provided description, feature, or requirements
 4. Prompt only — direct user instructions
 
@@ -43,7 +43,7 @@
 - State machines
 - Definitions of Done
 
-**ALWAYS read** the system's DESIGN artifact (DESIGN-PLATFORM, DESIGN-SUBAPP, or DESIGN-EPIC) to understand architecture, components, and constraints.
+**ALWAYS read** the system's DESIGN artifact (DESIGN-PLATFORM, DESIGN-MINIAPP, or DESIGN-EPIC) to understand architecture, components, and constraints.
 
 ---
 
@@ -81,15 +81,15 @@
 
 **Full traceability markers** (FULL mode):
 ```kotlin
-// @cpt-algo:cpt-{subapp}-algo-{feature}-kmp:p1
+// @cpt-algo:cpt-{miniapp}-algo-{feature}-kmp:p1
 fun processData() {
-    // @cpt-begin:cpt-{subapp}-algo-{feature}-kmp:p1:inst-kmp-1
+    // @cpt-begin:cpt-{miniapp}-algo-{feature}-kmp:p1:inst-kmp-1
     val intent = receiveIntent()
-    // @cpt-end:cpt-{subapp}-algo-{feature}-kmp:p1:inst-kmp-1
+    // @cpt-end:cpt-{miniapp}-algo-{feature}-kmp:p1:inst-kmp-1
     
-    // @cpt-begin:cpt-{subapp}-algo-{feature}-kmp:p1:inst-kmp-2
+    // @cpt-begin:cpt-{miniapp}-algo-{feature}-kmp:p1:inst-kmp-2
     val result = useCase.invoke(intent.data)
-    // @cpt-end:cpt-{subapp}-algo-{feature}-kmp:p1:inst-kmp-2
+    // @cpt-end:cpt-{miniapp}-algo-{feature}-kmp:p1:inst-kmp-2
 }
 ```
 
@@ -112,9 +112,9 @@ FEATURE-MOBILE: flow/algo/state/dod IDs → [x]
     ↓
 DECOMPOSITION-EPIC: feature entry [x]
     ↓
-DECOMPOSITION-SUBAPP: epic entry [x]
+DECOMPOSITION-MINIAPP: epic entry [x]
     ↓
-DECOMPOSITION-PLATFORM: subapp entry [x]
+DECOMPOSITION-PLATFORM: miniapp entry [x]
     ↓
 PRD/DESIGN: referenced IDs [x] when ALL downstream refs [x]
 ```

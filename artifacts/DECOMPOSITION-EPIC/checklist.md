@@ -29,8 +29,8 @@ The DECOMPOSITION MUST include:
 - [ ] Clear purpose statement
 - [ ] Link to Epic PRD
 - [ ] Link to Epic DESIGN
-- [ ] Link to SubApp DECOMPOSITION
-- [ ] Overall implementation status marker with ID `cpt-{subapp}-{epic}-status-overall`
+- [ ] Link to MiniApp DECOMPOSITION
+- [ ] Overall implementation status marker with ID `cpt-{miniapp}-{epic}-status-overall`
 
 **Why it matters**: Overview establishes context for Feature decomposition.
 
@@ -40,7 +40,7 @@ The DECOMPOSITION MUST include:
 
 Each Feature entry MUST include:
 
-- [ ] Feature ID following `cpt-{subapp}-feature-{feature}` pattern
+- [ ] Feature ID following `cpt-{miniapp}-feature-{feature}` pattern
 - [ ] Link to Feature folder
 - [ ] Priority (HIGH, MEDIUM, LOW)
 - [ ] Purpose description
@@ -57,7 +57,7 @@ Each Feature entry MUST include:
 Each Feature entry MUST document:
 
 - [ ] Requirements covered list
-- [ ] `cpt-{subapp}-epic-{epic}-fr-{slug}` references
+- [ ] `cpt-{miniapp}-epic-{epic}-fr-{slug}` references
 - [ ] Priority marker for each requirement
 - [ ] Checkbox for implementation status
 
@@ -70,7 +70,7 @@ Each Feature entry MUST document:
 Each Feature entry MUST list:
 
 - [ ] Design components from Epic DESIGN
-- [ ] `cpt-{subapp}-{epic}-component-{slug}` references
+- [ ] `cpt-{miniapp}-{epic}-component-{slug}` references
 - [ ] Screen/widget references
 - [ ] Use case references
 - [ ] Priority marker for each
@@ -83,8 +83,8 @@ Each Feature entry MUST list:
 
 Each Feature entry MUST include:
 
-- [ ] Screen reference `cpt-{subapp}-{epic}-screen-{slug}`
-- [ ] Widget references `cpt-{subapp}-{epic}-widget-{slug}`
+- [ ] Screen reference `cpt-{miniapp}-{epic}-screen-{slug}`
+- [ ] Widget references `cpt-{miniapp}-{epic}-widget-{slug}`
 - [ ] Checkboxes for implementation status
 
 **Why it matters**: Screen/widget mapping guides UI implementation.
@@ -95,7 +95,7 @@ Each Feature entry MUST include:
 
 Each Feature entry SHOULD include:
 
-- [ ] Use case reference `cpt-{subapp}-{epic}-usecase-{slug}`
+- [ ] Use case reference `cpt-{miniapp}-{epic}-usecase-{slug}`
 - [ ] Checkbox for implementation status
 
 **Why it matters**: Use cases map to Feature business logic.
@@ -183,7 +183,7 @@ The DECOMPOSITION MUST include:
 
 Features with state SHOULD include:
 
-- [ ] State reference `cpt-{subapp}-{epic}-state`
+- [ ] State reference `cpt-{miniapp}-{epic}-state`
 - [ ] State management component reference
 
 ### DECOMP-EPIC-014: API Contract References
@@ -269,9 +269,9 @@ Platform Implementation matrix MUST show:
 
 Platform locations MUST follow patterns:
 
-- [ ] KMP: `constructor-sdk/feature/{subapp}/`
-- [ ] Android: `android-app/feature/{subapp}/ui/`
-- [ ] iOS: `ios-app/Features/{SubApp}/Views/`
+- [ ] KMP: `constructor-sdk/feature/{miniapp}/`
+- [ ] Android: `android-app/feature/{miniapp}/ui/`
+- [ ] iOS: `ios-app/Features/{MiniApp}/Views/`
 
 ### MOBILE-DECOMP-003: Shared vs Platform-Specific
 

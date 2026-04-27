@@ -33,28 +33,28 @@ The DECOMPOSITION MUST include:
 
 **Why it matters**: Overview establishes context for decomposition.
 
-### DECOMP-PLATFORM-002: SubApp Entries Structure
+### DECOMP-PLATFORM-002: MiniApp Entries Structure
 
 **Priority**: CRITICAL
 
-Each SubApp entry MUST include:
+Each MiniApp entry MUST include:
 
-- [ ] SubApp ID following `cpt-{platform}-subapp-{subapp}` pattern
-- [ ] Link to SubApp folder
+- [ ] MiniApp ID following `cpt-{platform}-miniapp-{miniapp}` pattern
+- [ ] Link to MiniApp folder
 - [ ] Priority (HIGH, MEDIUM, LOW)
 - [ ] Purpose description (few sentences)
 - [ ] Target users (actor references)
-- [ ] Dependencies (Kernel, other SubApps)
+- [ ] Dependencies (Kernel, other MiniApps)
 - [ ] Scope (in-scope list)
 - [ ] Out-of-scope (explicit exclusions)
 
-**Why it matters**: Complete entries enable independent SubApp development.
+**Why it matters**: Complete entries enable independent MiniApp development.
 
 ### DECOMP-PLATFORM-003: Requirements Coverage
 
 **Priority**: CRITICAL
 
-Each SubApp entry MUST document:
+Each MiniApp entry MUST document:
 
 - [ ] Requirements covered list with IDs
 - [ ] `cpt-{platform}-fr-{slug}` references for each FR
@@ -62,26 +62,26 @@ Each SubApp entry MUST document:
 - [ ] Priority marker for each requirement
 - [ ] Checkbox for implementation status
 
-**Why it matters**: Coverage ensures all Platform FRs are allocated to SubApps.
+**Why it matters**: Coverage ensures all Platform FRs are allocated to MiniApps.
 
 ### DECOMP-PLATFORM-004: Platform Components
 
 **Priority**: HIGH
 
-Each SubApp entry MUST list:
+Each MiniApp entry MUST list:
 
-- [ ] Platform components from DESIGN used by this SubApp
+- [ ] Platform components from DESIGN used by this MiniApp
 - [ ] `cpt-{platform}-component-{slug}` references
 - [ ] Priority marker for each component
 - [ ] Checkbox for implementation status
 
-**Why it matters**: Components trace DESIGN elements to SubApps.
+**Why it matters**: Components trace DESIGN elements to MiniApps.
 
 ### DECOMP-PLATFORM-005: Integration Points
 
 **Priority**: HIGH
 
-Each SubApp entry MUST document:
+Each MiniApp entry MUST document:
 
 - [ ] External integration references
 - [ ] `cpt-{platform}-integration-{slug}` IDs
@@ -96,12 +96,12 @@ Each SubApp entry MUST document:
 The DECOMPOSITION MUST include:
 
 - [ ] Kernel components table
-- [ ] Component ID, name, and SubApps using each
+- [ ] Component ID, name, and MiniApps using each
 - [ ] Auth, Storage, Network, Notifications kernel modules
 
 **Why it matters**: Kernel components are shared dependencies.
 
-### DECOMP-PLATFORM-007: SubApp Dependencies
+### DECOMP-PLATFORM-007: MiniApp Dependencies
 
 **Priority**: HIGH
 
@@ -110,7 +110,7 @@ The DECOMPOSITION MUST include:
 - [ ] Dependency diagram (text or visual)
 - [ ] Dependency rationale for each relationship
 - [ ] Kernel as root dependency
-- [ ] Inter-SubApp communication patterns (deep links, events)
+- [ ] Inter-MiniApp communication patterns (deep links, events)
 
 **Why it matters**: Dependencies determine implementation order.
 
@@ -120,7 +120,7 @@ The DECOMPOSITION MUST include:
 
 The DECOMPOSITION MUST include:
 
-- [ ] Release roadmap table (quarter, SubApps, milestone)
+- [ ] Release roadmap table (quarter, MiniApps, milestone)
 - [ ] Chronological ordering
 - [ ] Milestone descriptions
 
@@ -130,11 +130,11 @@ The DECOMPOSITION MUST include:
 
 ## SHOULD HAVE Requirements
 
-### DECOMP-PLATFORM-009: Target Release Per SubApp
+### DECOMP-PLATFORM-009: Target Release Per MiniApp
 
 **Priority**: MEDIUM
 
-Each SubApp entry SHOULD include:
+Each MiniApp entry SHOULD include:
 
 - [ ] Target release (Q{X} 202{Y})
 - [ ] Alignment with roadmap table
@@ -145,19 +145,19 @@ Each SubApp entry SHOULD include:
 
 The DECOMPOSITION SHOULD verify:
 
-- [ ] All Platform FRs appear in at least one SubApp
+- [ ] All Platform FRs appear in at least one MiniApp
 - [ ] No Platform FRs are orphaned
 - [ ] Coverage can be traced to DESIGN components
 
-### DECOMP-PLATFORM-011: SubApp Isolation
+### DECOMP-PLATFORM-011: MiniApp Isolation
 
 **Priority**: MEDIUM
 
 The DECOMPOSITION SHOULD document:
 
-- [ ] SubApps are loosely coupled
+- [ ] MiniApps are loosely coupled
 - [ ] Communication only via deep links and events
-- [ ] No direct SubApp-to-SubApp calls
+- [ ] No direct MiniApp-to-MiniApp calls
 
 ---
 
@@ -169,11 +169,11 @@ The DECOMPOSITION SHOULD document:
 
 The DECOMPOSITION MUST NOT contain:
 
-- [ ] Epic-level breakdowns (belongs in DECOMPOSITION-SUBAPP)
-- [ ] Screen definitions (belongs in SubApp)
-- [ ] Feature lists (belongs in SubApp)
+- [ ] Epic-level breakdowns (belongs in DECOMPOSITION-MINIAPP)
+- [ ] Screen definitions (belongs in MiniApp)
+- [ ] Feature lists (belongs in MiniApp)
 
-**Why it matters**: Platform DECOMPOSITION only covers SubApps.
+**Why it matters**: Platform DECOMPOSITION only covers MiniApps.
 
 ### DECOMP-PLATFORM-NO-002: No Implementation Details
 
@@ -193,9 +193,9 @@ The DECOMPOSITION MUST NOT contain:
 
 The DECOMPOSITION MUST NOT have:
 
-- [ ] SubApps without requirement coverage
-- [ ] Requirements without SubApp allocation
-- [ ] Components without SubApp assignment
+- [ ] MiniApps without requirement coverage
+- [ ] Requirements without MiniApp allocation
+- [ ] Components without MiniApp assignment
 
 **Why it matters**: Full traceability is the purpose of decomposition.
 
@@ -205,8 +205,8 @@ The DECOMPOSITION MUST NOT have:
 
 The DECOMPOSITION MUST NOT have:
 
-- [ ] Priority mismatches between SubApp level and requirements
-- [ ] P1 requirements in LOW priority SubApps without justification
+- [ ] Priority mismatches between MiniApp level and requirements
+- [ ] P1 requirements in LOW priority MiniApps without justification
 
 **Why it matters**: Priorities should align across hierarchy.
 
@@ -218,7 +218,7 @@ The DECOMPOSITION MUST NOT have:
 
 **Priority**: CRITICAL
 
-All SubApps MUST depend on:
+All MiniApps MUST depend on:
 
 - [ ] Auth Kernel (`cpt-{platform}-component-auth-kernel`)
 - [ ] Storage Kernel (`cpt-{platform}-component-storage-kernel`)
@@ -228,7 +228,7 @@ All SubApps MUST depend on:
 
 **Priority**: MEDIUM
 
-Where applicable, SubApp entries SHOULD note:
+Where applicable, MiniApp entries SHOULD note:
 
 - [ ] iOS-specific considerations
 - [ ] Android-specific considerations
@@ -238,16 +238,16 @@ Where applicable, SubApp entries SHOULD note:
 
 **Priority**: MEDIUM
 
-SubApps using notifications MUST reference:
+MiniApps using notifications MUST reference:
 
 - [ ] Notifications Kernel dependency
 - [ ] Push notification integration point
 
-### MOBILE-DECOMP-004: Offline-First SubApps
+### MOBILE-DECOMP-004: Offline-First MiniApps
 
 **Priority**: MEDIUM
 
-SubApps with offline requirements SHOULD note:
+MiniApps with offline requirements SHOULD note:
 
 - [ ] Offline capability in scope
 - [ ] Storage Kernel usage for offline data

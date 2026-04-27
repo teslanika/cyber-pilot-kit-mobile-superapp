@@ -1,12 +1,12 @@
-# PRD-SUBAPP Rules
+# PRD-MINIAPP Rules
 
-**Artifact**: PRD-SUBAPP  
+**Artifact**: PRD-MINIAPP  
 **Kit**: mobile-superapp  
-**Level**: L1 (SubApp)
+**Level**: L1 (MiniApp)
 
 **Dependencies**:
-- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — structural reference
-- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/checklist.md` — semantic quality criteria
 - `{platform_prd}` — parent Platform PRD reference
 
 ## Table of Contents
@@ -24,8 +24,8 @@
 
 ### Load Dependencies
 
-- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` for structure
-- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/checklist.md` for semantic guidance
 - [ ] Read parent Platform PRD for context
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
@@ -36,16 +36,16 @@
 
 ### Structural
 
-- [ ] PRD-SUBAPP follows `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` structure
+- [ ] PRD-MINIAPP follows `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (purpose, scope, traces to platform)
-  - Actors (primary actors with SubApp-specific context)
-  - Functional Requirements (core capabilities, SubApp-level NFRs)
+  - Actors (primary actors with MiniApp-specific context)
+  - Functional Requirements (core capabilities, MiniApp-level NFRs)
   - Use Cases (key user scenarios)
   - Dependencies (platform, external)
   - Traceability Matrix
   - Acceptance Criteria
-- [ ] All IDs follow `cpt-{subapp}-{kind}-{slug}` convention
+- [ ] All IDs follow `cpt-{miniapp}-{kind}-{slug}` convention
 - [ ] References to Platform PRD are valid
 - [ ] No placeholder content (TODO, TBD, FIXME)
 - [ ] No duplicate IDs within document
@@ -63,13 +63,13 @@
 
 ### Traceability
 
-- [ ] Every SubApp FR traces to Platform PRD FR (refines relationship)
-- [ ] Platform NFRs applicable to SubApp are inherited with `inherits` relation
-- [ ] SubApp-specific FRs are tagged `subapp-specific` with rationale
-- [ ] Use cases trace to SubApp FRs
+- [ ] Every MiniApp FR traces to Platform PRD FR (refines relationship)
+- [ ] Platform NFRs applicable to MiniApp are inherited with `inherits` relation
+- [ ] MiniApp-specific FRs are tagged `miniapp-specific` with rationale
+- [ ] Use cases trace to MiniApp FRs
 - [ ] Traceability matrix documents:
-  - Platform FR → SubApp FR coverage
-  - SubApp FR → Epic coverage (planned)
+  - Platform FR → MiniApp FR coverage
+  - MiniApp FR → Epic coverage (planned)
 
 ### Versioning
 
@@ -82,10 +82,10 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` for structure
-- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` for semantic guidance
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for parent requirements
-- [ ] Identify which Platform FRs this SubApp refines
+- [ ] Identify which Platform FRs this MiniApp refines
 
 ### Phase 2: Content Creation
 
@@ -94,16 +94,16 @@ Apply checklist semantics during creation:
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
 | Overview | Document purpose, scope (in/out), platform traces |
-| Actors | List primary actors with SubApp-specific context |
+| Actors | List primary actors with MiniApp-specific context |
 | Functional Requirements | Define FRs with priority, actor, description, acceptance |
-| NFRs | Extend/specialize Platform NFRs for SubApp context |
+| NFRs | Extend/specialize Platform NFRs for MiniApp context |
 | Use Cases | Document key user scenarios with flows |
 | Dependencies | List Kernel services and external integrations |
-| Traceability | Build coverage matrix for Platform → SubApp |
+| Traceability | Build coverage matrix for Platform → MiniApp |
 
 **Partial Completion Handling**:
 
-If PRD-SUBAPP cannot be completed in a single session:
+If PRD-MINIAPP cannot be completed in a single session:
 1. Checkpoint progress with completed sections
 2. Add `status: DRAFT` to document header
 3. Mark incomplete sections with `INCOMPLETE: {reason}`
@@ -111,17 +111,17 @@ If PRD-SUBAPP cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate SubApp PRD anchor: `cpt-{subapp}-prd`
-- [ ] Generate FR IDs: `cpt-{subapp}-fr-{slug}`
-- [ ] Generate NFR IDs: `cpt-{subapp}-nfr-{slug}`
-- [ ] Generate use case IDs: `cpt-{subapp}-usecase-{slug}`
+- [ ] Generate MiniApp PRD anchor: `cpt-{miniapp}-prd`
+- [ ] Generate FR IDs: `cpt-{miniapp}-fr-{slug}`
+- [ ] Generate NFR IDs: `cpt-{miniapp}-nfr-{slug}`
+- [ ] Generate use case IDs: `cpt-{miniapp}-usecase-{slug}`
 - [ ] Link to Platform PRD requirements
 - [ ] Reference platform actor IDs
 - [ ] Verify uniqueness with `cypilot list-ids`
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
 - [ ] Verify every FR is testable (measurable acceptance criteria)
 - [ ] Verify Platform traceability is complete
@@ -145,7 +145,7 @@ If PRD-SUBAPP cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/checklist.md` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 
@@ -160,7 +160,7 @@ If PRD-SUBAPP cannot be completed in a single session:
 ### Validation Report Format
 
 ```
-PRD-SUBAPP Validation Report
+PRD-MINIAPP Validation Report
 ════════════════════════════
 
 Structural: PASS/FAIL
@@ -180,11 +180,11 @@ Issues:
 - [ ] If parent Platform PRD not found:
   - Option 1: Run `/cypilot-generate PRD-PLATFORM` first (recommended)
   - Option 2: Continue without Platform PRD (document assumptions)
-  - Document "Platform PRD pending" in SubApp PRD header
+  - Document "Platform PRD pending" in MiniApp PRD header
 
 ### Unclear Scope
 
-- [ ] If uncertain about SubApp scope:
+- [ ] If uncertain about MiniApp scope:
   - Ask user for scope clarification
   - Document assumptions made
   - Mark scope section for review
@@ -201,8 +201,8 @@ Issues:
 
 ### Options
 
-- [ ] PRD-SUBAPP complete → `/cypilot-generate DESIGN-SUBAPP` — create technical design
+- [ ] PRD-MINIAPP complete → `/cypilot-generate DESIGN-MINIAPP` — create technical design
 - [ ] Need Platform context → `/cypilot-generate PRD-PLATFORM` — create Platform PRD first
-- [ ] PRD needs revision → continue editing PRD-SUBAPP
+- [ ] PRD needs revision → continue editing PRD-MINIAPP
 - [ ] Ready for Epic → `/cypilot-generate PRD-EPIC` — create Epic-level PRD
-- [ ] Ready for decomposition → `/cypilot-generate DECOMPOSITION-SUBAPP` — break into epics
+- [ ] Ready for decomposition → `/cypilot-generate DECOMPOSITION-MINIAPP` — break into epics

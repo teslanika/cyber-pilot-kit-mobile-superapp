@@ -50,11 +50,11 @@
   - Acceptance Criteria
   - Traceability
 - [ ] All IDs follow appropriate conventions:
-  - Feature ID: `cpt-{subapp}-feature-{slug}`
-  - Flow ID: `cpt-{subapp}-flow-{feature-slug}-{slug}`
-  - Algo ID: `cpt-{subapp}-algo-{feature-slug}-{platform}`
-  - State ID: `cpt-{subapp}-state-{feature-slug}`
-  - DoD ID: `cpt-{subapp}-dod-{feature-slug}-{slug}`
+  - Feature ID: `cpt-{miniapp}-feature-{slug}`
+  - Flow ID: `cpt-{miniapp}-flow-{feature-slug}-{slug}`
+  - Algo ID: `cpt-{miniapp}-algo-{feature-slug}-{platform}`
+  - State ID: `cpt-{miniapp}-state-{feature-slug}`
+  - DoD ID: `cpt-{miniapp}-dod-{feature-slug}-{slug}`
 - [ ] All CDSL steps have `inst-{id}` markers for implementation tracking
 - [ ] No placeholder content (TODO, TBD, FIXME)
 - [ ] No duplicate IDs within document
@@ -152,12 +152,12 @@ If FEATURE-MOBILE cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate feature status ID: `cpt-{subapp}-featstatus-{feature-slug}`
-- [ ] Generate feature ID: `cpt-{subapp}-feature-{slug}`
-- [ ] Generate flow IDs: `cpt-{subapp}-flow-{feature-slug}-{slug}`
-- [ ] Generate algo IDs: `cpt-{subapp}-algo-{feature-slug}-{platform}`
-- [ ] Generate state ID: `cpt-{subapp}-state-{feature-slug}`
-- [ ] Generate DoD IDs: `cpt-{subapp}-dod-{feature-slug}-{slug}`
+- [ ] Generate feature status ID: `cpt-{miniapp}-featstatus-{feature-slug}`
+- [ ] Generate feature ID: `cpt-{miniapp}-feature-{slug}`
+- [ ] Generate flow IDs: `cpt-{miniapp}-flow-{feature-slug}-{slug}`
+- [ ] Generate algo IDs: `cpt-{miniapp}-algo-{feature-slug}-{platform}`
+- [ ] Generate state ID: `cpt-{miniapp}-state-{feature-slug}`
+- [ ] Generate DoD IDs: `cpt-{miniapp}-dod-{feature-slug}-{slug}`
 - [ ] Generate unique `inst-{id}` for each CDSL step
 - [ ] Link to Epic PRD requirements
 - [ ] Link to Epic DESIGN components

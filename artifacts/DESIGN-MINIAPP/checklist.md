@@ -1,10 +1,10 @@
-# DESIGN-SUBAPP Checklist
+# DESIGN-MINIAPP Checklist
 
-**Artifact**: DESIGN-SUBAPP  
+**Artifact**: DESIGN-MINIAPP  
 **Kit**: mobile-superapp  
-**Level**: L1 (SubApp)
+**Level**: L1 (MiniApp)
 
-This checklist provides semantic quality criteria for SubApp-level technical design documents in mobile SuperApp projects.
+This checklist provides semantic quality criteria for MiniApp-level technical design documents in mobile SuperApp projects.
 
 ---
 
@@ -20,21 +20,21 @@ This checklist provides semantic quality criteria for SubApp-level technical des
 
 ## MUST HAVE Requirements
 
-### ARCH-SUBAPP-001: SubApp Overview Completeness
+### ARCH-MINIAPP-001: MiniApp Overview Completeness
 
 **Priority**: CRITICAL
 
-The SubApp DESIGN MUST include:
+The MiniApp DESIGN MUST include:
 
 - [ ] Clear purpose statement (1-2 paragraphs)
 - [ ] Link to parent Platform DESIGN
-- [ ] Capabilities table mapping SubApp PRD FRs to design responses
+- [ ] Capabilities table mapping MiniApp PRD FRs to design responses
 - [ ] NFR allocation table with design responses
 - [ ] ADR references for key decisions
 
-**Why it matters**: Without clear purpose and traceability, the SubApp's role in the SuperApp ecosystem is unclear.
+**Why it matters**: Without clear purpose and traceability, the MiniApp's role in the SuperApp ecosystem is unclear.
 
-### ARCH-SUBAPP-002: Module Structure Definition
+### ARCH-MINIAPP-002: Module Structure Definition
 
 **Priority**: CRITICAL
 
@@ -48,7 +48,7 @@ The DESIGN MUST define module structure for all platforms:
 
 **Why it matters**: Mobile SuperApps require consistent module organization across platforms for maintainability.
 
-### ARCH-SUBAPP-003: Navigation Architecture
+### ARCH-MINIAPP-003: Navigation Architecture
 
 **Priority**: HIGH
 
@@ -59,9 +59,9 @@ The DESIGN MUST include:
 - [ ] Deep link schema with parameters
 - [ ] Deep link handling flow description
 
-**Why it matters**: Navigation is critical for mobile UX and SubApp integration.
+**Why it matters**: Navigation is critical for mobile UX and MiniApp integration.
 
-### ARCH-SUBAPP-004: State Management Pattern
+### ARCH-MINIAPP-004: State Management Pattern
 
 **Priority**: CRITICAL
 
@@ -75,7 +75,7 @@ The DESIGN MUST document MVI pattern:
 
 **Why it matters**: Consistent state management is essential for predictable app behavior.
 
-### ARCH-SUBAPP-005: Domain Model
+### ARCH-MINIAPP-005: Domain Model
 
 **Priority**: HIGH
 
@@ -84,11 +84,11 @@ The DESIGN MUST define:
 - [ ] Core entities table with descriptions and locations
 - [ ] Entity relationships (diagram preferred)
 - [ ] Repository interfaces with key methods
-- [ ] Entity IDs following `cpt-{subapp}-entity-{slug}` pattern
+- [ ] Entity IDs following `cpt-{miniapp}-entity-{slug}` pattern
 
 **Why it matters**: Domain model is the foundation of business logic.
 
-### ARCH-SUBAPP-006: Kernel Integration
+### ARCH-MINIAPP-006: Kernel Integration
 
 **Priority**: CRITICAL
 
@@ -96,18 +96,18 @@ The DESIGN MUST specify:
 
 - [ ] Required kernel services table (Auth, Storage, Network, Notifications)
 - [ ] Criticality of each service
-- [ ] SubApp contract interface implementation (code snippet)
+- [ ] MiniApp contract interface implementation (code snippet)
 - [ ] Lifecycle methods (initialize, start, handleDeepLink, onBackground, onForeground, dispose)
 
-**Why it matters**: SubApps must integrate properly with the host app's shared services.
+**Why it matters**: MiniApps must integrate properly with the host app's shared services.
 
-### ARCH-SUBAPP-007: Traceability Section
+### ARCH-MINIAPP-007: Traceability Section
 
 **Priority**: HIGH
 
 The DESIGN MUST include traceability links:
 
-- [ ] SubApp PRD reference
+- [ ] MiniApp PRD reference
 - [ ] Platform DESIGN reference
 - [ ] ADRs folder reference
 - [ ] DECOMPOSITION reference
@@ -119,7 +119,7 @@ The DESIGN MUST include traceability links:
 
 ## SHOULD HAVE Requirements
 
-### ARCH-SUBAPP-008: API Layer Documentation
+### ARCH-MINIAPP-008: API Layer Documentation
 
 **Priority**: MEDIUM
 
@@ -129,7 +129,7 @@ The DESIGN SHOULD include:
 - [ ] WebSocket connections (if applicable)
 - [ ] Authentication requirements
 
-### ARCH-SUBAPP-009: Screen Implementation Types
+### ARCH-MINIAPP-009: Screen Implementation Types
 
 **Priority**: MEDIUM
 
@@ -138,7 +138,7 @@ For each screen in navigation inventory:
 - [ ] Implementation type specified (Native / WebView / Hybrid)
 - [ ] Rationale for WebView choices documented
 
-### ARCH-SUBAPP-010: Module Dependencies
+### ARCH-MINIAPP-010: Module Dependencies
 
 **Priority**: MEDIUM
 
@@ -152,7 +152,7 @@ The DESIGN SHOULD document:
 
 ## MUST NOT HAVE (Violations)
 
-### ARCH-SUBAPP-NO-001: No Implementation Code
+### ARCH-MINIAPP-NO-001: No Implementation Code
 
 **Priority**: HIGH
 
@@ -164,7 +164,7 @@ The DESIGN MUST NOT contain:
 
 **Why it matters**: Implementation belongs in code, not documentation.
 
-### ARCH-SUBAPP-NO-002: No Feature-Level Details
+### ARCH-MINIAPP-NO-002: No Feature-Level Details
 
 **Priority**: MEDIUM
 
@@ -174,9 +174,9 @@ The DESIGN MUST NOT contain:
 - [ ] Widget specifications (belongs in DESIGN-EPIC)
 - [ ] Acceptance criteria (belongs in FEATURE)
 
-**Why it matters**: DESIGN-SUBAPP is architectural, not feature-specific.
+**Why it matters**: DESIGN-MINIAPP is architectural, not feature-specific.
 
-### ARCH-SUBAPP-NO-003: No Product Requirements
+### ARCH-MINIAPP-NO-003: No Product Requirements
 
 **Priority**: HIGH
 
@@ -188,7 +188,7 @@ The DESIGN MUST NOT contain:
 
 **Why it matters**: Separation of concerns between PRD and DESIGN.
 
-### ARCH-SUBAPP-NO-004: No Platform DESIGN Duplication
+### ARCH-MINIAPP-NO-004: No Platform DESIGN Duplication
 
 **Priority**: MEDIUM
 
@@ -204,7 +204,7 @@ The DESIGN MUST NOT:
 
 ## Mobile-Specific Criteria
 
-### MOBILE-SUBAPP-001: KMP Module Organization
+### MOBILE-MINIAPP-001: KMP Module Organization
 
 **Priority**: HIGH
 
@@ -214,7 +214,7 @@ KMP modules MUST follow structure:
 - [ ] `data/` — repository implementations, API clients, local sources
 - [ ] `presentation/` — ViewModels, State, Intent, Effect
 
-### MOBILE-SUBAPP-002: Android Module Organization
+### MOBILE-MINIAPP-002: Android Module Organization
 
 **Priority**: HIGH
 
@@ -224,7 +224,7 @@ Android modules MUST follow structure:
 - [ ] `navigation/` — Navigation graph
 - [ ] Hilt DI modules documented
 
-### MOBILE-SUBAPP-003: iOS Module Organization
+### MOBILE-MINIAPP-003: iOS Module Organization
 
 **Priority**: HIGH
 
@@ -234,7 +234,7 @@ iOS modules MUST follow structure:
 - [ ] `Navigation/` — Coordinators
 - [ ] KMP integration pattern documented
 
-### MOBILE-SUBAPP-004: MVI Implementation Consistency
+### MOBILE-MINIAPP-004: MVI Implementation Consistency
 
 **Priority**: CRITICAL
 
@@ -245,13 +245,13 @@ State management MUST be consistent:
 - [ ] Effects are sealed class
 - [ ] ViewModel processes Intent → State + Effects
 
-### MOBILE-SUBAPP-005: Deep Link Schema
+### MOBILE-MINIAPP-005: Deep Link Schema
 
 **Priority**: HIGH
 
 Deep links MUST follow pattern:
 
-- [ ] Format: `constructor://{subapp}/{path}?{params}`
+- [ ] Format: `constructor://{miniapp}/{path}?{params}`
 - [ ] Parameters documented
 - [ ] Handling flow described
 
@@ -268,7 +268,7 @@ For each issue found, report:
 
 **Severity**: CRITICAL | HIGH | MEDIUM | LOW
 
-**Why Applicable**: {Why this requirement applies to this SubApp}
+**Why Applicable**: {Why this requirement applies to this MiniApp}
 
 **Issue**: {What is wrong}
 

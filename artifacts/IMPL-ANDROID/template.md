@@ -10,9 +10,9 @@ This document links the Android implementation to its product documentation.
 
 | Document | Path | ID |
 |----------|------|-----|
-| Feature | [subapps/{subapp}/.../features/{feature}/FEATURE.md](../../subapps/{subapp}/.../features/{feature}/FEATURE.md) | `cpt-{subapp}-feature-{slug}` |
-| Epic DESIGN | [subapps/{subapp}/.../DESIGN.md](../../subapps/{subapp}/.../DESIGN.md) | `cpt-{subapp}-epic-{epic}` |
-| SubApp DESIGN | [subapps/{subapp}/DESIGN.md](../../subapps/{subapp}/DESIGN.md) | `cpt-{subapp}-design` |
+| Feature | [miniapps/{miniapp}/.../features/{feature}/FEATURE.md](../../miniapps/{miniapp}/.../features/{feature}/FEATURE.md) | `cpt-{miniapp}-feature-{slug}` |
+| Epic DESIGN | [miniapps/{miniapp}/.../DESIGN.md](../../miniapps/{miniapp}/.../DESIGN.md) | `cpt-{miniapp}-epic-{epic}` |
+| MiniApp DESIGN | [miniapps/{miniapp}/DESIGN.md](../../miniapps/{miniapp}/DESIGN.md) | `cpt-{miniapp}-design` |
 
 ## Scope
 
@@ -29,10 +29,10 @@ This Android module implements:
 
 | Design Component ID | Code File | Implementation ID |
 |---------------------|-----------|-------------------|
-| `cpt-{subapp}-{epic}-screen-{slug}` | `ui/{feature}/{Feature}Screen.kt` | `@cpt-impl cpt-android-{module}-screen-{slug}` |
-| `cpt-{subapp}-{epic}-widget-{slug}` | `ui/{feature}/components/{Widget}.kt` | `@cpt-impl cpt-android-{module}-widget-{slug}` |
-| `cpt-{subapp}-{epic}-nav` | `navigation/{Feature}NavGraph.kt` | `@cpt-impl cpt-android-{module}-nav-{slug}` |
-| `cpt-{subapp}-algo-{feature-slug}-android` | `ui/{feature}/{Feature}Screen.kt` | `@cpt-impl cpt-android-{module}-ui-{slug}` |
+| `cpt-{miniapp}-{epic}-screen-{slug}` | `ui/{feature}/{Feature}Screen.kt` | `@cpt-impl cpt-android-{module}-screen-{slug}` |
+| `cpt-{miniapp}-{epic}-widget-{slug}` | `ui/{feature}/components/{Widget}.kt` | `@cpt-impl cpt-android-{module}-widget-{slug}` |
+| `cpt-{miniapp}-{epic}-nav` | `navigation/{Feature}NavGraph.kt` | `@cpt-impl cpt-android-{module}-nav-{slug}` |
+| `cpt-{miniapp}-algo-{feature-slug}-android` | `ui/{feature}/{Feature}Screen.kt` | `@cpt-impl cpt-android-{module}-ui-{slug}` |
 
 ## Directory Structure
 

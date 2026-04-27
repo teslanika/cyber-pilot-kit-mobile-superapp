@@ -26,7 +26,7 @@ This checklist provides semantic quality criteria for Feature specification docu
 
 The FEATURE MUST include context section:
 
-- [ ] Feature ID following `cpt-{subapp}-feature-{slug}` pattern
+- [ ] Feature ID following `cpt-{miniapp}-feature-{slug}` pattern
 - [ ] Implementation status marker
 - [ ] Overview (1-2 sentences)
 - [ ] Purpose (why this feature exists)
@@ -41,7 +41,7 @@ The FEATURE MUST include context section:
 
 The FEATURE MUST include Actor Flows:
 
-- [ ] Primary flow with ID `cpt-{subapp}-flow-{feature-slug}-{slug}`
+- [ ] Primary flow with ID `cpt-{miniapp}-flow-{feature-slug}-{slug}`
 - [ ] Actor reference
 - [ ] Success scenarios listed
 - [ ] Error scenarios listed
@@ -97,7 +97,7 @@ The FEATURE MUST include platform sections:
 - [ ] Section 3.1: KMP Shared Logic
 - [ ] Section 3.2: Android UI
 - [ ] Section 3.3: iOS UI
-- [ ] Each section with ID `cpt-{subapp}-algo-{feature-slug}-{platform}`
+- [ ] Each section with ID `cpt-{miniapp}-algo-{feature-slug}-{platform}`
 
 **Why it matters**: Platform sections guide implementation.
 
@@ -107,8 +107,8 @@ The FEATURE MUST include platform sections:
 
 KMP section MUST include:
 
-- [ ] Algorithm ID `cpt-{subapp}-algo-{feature-slug}-kmp`
-- [ ] Location (`constructor-sdk/feature/{subapp}/`)
+- [ ] Algorithm ID `cpt-{miniapp}-algo-{feature-slug}-kmp`
+- [ ] Location (`constructor-sdk/feature/{miniapp}/`)
 - [ ] ViewModel steps (receive intent, call use case, update state, emit effects)
 - [ ] Use Case steps (validate, call repo, transform, return)
 - [ ] Repository steps (cache check, fetch, store, return)
@@ -121,8 +121,8 @@ KMP section MUST include:
 
 Android section MUST include:
 
-- [ ] Algorithm ID `cpt-{subapp}-algo-{feature-slug}-android`
-- [ ] Location (`android-app/feature/{subapp}/ui/`)
+- [ ] Algorithm ID `cpt-{miniapp}-algo-{feature-slug}-android`
+- [ ] Location (`android-app/feature/{miniapp}/ui/`)
 - [ ] Compose Screen steps (collect state, render, handle actions, handle effects)
 
 **Why it matters**: Android UI implementation guidance.
@@ -133,8 +133,8 @@ Android section MUST include:
 
 iOS section MUST include:
 
-- [ ] Algorithm ID `cpt-{subapp}-algo-{feature-slug}-ios`
-- [ ] Location (`ios-app/Features/{SubApp}/Views/`)
+- [ ] Algorithm ID `cpt-{miniapp}-algo-{feature-slug}-ios`
+- [ ] Location (`ios-app/Features/{MiniApp}/Views/`)
 - [ ] SwiftUI View steps (observe state, render body, handle actions, handle effects)
 
 **Why it matters**: iOS UI implementation guidance.
@@ -145,7 +145,7 @@ iOS section MUST include:
 
 The FEATURE MUST include state machine:
 
-- [ ] State ID `cpt-{subapp}-state-{feature-slug}`
+- [ ] State ID `cpt-{miniapp}-state-{feature-slug}`
 - [ ] States list (Loading, Content, Error, Empty)
 - [ ] Initial State
 - [ ] Transitions with FROM/TO/WHEN format
@@ -159,7 +159,7 @@ The FEATURE MUST include state machine:
 
 The FEATURE MUST include DoD:
 
-- [ ] DoD ID following `cpt-{subapp}-dod-{feature-slug}-{slug}` pattern
+- [ ] DoD ID following `cpt-{miniapp}-dod-{feature-slug}-{slug}` pattern
 - [ ] Clear requirement ("The system MUST...")
 - [ ] Implements (which flows)
 - [ ] Touches (KMP, Android, iOS, API modules)
@@ -213,7 +213,7 @@ The FEATURE SHOULD include:
 
 If feature uses WebView:
 
-- [ ] WebView algorithm ID `cpt-{subapp}-algo-{feature-slug}-webview`
+- [ ] WebView algorithm ID `cpt-{miniapp}-algo-{feature-slug}-webview`
 - [ ] WebView URL pattern
 - [ ] Native → WebView steps
 - [ ] WebView → Native steps

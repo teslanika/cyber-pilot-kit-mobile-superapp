@@ -1,10 +1,10 @@
-# DECOMPOSITION-SUBAPP Checklist
+# DECOMPOSITION-MINIAPP Checklist
 
-**Artifact**: DECOMPOSITION-SUBAPP  
+**Artifact**: DECOMPOSITION-MINIAPP  
 **Kit**: mobile-superapp  
-**Level**: L1 (SubApp)
+**Level**: L1 (MiniApp)
 
-This checklist provides semantic quality criteria for SubApp-level Decomposition documents in mobile SuperApp projects.
+This checklist provides semantic quality criteria for MiniApp-level Decomposition documents in mobile SuperApp projects.
 
 ---
 
@@ -20,21 +20,21 @@ This checklist provides semantic quality criteria for SubApp-level Decomposition
 
 ## MUST HAVE Requirements
 
-### DECOMP-SUBAPP-001: Overview Section
+### DECOMP-MINIAPP-001: Overview Section
 
 **Priority**: CRITICAL
 
 The DECOMPOSITION MUST include:
 
 - [ ] Clear purpose statement
-- [ ] Link to SubApp PRD
-- [ ] Link to SubApp DESIGN
+- [ ] Link to MiniApp PRD
+- [ ] Link to MiniApp DESIGN
 - [ ] Link to Platform DECOMPOSITION
 - [ ] Overall implementation status marker with ID
 
 **Why it matters**: Overview establishes context for Epic decomposition.
 
-### DECOMP-SUBAPP-002: Epic Categories
+### DECOMP-MINIAPP-002: Epic Categories
 
 **Priority**: CRITICAL
 
@@ -46,13 +46,13 @@ The DECOMPOSITION MUST organize Epics by category:
 
 **Why it matters**: Categories clarify Epic types and dependencies.
 
-### DECOMP-SUBAPP-003: Screen Epic Entries
+### DECOMP-MINIAPP-003: Screen Epic Entries
 
 **Priority**: CRITICAL
 
 Each Screen Epic entry MUST include:
 
-- [ ] Epic ID following `cpt-{subapp}-epic-{screen}` pattern
+- [ ] Epic ID following `cpt-{miniapp}-epic-{screen}` pattern
 - [ ] Link to Epic folder
 - [ ] Priority (HIGH, MEDIUM, LOW)
 - [ ] Category: Screen
@@ -64,13 +64,13 @@ Each Screen Epic entry MUST include:
 
 **Why it matters**: Complete entries enable independent Epic development.
 
-### DECOMP-SUBAPP-004: Capability Epic Entries
+### DECOMP-MINIAPP-004: Capability Epic Entries
 
 **Priority**: HIGH
 
 Each Capability Epic entry MUST include:
 
-- [ ] Epic ID following `cpt-{subapp}-epic-{capability}` pattern
+- [ ] Epic ID following `cpt-{miniapp}-epic-{capability}` pattern
 - [ ] Category: Capability (cross-cutting)
 - [ ] Purpose description
 - [ ] Kernel integration references
@@ -78,13 +78,13 @@ Each Capability Epic entry MUST include:
 
 **Why it matters**: Capabilities are shared across screens.
 
-### DECOMP-SUBAPP-005: Flow Epic Entries
+### DECOMP-MINIAPP-005: Flow Epic Entries
 
 **Priority**: HIGH
 
 Each Flow Epic entry MUST include:
 
-- [ ] Epic ID following `cpt-{subapp}-epic-{flow}` pattern
+- [ ] Epic ID following `cpt-{miniapp}-epic-{flow}` pattern
 - [ ] Category: Flow (multi-screen journey)
 - [ ] Purpose description
 - [ ] Screens involved (ordered list)
@@ -92,33 +92,33 @@ Each Flow Epic entry MUST include:
 
 **Why it matters**: Flows define user journeys spanning screens.
 
-### DECOMP-SUBAPP-006: Requirements Coverage
+### DECOMP-MINIAPP-006: Requirements Coverage
 
 **Priority**: CRITICAL
 
 Each Epic entry MUST document:
 
 - [ ] Requirements covered list
-- [ ] `cpt-{subapp}-fr-{slug}` references for FRs
-- [ ] `cpt-{subapp}-nfr-{slug}` references for NFRs (if applicable)
+- [ ] `cpt-{miniapp}-fr-{slug}` references for FRs
+- [ ] `cpt-{miniapp}-nfr-{slug}` references for NFRs (if applicable)
 - [ ] Priority marker for each requirement
 - [ ] Checkbox for implementation status
 
-**Why it matters**: Coverage ensures all SubApp FRs are allocated to Epics.
+**Why it matters**: Coverage ensures all MiniApp FRs are allocated to Epics.
 
-### DECOMP-SUBAPP-007: Design Components
+### DECOMP-MINIAPP-007: Design Components
 
 **Priority**: HIGH
 
 Each Epic entry MUST list:
 
-- [ ] Design components from SubApp DESIGN
-- [ ] `cpt-{subapp}-component-{slug}` references
+- [ ] Design components from MiniApp DESIGN
+- [ ] `cpt-{miniapp}-component-{slug}` references
 - [ ] Priority marker for each component
 
 **Why it matters**: Components trace DESIGN elements to Epics.
 
-### DECOMP-SUBAPP-008: Epic Dependencies
+### DECOMP-MINIAPP-008: Epic Dependencies
 
 **Priority**: HIGH
 
@@ -130,7 +130,7 @@ The DECOMPOSITION MUST include:
 
 **Why it matters**: Dependencies determine implementation order.
 
-### DECOMP-SUBAPP-009: Coverage Matrices
+### DECOMP-MINIAPP-009: Coverage Matrices
 
 **Priority**: CRITICAL
 
@@ -142,7 +142,7 @@ The DECOMPOSITION MUST include:
 
 **Why it matters**: Matrices enable coverage validation.
 
-### DECOMP-SUBAPP-010: Implementation Order
+### DECOMP-MINIAPP-010: Implementation Order
 
 **Priority**: HIGH
 
@@ -159,7 +159,7 @@ The DECOMPOSITION MUST include:
 
 ## SHOULD HAVE Requirements
 
-### DECOMP-SUBAPP-011: Target Release Per Epic
+### DECOMP-MINIAPP-011: Target Release Per Epic
 
 **Priority**: MEDIUM
 
@@ -168,16 +168,16 @@ Each Epic entry SHOULD include:
 - [ ] Target release (Q{X} 202{Y})
 - [ ] Alignment with Platform roadmap
 
-### DECOMP-SUBAPP-012: KMP Module References
+### DECOMP-MINIAPP-012: KMP Module References
 
 **Priority**: MEDIUM
 
 Screen/Capability Epics SHOULD include:
 
-- [ ] KMP module reference `cpt-{subapp}-component-kmp-{slug}`
+- [ ] KMP module reference `cpt-{miniapp}-component-kmp-{slug}`
 - [ ] Module location hint
 
-### DECOMP-SUBAPP-013: Widget Lists
+### DECOMP-MINIAPP-013: Widget Lists
 
 **Priority**: LOW
 
@@ -190,7 +190,7 @@ Screen Epics SHOULD list:
 
 ## MUST NOT HAVE (Violations)
 
-### DECOMP-SUBAPP-NO-001: No Feature Details
+### DECOMP-MINIAPP-NO-001: No Feature Details
 
 **Priority**: HIGH
 
@@ -200,9 +200,9 @@ The DECOMPOSITION MUST NOT contain:
 - [ ] CDSL flows (belongs in FEATURE)
 - [ ] DoD definitions (belongs in FEATURE)
 
-**Why it matters**: SubApp DECOMPOSITION only covers Epics.
+**Why it matters**: MiniApp DECOMPOSITION only covers Epics.
 
-### DECOMP-SUBAPP-NO-002: No Implementation Details
+### DECOMP-MINIAPP-NO-002: No Implementation Details
 
 **Priority**: HIGH
 
@@ -214,7 +214,7 @@ The DECOMPOSITION MUST NOT contain:
 
 **Why it matters**: Decomposition is organizational, not technical.
 
-### DECOMP-SUBAPP-NO-003: No Missing Traceability
+### DECOMP-MINIAPP-NO-003: No Missing Traceability
 
 **Priority**: CRITICAL
 
@@ -226,16 +226,16 @@ The DECOMPOSITION MUST NOT have:
 
 **Why it matters**: Full traceability is the purpose of decomposition.
 
-### DECOMP-SUBAPP-NO-004: No Platform DECOMPOSITION Duplication
+### DECOMP-MINIAPP-NO-004: No Platform DECOMPOSITION Duplication
 
 **Priority**: MEDIUM
 
 The DECOMPOSITION MUST NOT:
 
-- [ ] Repeat SubApp entry details from Platform DECOMPOSITION
-- [ ] Redefine SubApp scope (reference only)
+- [ ] Repeat MiniApp entry details from Platform DECOMPOSITION
+- [ ] Redefine MiniApp scope (reference only)
 
-**Why it matters**: Reference Platform DECOMPOSITION for SubApp context.
+**Why it matters**: Reference Platform DECOMPOSITION for MiniApp context.
 
 ---
 

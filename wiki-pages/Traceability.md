@@ -18,7 +18,7 @@ Developer: "Which screens? What data? How fresh?"
 ```
 Platform FR: cpt-platform-fr-offline-support
     ↓ "refined by"
-SubApp FR: cpt-learn-fr-offline-courses
+MiniApp FR: cpt-learn-fr-offline-courses
     ↓ "detailed by"
 Epic Story: cpt-learn-course-catalog-story-cache-courses
     ↓ "specified by"
@@ -31,14 +31,14 @@ Code: @cpt-flow:cpt-learn-flow-course-list-load-cached:p1
 
 | Benefit | Description |
 |---------|-------------|
-| **Impact Analysis** | Change platform FR → see all affected SubApps/Features |
+| **Impact Analysis** | Change platform FR → see all affected MiniApps/Features |
 | **Coverage Check** | Ensure every platform requirement reaches code |
 | **Audit Trail** | For compliance and security reviews |
 | **Gap Detection** | Find requirements without implementation |
 
 ## How to Link
 
-### In PRD-SUBAPP
+### In PRD-MINIAPP
 
 Reference Platform FRs:
 
@@ -46,7 +46,7 @@ Reference Platform FRs:
 ## Traceability
 
 ### Platform Requirements
-| Platform FR | SubApp FR |
+| Platform FR | MiniApp FR |
 |-------------|-----------|
 | `cpt-platform-fr-offline-support` | `cpt-learn-fr-offline-courses` |
 | `cpt-platform-fr-push-notifications` | `cpt-learn-fr-course-reminders` |
@@ -54,13 +54,13 @@ Reference Platform FRs:
 
 ### In PRD-EPIC
 
-Reference SubApp FRs:
+Reference MiniApp FRs:
 
 ```markdown
 ## Traceability
 
-### SubApp Requirements
-| SubApp FR | Epic Story |
+### MiniApp Requirements
+| MiniApp FR | Epic Story |
 |-----------|------------|
 | `cpt-learn-fr-offline-courses` | `cpt-learn-course-catalog-story-cache-courses` |
 ```
@@ -76,7 +76,7 @@ Reference Epic and higher levels:
 | Level | ID | Description |
 |-------|-----|-------------|
 | Platform FR | `cpt-platform-fr-offline-support` | App works offline |
-| SubApp FR | `cpt-learn-fr-offline-courses` | Cached courses available |
+| MiniApp FR | `cpt-learn-fr-offline-courses` | Cached courses available |
 | Epic Story | `cpt-learn-course-catalog-story-cache-courses` | User can browse cached |
 ```
 
@@ -145,9 +145,9 @@ FEATURE-MOBILE: flow/algo/state/dod IDs → [x]
     ↓
 DECOMPOSITION-EPIC: feature entry [x]
     ↓
-DECOMPOSITION-SUBAPP: epic entry [x]
+DECOMPOSITION-MINIAPP: epic entry [x]
     ↓
-DECOMPOSITION-PLATFORM: subapp entry [x]
+DECOMPOSITION-PLATFORM: miniapp entry [x]
 ```
 
 ## Consistency Rules

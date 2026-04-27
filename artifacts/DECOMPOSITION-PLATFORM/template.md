@@ -8,13 +8,13 @@
 
 ## 1. Overview
 
-This document decomposes the Platform DESIGN into SubApps. Each SubApp is a self-contained module within the SuperApp that can be developed, deployed, and activated independently.
+This document decomposes the Platform DESIGN into MiniApps. Each MiniApp is a self-contained module within the SuperApp that can be developed, deployed, and activated independently.
 
 **Parent Documents:**
 - PRD: [PRD.md](./PRD.md)
 - DESIGN: [DESIGN.md](./DESIGN.md)
 
-## 2. SubApp Entries
+## 2. MiniApp Entries
 
 **Overall implementation status:**
 
@@ -22,11 +22,11 @@ This document decomposes the Platform DESIGN into SubApps. Each SubApp is a self
 
 ---
 
-### 2.1 [{SubApp Name 1}](subapps/{subapp1}/) - HIGH
+### 2.1 [{MiniApp Name 1}](miniapps/{miniapp1}/) - HIGH
 
-- [ ] `p1` - **ID**: `cpt-{platform}-subapp-{subapp1}`
+- [ ] `p1` - **ID**: `cpt-{platform}-miniapp-{miniapp1}`
 
-- **Purpose**: {Few sentences describing what this SubApp provides and why it exists}
+- **Purpose**: {Few sentences describing what this MiniApp provides and why it exists}
 
 - **Target Users**: `cpt-{platform}-actor-{slug}`
 
@@ -53,17 +53,17 @@ This document decomposes the Platform DESIGN into SubApps. Each SubApp is a self
 
 ---
 
-### 2.2 [{SubApp Name 2}](subapps/{subapp2}/) - MEDIUM
+### 2.2 [{MiniApp Name 2}](miniapps/{miniapp2}/) - MEDIUM
 
-- [ ] `p2` - **ID**: `cpt-{platform}-subapp-{subapp2}`
+- [ ] `p2` - **ID**: `cpt-{platform}-miniapp-{miniapp2}`
 
-- **Purpose**: {Few sentences describing what this SubApp provides}
+- **Purpose**: {Few sentences describing what this MiniApp provides}
 
 - **Target Users**: `cpt-{platform}-actor-{slug}`
 
 - **Depends On**: 
   - Kernel (Auth, Storage, Network)
-  - `cpt-{platform}-subapp-{subapp1}` (if dependent on another SubApp)
+  - `cpt-{platform}-miniapp-{miniapp1}` (if dependent on another MiniApp)
 
 - **Scope**:
   - {in-scope capability 1}
@@ -84,11 +84,11 @@ This document decomposes the Platform DESIGN into SubApps. Each SubApp is a self
 
 ---
 
-### 2.3 [{SubApp Name 3}](subapps/{subapp3}/) - LOW
+### 2.3 [{MiniApp Name 3}](miniapps/{miniapp3}/) - LOW
 
-- [ ] `p3` - **ID**: `cpt-{platform}-subapp-{subapp3}`
+- [ ] `p3` - **ID**: `cpt-{platform}-miniapp-{miniapp3}`
 
-- **Purpose**: {Few sentences describing what this SubApp provides}
+- **Purpose**: {Few sentences describing what this MiniApp provides}
 
 - **Target Users**: `cpt-{platform}-actor-{slug}`
 
@@ -112,38 +112,38 @@ This document decomposes the Platform DESIGN into SubApps. Each SubApp is a self
 
 ## 3. Shared Kernel Components
 
-Components from Platform DESIGN that are shared across all SubApps:
+Components from Platform DESIGN that are shared across all MiniApps:
 
-| Component ID | Component | SubApps Using |
+| Component ID | Component | MiniApps Using |
 |--------------|-----------|---------------|
 | `cpt-{platform}-component-auth-kernel` | Authentication Module | All |
 | `cpt-{platform}-component-storage-kernel` | Storage Module | All |
 | `cpt-{platform}-component-network-kernel` | Networking Module | All |
 | `cpt-{platform}-component-notifications-kernel` | Notifications Module | Student, Proctor |
 
-## 4. SubApp Dependencies
+## 4. MiniApp Dependencies
 
 ```text
 Kernel (Auth, Storage, Network, Notifications)
     │
-    ├─→ cpt-{platform}-subapp-student (independent)
+    ├─→ cpt-{platform}-miniapp-student (independent)
     │
-    ├─→ cpt-{platform}-subapp-proctor (independent)
+    ├─→ cpt-{platform}-miniapp-proctor (independent)
     │       │
-    │       └─→ uses: Student SubApp deep links for exam navigation
+    │       └─→ uses: Student MiniApp deep links for exam navigation
     │
-    └─→ cpt-{platform}-subapp-groups (independent)
+    └─→ cpt-{platform}-miniapp-groups (independent)
 ```
 
 **Dependency Rationale**:
 
-- All SubApps depend on **Kernel** for shared services (auth, storage, network)
-- SubApps are **loosely coupled** — communicate via deep links and events, not direct calls
-- **Proctor → Student**: Proctor needs to navigate to exam content in Student SubApp
+- All MiniApps depend on **Kernel** for shared services (auth, storage, network)
+- MiniApps are **loosely coupled** — communicate via deep links and events, not direct calls
+- **Proctor → Student**: Proctor needs to navigate to exam content in Student MiniApp
 
 ## 5. Release Roadmap
 
-| Quarter | SubApps | Milestone |
+| Quarter | MiniApps | Milestone |
 |---------|---------|-----------|
 | Q1 2026 | Student (MVP) | Core learning experience |
 | Q2 2026 | Proctor, Groups (WebView) | Full proctoring, video calls |

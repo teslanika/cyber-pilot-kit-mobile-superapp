@@ -135,11 +135,11 @@ Requirements that significantly influence platform architecture decisions.
 | Navigation | ✓ | ✓ | ✗ |
 | Platform APIs | ✓ | ✓ | ✗ |
 
-## 3. SubApp Architecture
+## 3. MiniApp Architecture
 
-### 3.1 SubApp Container Model
+### 3.1 MiniApp Container Model
 
-- [ ] `p1` - **ID**: `cpt-{platform}-component-subapp-container`
+- [ ] `p1` - **ID**: `cpt-{platform}-component-miniapp-container`
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -152,26 +152,26 @@ Requirements that significantly influence platform architecture decisions.
 │  └──────────────────────────────────────────────────────┘   │
 │                           │                                  │
 │  ┌────────────────────────┴─────────────────────────────┐   │
-│  │                  SUBAPP REGISTRY                      │   │
+│  │                  MINIAPP REGISTRY                      │   │
 │  └────────────────────────┬─────────────────────────────┘   │
 │                           │                                  │
 │  ┌─────────┬─────────┬────┴────┬─────────┬─────────┐       │
 │  │ Student │ Proctor │ Groups  │Practice │  ...    │       │
-│  │ SubApp  │ SubApp  │ SubApp  │ SubApp  │         │       │
+│  │ MiniApp  │ MiniApp  │ MiniApp  │ MiniApp  │         │       │
 │  └─────────┴─────────┴─────────┴─────────┴─────────┘       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**SubApp Interface Contract:**
+**MiniApp Interface Contract:**
 
 ```kotlin
-interface SubApp {
+interface MiniApp {
     val id: String
     val name: String
     val version: String
     
     fun initialize(kernel: Kernel)
-    fun start(): SubAppScreen
+    fun start(): MiniAppScreen
     fun handleDeepLink(uri: Uri): Boolean
     fun onBackground()
     fun onForeground()
@@ -179,30 +179,30 @@ interface SubApp {
 }
 ```
 
-### 3.2 SubApp Lifecycle
+### 3.2 MiniApp Lifecycle
 
-- [ ] `p2` - **ID**: `cpt-{platform}-state-subapp-lifecycle`
+- [ ] `p2` - **ID**: `cpt-{platform}-state-miniapp-lifecycle`
 
 **States**: REGISTERED, INITIALIZING, READY, ACTIVE, BACKGROUND, DISPOSED
 
 **Initial State**: REGISTERED
 
 **Transitions**:
-1. **FROM** REGISTERED **TO** INITIALIZING **WHEN** user selects SubApp
+1. **FROM** REGISTERED **TO** INITIALIZING **WHEN** user selects MiniApp
 2. **FROM** INITIALIZING **TO** READY **WHEN** initialization complete
-3. **FROM** READY **TO** ACTIVE **WHEN** SubApp screen displayed
-4. **FROM** ACTIVE **TO** BACKGROUND **WHEN** app backgrounded or SubApp switched
+3. **FROM** READY **TO** ACTIVE **WHEN** MiniApp screen displayed
+4. **FROM** ACTIVE **TO** BACKGROUND **WHEN** app backgrounded or MiniApp switched
 5. **FROM** BACKGROUND **TO** ACTIVE **WHEN** app foregrounded
-6. **FROM** any **TO** DISPOSED **WHEN** SubApp unloaded
+6. **FROM** any **TO** DISPOSED **WHEN** MiniApp unloaded
 
-### 3.3 SubApp Communication
+### 3.3 MiniApp Communication
 
-- [ ] `p2` - **ID**: `cpt-{platform}-component-subapp-router`
+- [ ] `p2` - **ID**: `cpt-{platform}-component-miniapp-router`
 
-**Inter-SubApp Navigation:**
-- Deep links: `constructor://subapp/{subapp-id}/path`
-- Event bus for cross-SubApp notifications
-- Shared Kernel services (no direct SubApp-to-SubApp calls)
+**Inter-MiniApp Navigation:**
+- Deep links: `constructor://miniapp/{miniapp-id}/path`
+- Event bus for cross-MiniApp notifications
+- Shared Kernel services (no direct MiniApp-to-MiniApp calls)
 
 ## 4. Shared Kernel
 
@@ -331,4 +331,4 @@ interface SubApp {
 - **PRD**: [PRD.md](./PRD.md)
 - **ADRs**: [adr/](./adr/)
 - **DECOMPOSITION**: [DECOMPOSITION.md](./DECOMPOSITION.md)
-- **SubApps**: [subapps/](../subapps/)
+- **MiniApps**: [miniapps/](../miniapps/)

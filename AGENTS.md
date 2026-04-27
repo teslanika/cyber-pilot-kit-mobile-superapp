@@ -3,21 +3,21 @@
 ## Navigation Rules
 
 ### PRD Templates (with traceability)
-ALWAYS open and follow `{kit_path}/artifacts/PRD-SUBAPP/template.md` WHEN creating SubApp-level PRD
+ALWAYS open and follow `{kit_path}/artifacts/PRD-MINIAPP/template.md` WHEN creating MiniApp-level PRD
 
 ALWAYS open and follow `{kit_path}/artifacts/PRD-EPIC/template.md` WHEN creating Epic-level PRD
 
 ### DESIGN Templates
 ALWAYS open and follow `{kit_path}/artifacts/DESIGN-PLATFORM/template.md` WHEN creating Platform-level DESIGN
 
-ALWAYS open and follow `{kit_path}/artifacts/DESIGN-SUBAPP/template.md` WHEN creating SubApp-level DESIGN
+ALWAYS open and follow `{kit_path}/artifacts/DESIGN-MINIAPP/template.md` WHEN creating MiniApp-level DESIGN
 
 ALWAYS open and follow `{kit_path}/artifacts/DESIGN-EPIC/template.md` WHEN creating Epic-level DESIGN (screen, capability, flow)
 
 ### DECOMPOSITION Templates
 ALWAYS open and follow `{kit_path}/artifacts/DECOMPOSITION-PLATFORM/template.md` WHEN creating Platform DECOMPOSITION
 
-ALWAYS open and follow `{kit_path}/artifacts/DECOMPOSITION-SUBAPP/template.md` WHEN creating SubApp DECOMPOSITION
+ALWAYS open and follow `{kit_path}/artifacts/DECOMPOSITION-MINIAPP/template.md` WHEN creating MiniApp DECOMPOSITION
 
 ALWAYS open and follow `{kit_path}/artifacts/DECOMPOSITION-EPIC/template.md` WHEN creating Epic DECOMPOSITION
 
@@ -37,18 +37,18 @@ ALWAYS open and follow `{kit_path}/constraints.toml` WHEN validating mobile-supe
 ## Level Detection
 
 WHEN artifact path matches `architecture/` → Platform level (L0)
-WHEN artifact path matches `subapps/{subapp}/` (direct children) → SubApp level (L1)
-WHEN artifact path matches `subapps/{subapp}/screens/{screen}/` → Epic level (L2, screen)
-WHEN artifact path matches `subapps/{subapp}/capabilities/{capability}/` → Epic level (L2, capability)
-WHEN artifact path matches `subapps/{subapp}/flows/{flow}/` → Epic level (L2, flow)
-WHEN artifact path matches `subapps/{subapp}/*/{epic}/features/{feature}/` → Feature level (L3)
+WHEN artifact path matches `miniapps/{miniapp}/` (direct children) → MiniApp level (L1)
+WHEN artifact path matches `miniapps/{miniapp}/screens/{screen}/` → Epic level (L2, screen)
+WHEN artifact path matches `miniapps/{miniapp}/capabilities/{capability}/` → Epic level (L2, capability)
+WHEN artifact path matches `miniapps/{miniapp}/flows/{flow}/` → Epic level (L2, flow)
+WHEN artifact path matches `miniapps/{miniapp}/*/{epic}/features/{feature}/` → Feature level (L3)
 
 ## Template Selection
 
 | Level | PRD | DESIGN | DECOMPOSITION | FEATURE |
 |-------|-----|--------|---------------|---------|
 | L0: Platform | SDLC PRD | DESIGN-PLATFORM | DECOMPOSITION-PLATFORM | — |
-| L1: SubApp | **PRD-SUBAPP** | DESIGN-SUBAPP | DECOMPOSITION-SUBAPP | — |
+| L1: MiniApp | **PRD-MINIAPP** | DESIGN-MINIAPP | DECOMPOSITION-MINIAPP | — |
 | L2: Epic | **PRD-EPIC** | DESIGN-EPIC | DECOMPOSITION-EPIC | — |
 | L3: Feature | — | — | — | FEATURE-MOBILE |
 
@@ -56,14 +56,14 @@ WHEN artifact path matches `subapps/{subapp}/*/{epic}/features/{feature}/` → F
 
 ### FR Cascade Requirements
 
-When creating SubApp PRD:
+When creating MiniApp PRD:
 1. MUST include "Traces To Platform" table
-2. Each SubApp FR SHOULD reference parent Platform FR
-3. FRs without parent must be tagged `subapp-specific`
+2. Each MiniApp FR SHOULD reference parent Platform FR
+3. FRs without parent must be tagged `miniapp-specific`
 
 When creating Epic PRD:
 1. MUST include "Traces To Parent Requirements" table
-2. Each Epic FR SHOULD reference parent SubApp FR
+2. Each Epic FR SHOULD reference parent MiniApp FR
 3. FRs without parent must be tagged `epic-specific`
 
 When creating FEATURE:
@@ -76,11 +76,11 @@ When creating FEATURE:
 # Validate FR traceability cascade
 cpt validate --check=fr-cascade
 
-# Check coverage of Platform FRs → SubApp FRs
+# Check coverage of Platform FRs → MiniApp FRs
 cpt validate --check=platform-fr-coverage
 
-# Check coverage of SubApp FRs → Epic FRs  
-cpt validate --check=subapp-fr-coverage
+# Check coverage of MiniApp FRs → Epic FRs  
+cpt validate --check=miniapp-fr-coverage
 
 # Check Feature implementation coverage
 cpt validate --check=feature-impl-coverage

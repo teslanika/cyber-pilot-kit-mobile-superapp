@@ -1,10 +1,10 @@
-# PRD-SUBAPP Checklist
+# PRD-MINIAPP Checklist
 
-**Artifact**: PRD-SUBAPP  
+**Artifact**: PRD-MINIAPP  
 **Kit**: mobile-superapp  
-**Level**: L1 (SubApp)
+**Level**: L1 (MiniApp)
 
-This checklist provides semantic quality criteria for SubApp-level Product Requirements Documents in mobile SuperApp projects.
+This checklist provides semantic quality criteria for MiniApp-level Product Requirements Documents in mobile SuperApp projects.
 
 ---
 
@@ -20,11 +20,11 @@ This checklist provides semantic quality criteria for SubApp-level Product Requi
 
 ## MUST HAVE Requirements
 
-### PRD-SUBAPP-001: Overview Completeness
+### PRD-MINIAPP-001: Overview Completeness
 
 **Priority**: CRITICAL
 
-The SubApp PRD MUST include:
+The MiniApp PRD MUST include:
 
 - [ ] Clear purpose statement (1-2 paragraphs)
 - [ ] Link to parent Platform PRD
@@ -34,39 +34,39 @@ The SubApp PRD MUST include:
 
 **Why it matters**: Without clear scope definition, development will drift and stakeholders will have misaligned expectations.
 
-### PRD-SUBAPP-002: Platform Traceability
+### PRD-MINIAPP-002: Platform Traceability
 
 **Priority**: CRITICAL
 
 The PRD MUST include traces to Platform PRD:
 
-- [ ] Table mapping SubApp to Platform requirements
+- [ ] Table mapping MiniApp to Platform requirements
 - [ ] Relation type for each trace (refines, inherits, extends)
 - [ ] `cpt-superapp-fr-{slug}` references for refined FRs
 - [ ] `cpt-superapp-nfr-{slug}` references for inherited NFRs
 
-**Why it matters**: SubApp requirements must demonstrate they contribute to Platform-level goals.
+**Why it matters**: MiniApp requirements must demonstrate they contribute to Platform-level goals.
 
-### PRD-SUBAPP-003: Actor Definition
+### PRD-MINIAPP-003: Actor Definition
 
 **Priority**: HIGH
 
 The PRD MUST define actors:
 
-- [ ] Primary actors table with SubApp-specific context
+- [ ] Primary actors table with MiniApp-specific context
 - [ ] Actor IDs following `cpt-superapp-actor-{slug}` pattern
-- [ ] Description of how each actor uses this SubApp
+- [ ] Description of how each actor uses this MiniApp
 
 **Why it matters**: Actor definitions ensure requirements are user-centered and traceable.
 
-### PRD-SUBAPP-004: Functional Requirements Structure
+### PRD-MINIAPP-004: Functional Requirements Structure
 
 **Priority**: CRITICAL
 
 Each Functional Requirement MUST include:
 
-- [ ] Unique ID following `cpt-{subapp}-fr-{slug}` pattern
-- [ ] Traces To field (parent Platform FR or "SubApp-specific")
+- [ ] Unique ID following `cpt-{miniapp}-fr-{slug}` pattern
+- [ ] Traces To field (parent Platform FR or "MiniApp-specific")
 - [ ] Priority (P1, P2, P3)
 - [ ] Actor reference
 - [ ] Description (what the system must do)
@@ -74,28 +74,28 @@ Each Functional Requirement MUST include:
 
 **Why it matters**: Well-structured FRs enable traceability, prioritization, and validation.
 
-### PRD-SUBAPP-005: Non-Functional Requirements
+### PRD-MINIAPP-005: Non-Functional Requirements
 
 **Priority**: HIGH
 
 Each NFR MUST include:
 
-- [ ] Unique ID following `cpt-{subapp}-nfr-{slug}` pattern
+- [ ] Unique ID following `cpt-{miniapp}-nfr-{slug}` pattern
 - [ ] Traces To field (parent Platform NFR)
 - [ ] Category (Performance, Security, Usability, etc.)
 - [ ] Measurable metric
 - [ ] Target value
-- [ ] Rationale for SubApp-specific value
+- [ ] Rationale for MiniApp-specific value
 
 **Why it matters**: NFRs ensure quality attributes are explicitly defined and measurable.
 
-### PRD-SUBAPP-006: Use Cases
+### PRD-MINIAPP-006: Use Cases
 
 **Priority**: HIGH
 
 The PRD MUST include use cases:
 
-- [ ] Unique ID following `cpt-{subapp}-usecase-{slug}` pattern
+- [ ] Unique ID following `cpt-{miniapp}-usecase-{slug}` pattern
 - [ ] Traces To field (which FR it implements)
 - [ ] Primary actor reference
 - [ ] Preconditions
@@ -105,7 +105,7 @@ The PRD MUST include use cases:
 
 **Why it matters**: Use cases bridge requirements to implementation by describing user journeys.
 
-### PRD-SUBAPP-007: Dependencies
+### PRD-MINIAPP-007: Dependencies
 
 **Priority**: HIGH
 
@@ -118,15 +118,15 @@ The PRD MUST document dependencies:
 
 **Why it matters**: Dependencies define integration scope and external team coordination.
 
-### PRD-SUBAPP-008: Traceability Matrix
+### PRD-MINIAPP-008: Traceability Matrix
 
 **Priority**: CRITICAL
 
 The PRD MUST include traceability matrices:
 
-- [ ] Platform FR → SubApp FR coverage table
+- [ ] Platform FR → MiniApp FR coverage table
 - [ ] Coverage status (Full, Partial, Not in scope)
-- [ ] SubApp FR → Epic coverage table
+- [ ] MiniApp FR → Epic coverage table
 - [ ] Status for each mapping
 
 **Why it matters**: Traceability ensures complete coverage and enables change impact analysis.
@@ -135,28 +135,28 @@ The PRD MUST include traceability matrices:
 
 ## SHOULD HAVE Requirements
 
-### PRD-SUBAPP-009: SubApp-Specific Tags
+### PRD-MINIAPP-009: MiniApp-Specific Tags
 
 **Priority**: MEDIUM
 
 Requirements that don't trace to Platform SHOULD:
 
-- [ ] Have `subapp-specific` tag
-- [ ] Include rationale for why it's SubApp-level only
+- [ ] Have `miniapp-specific` tag
+- [ ] Include rationale for why it's MiniApp-level only
 - [ ] Not duplicate Platform-level requirements
 
-### PRD-SUBAPP-010: Acceptance Criteria Checklist
+### PRD-MINIAPP-010: Acceptance Criteria Checklist
 
 **Priority**: MEDIUM
 
 The PRD SHOULD include summary acceptance criteria:
 
 - [ ] All Platform FRs in scope are refined
-- [ ] All SubApp FRs have epic-level detailing
+- [ ] All MiniApp FRs have epic-level detailing
 - [ ] All use cases have corresponding features
 - [ ] Traceability matrix complete
 
-### PRD-SUBAPP-011: ID Reference Appendix
+### PRD-MINIAPP-011: ID Reference Appendix
 
 **Priority**: LOW
 
@@ -170,7 +170,7 @@ The PRD SHOULD include ID pattern reference:
 
 ## MUST NOT HAVE (Violations)
 
-### PRD-SUBAPP-NO-001: No Technical Implementation
+### PRD-MINIAPP-NO-001: No Technical Implementation
 
 **Priority**: HIGH
 
@@ -183,7 +183,7 @@ The PRD MUST NOT contain:
 
 **Why it matters**: PRD defines WHAT, not HOW.
 
-### PRD-SUBAPP-NO-002: No Platform Duplication
+### PRD-MINIAPP-NO-002: No Platform Duplication
 
 **Priority**: HIGH
 
@@ -195,19 +195,19 @@ The PRD MUST NOT:
 
 **Why it matters**: Duplication creates inconsistency and maintenance burden.
 
-### PRD-SUBAPP-NO-003: No Untraceable Requirements
+### PRD-MINIAPP-NO-003: No Untraceable Requirements
 
 **Priority**: CRITICAL
 
 The PRD MUST NOT contain requirements without:
 
 - [ ] Unique ID
-- [ ] Clear traceability (to Platform or marked as SubApp-specific)
+- [ ] Clear traceability (to Platform or marked as MiniApp-specific)
 - [ ] Priority assignment
 
 **Why it matters**: Untraceable requirements cannot be validated or prioritized.
 
-### PRD-SUBAPP-NO-004: No Vague Acceptance Criteria
+### PRD-MINIAPP-NO-004: No Vague Acceptance Criteria
 
 **Priority**: HIGH
 
@@ -227,7 +227,7 @@ The PRD MUST NOT contain:
 
 **Priority**: HIGH
 
-SubApp PRD MUST address offline behavior:
+MiniApp PRD MUST address offline behavior:
 
 - [ ] Core offline capabilities defined
 - [ ] Data sync requirements specified
@@ -237,7 +237,7 @@ SubApp PRD MUST address offline behavior:
 
 **Priority**: HIGH
 
-SubApp PRD MUST specify platform parity:
+MiniApp PRD MUST specify platform parity:
 
 - [ ] iOS-specific requirements (if any)
 - [ ] Android-specific requirements (if any)
@@ -248,7 +248,7 @@ SubApp PRD MUST specify platform parity:
 
 **Priority**: MEDIUM
 
-SubApp PRD SHOULD include:
+MiniApp PRD SHOULD include:
 
 - [ ] Deep link entry points
 - [ ] Deep link parameters
@@ -258,7 +258,7 @@ SubApp PRD SHOULD include:
 
 **Priority**: MEDIUM
 
-If SubApp uses notifications:
+If MiniApp uses notifications:
 
 - [ ] Notification types defined
 - [ ] Notification triggers documented
@@ -277,7 +277,7 @@ For each issue found, report:
 
 **Severity**: CRITICAL | HIGH | MEDIUM | LOW
 
-**Why Applicable**: {Why this requirement applies to this SubApp}
+**Why Applicable**: {Why this requirement applies to this MiniApp}
 
 **Issue**: {What is wrong}
 

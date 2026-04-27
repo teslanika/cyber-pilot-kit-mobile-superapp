@@ -27,7 +27,7 @@ This checklist provides semantic quality criteria for Epic-level Technical Desig
 The Epic DESIGN MUST include:
 
 - [ ] Purpose statement (1-2 paragraphs)
-- [ ] Link to parent SubApp DESIGN
+- [ ] Link to parent MiniApp DESIGN
 - [ ] Requirements coverage table (requirement ID → design response)
 - [ ] ADR references
 
@@ -44,7 +44,7 @@ The DESIGN MUST include component architecture:
 - [ ] ViewModel layer components
 - [ ] Domain layer components
 - [ ] Data layer components
-- [ ] Component ID `cpt-{subapp}-epic-{epic}-component-overview`
+- [ ] Component ID `cpt-{miniapp}-epic-{epic}-component-overview`
 
 **Why it matters**: Component architecture guides implementation structure.
 
@@ -54,7 +54,7 @@ The DESIGN MUST include component architecture:
 
 For each screen, the DESIGN MUST include:
 
-- [ ] Screen ID following `cpt-{subapp}-{epic}-screen-{slug}` pattern
+- [ ] Screen ID following `cpt-{miniapp}-{epic}-screen-{slug}` pattern
 - [ ] Responsibility description
 - [ ] Platform implementation table (KMP, Android, iOS locations)
 - [ ] Priority marker
@@ -67,7 +67,7 @@ For each screen, the DESIGN MUST include:
 
 For each widget, the DESIGN MUST include:
 
-- [ ] Widget ID following `cpt-{subapp}-{epic}-widget-{slug}` pattern
+- [ ] Widget ID following `cpt-{miniapp}-{epic}-widget-{slug}` pattern
 - [ ] Responsibility description
 - [ ] States (default, loading, error, empty, success)
 - [ ] Props/parameters with types
@@ -85,7 +85,7 @@ The DESIGN MUST document MVI state management:
 - [ ] ScreenState sealed class (Loading, Content, Error)
 - [ ] Intent sealed class (user actions)
 - [ ] Effect sealed class (side effects)
-- [ ] State ID `cpt-{subapp}-{epic}-state`
+- [ ] State ID `cpt-{miniapp}-{epic}-state`
 
 **Why it matters**: Consistent MVI pattern enables predictable behavior.
 
@@ -95,7 +95,7 @@ The DESIGN MUST document MVI state management:
 
 For each use case, the DESIGN MUST include:
 
-- [ ] Use case ID following `cpt-{subapp}-{epic}-usecase-{slug}` pattern
+- [ ] Use case ID following `cpt-{miniapp}-{epic}-usecase-{slug}` pattern
 - [ ] Input type
 - [ ] Output type (Result<T>)
 - [ ] Steps (validate, call, transform, return)
@@ -109,7 +109,7 @@ For each use case, the DESIGN MUST include:
 
 The DESIGN MUST document repository:
 
-- [ ] Repository ID following `cpt-{subapp}-{epic}-repo-{slug}` pattern
+- [ ] Repository ID following `cpt-{miniapp}-{epic}-repo-{slug}` pattern
 - [ ] Operations table (operation, method, source, caching)
 - [ ] Cache strategy (cache-first, network-first, write-through)
 
@@ -121,7 +121,7 @@ The DESIGN MUST document repository:
 
 The DESIGN MUST include navigation:
 
-- [ ] Navigation ID following `cpt-{subapp}-{epic}-nav` pattern
+- [ ] Navigation ID following `cpt-{miniapp}-{epic}-nav` pattern
 - [ ] Entry points (source, deep link)
 - [ ] Exit points (destination, action)
 - [ ] Navigation parameters table
@@ -149,7 +149,7 @@ The DESIGN MUST specify error handling:
 The DESIGN MUST include:
 
 - [ ] Link to Epic PRD
-- [ ] Link to SubApp DESIGN
+- [ ] Link to MiniApp DESIGN
 - [ ] Link to ADRs folder
 - [ ] Link to DECOMPOSITION
 - [ ] Link to Features folder
@@ -167,7 +167,7 @@ The DESIGN MUST include:
 The DESIGN SHOULD include:
 
 - [ ] API contracts table (method, endpoint, request, response)
-- [ ] API ID `cpt-{subapp}-{epic}-api-{slug}`
+- [ ] API ID `cpt-{miniapp}-{epic}-api-{slug}`
 - [ ] Authentication requirements
 
 ### ARCH-EPIC-012: Offline Behavior
@@ -180,7 +180,7 @@ If Epic supports offline:
 - [ ] Read behavior offline
 - [ ] Write behavior offline
 - [ ] Sync behavior
-- [ ] Offline ID `cpt-{subapp}-{epic}-offline`
+- [ ] Offline ID `cpt-{miniapp}-{epic}-offline`
 
 ### ARCH-EPIC-013: WebView Integration
 
@@ -192,7 +192,7 @@ If Epic uses WebView:
 - [ ] JS bridge methods
 - [ ] Native → WebView events
 - [ ] WebView → Native events
-- [ ] WebView ID `cpt-{subapp}-{epic}-webview`
+- [ ] WebView ID `cpt-{miniapp}-{epic}-webview`
 
 ---
 
@@ -211,17 +211,17 @@ The DESIGN MUST NOT contain:
 
 **Why it matters**: Epic DESIGN defines architecture, not implementation steps.
 
-### ARCH-EPIC-NO-002: No SubApp Architecture Duplication
+### ARCH-EPIC-NO-002: No MiniApp Architecture Duplication
 
 **Priority**: MEDIUM
 
 The DESIGN MUST NOT:
 
-- [ ] Redefine SubApp-level patterns
+- [ ] Redefine MiniApp-level patterns
 - [ ] Duplicate kernel service specifications
 - [ ] Redefine navigation architecture
 
-**Why it matters**: Reference SubApp DESIGN instead of duplicating.
+**Why it matters**: Reference MiniApp DESIGN instead of duplicating.
 
 ### ARCH-EPIC-NO-003: No Production Code
 
@@ -258,9 +258,9 @@ The DESIGN MUST NOT have:
 
 Each component MUST have:
 
-- [ ] KMP module location (`constructor-sdk/feature/{subapp}/...`)
-- [ ] Android location (`android-app/feature/{subapp}/...`)
-- [ ] iOS location (`ios-app/Features/{SubApp}/...`)
+- [ ] KMP module location (`constructor-sdk/feature/{miniapp}/...`)
+- [ ] Android location (`android-app/feature/{miniapp}/...`)
+- [ ] iOS location (`ios-app/Features/{MiniApp}/...`)
 
 ### MOBILE-EPIC-002: Android-Specific Section
 
@@ -271,7 +271,7 @@ The DESIGN MUST include Android section:
 - [ ] Compose specifics
 - [ ] Lifecycle handling
 - [ ] Configuration change handling
-- [ ] Android ID `cpt-{subapp}-{epic}-android`
+- [ ] Android ID `cpt-{miniapp}-{epic}-android`
 
 ### MOBILE-EPIC-003: iOS-Specific Section
 
@@ -281,7 +281,7 @@ The DESIGN MUST include iOS section:
 
 - [ ] SwiftUI specifics
 - [ ] Scene phase handling
-- [ ] iOS ID `cpt-{subapp}-{epic}-ios`
+- [ ] iOS ID `cpt-{miniapp}-{epic}-ios`
 
 ### MOBILE-EPIC-004: MVI Consistency
 

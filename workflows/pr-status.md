@@ -82,15 +82,15 @@ For each affected FEATURE:
 
 ### {Feature Name}
 
-**Feature ID**: `cpt-{subapp}-feature-{slug}`
-**Epic**: `cpt-{subapp}-epic-{epic}`
+**Feature ID**: `cpt-{miniapp}-feature-{slug}`
+**Epic**: `cpt-{miniapp}-epic-{epic}`
 
 #### Definitions of Done
 
 | DOD ID | Description | Status |
 |--------|-------------|--------|
-| `cpt-{subapp}-dod-{slug}-1` | {description} | ✅ Done / 🔄 In Progress / ⏳ Not Started |
-| `cpt-{subapp}-dod-{slug}-2` | {description} | ✅ / 🔄 / ⏳ |
+| `cpt-{miniapp}-dod-{slug}-1` | {description} | ✅ Done / 🔄 In Progress / ⏳ Not Started |
+| `cpt-{miniapp}-dod-{slug}-2` | {description} | ✅ / 🔄 / ⏳ |
 
 **Progress**: {completed}/{total} ({percentage}%)
 

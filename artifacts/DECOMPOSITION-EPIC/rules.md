@@ -29,7 +29,7 @@
 - [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-EPIC/checklist.md` for semantic guidance
 - [ ] Read Epic PRD for requirements context
 - [ ] Read Epic DESIGN for architectural context
-- [ ] Read SubApp DECOMPOSITION for Epic boundaries
+- [ ] Read MiniApp DECOMPOSITION for Epic boundaries
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
@@ -48,7 +48,7 @@
   - Platform Implementation Matrix
   - Implementation Order
   - Acceptance Criteria Summary
-- [ ] All IDs follow `cpt-{subapp}-feature-{slug}` convention
+- [ ] All IDs follow `cpt-{miniapp}-feature-{slug}` convention
 - [ ] Each Feature entry has complete metadata:
   - Purpose, Depends On, Scope (in/out)
   - Requirements Covered, Design Components
@@ -74,7 +74,7 @@
 - [ ] Design components from Epic DESIGN are allocated to Features
 - [ ] Requirements → Features coverage matrix complete
 - [ ] Design Components → Features coverage matrix complete
-- [ ] Links to parent documents (Epic PRD, Epic DESIGN, SubApp DECOMPOSITION)
+- [ ] Links to parent documents (Epic PRD, Epic DESIGN, MiniApp DECOMPOSITION)
 
 ### Versioning
 
@@ -99,7 +99,7 @@ Apply checklist semantics during creation:
 
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
-| Overview | Link to parent PRD, DESIGN, SubApp DECOMPOSITION |
+| Overview | Link to parent PRD, DESIGN, MiniApp DECOMPOSITION |
 | Feature Entries | Create entry for each feature with full metadata |
 | Dependencies | Create dependency diagram with rationale |
 | Coverage Matrix | Map FRs and components to Features |
@@ -130,8 +130,8 @@ If DECOMPOSITION-EPIC cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate overall status ID: `cpt-{subapp}-{epic}-status-overall`
-- [ ] Generate Feature IDs: `cpt-{subapp}-feature-{slug}`
+- [ ] Generate overall status ID: `cpt-{miniapp}-{epic}-status-overall`
+- [ ] Generate Feature IDs: `cpt-{miniapp}-feature-{slug}`
 - [ ] Link to Epic FR IDs
 - [ ] Link to Epic component IDs (screens, widgets, use cases)
 - [ ] Verify uniqueness with `cypilot list-ids`

@@ -10,29 +10,29 @@ user_modifiable = true
 # PRD ARTIFACTS
 # ══════════════════════════════════════════════════════════════════════════════
 
-# ── PRD-SUBAPP artifact files ────────────────────────────────────────────────
+# ── PRD-MINIAPP artifact files ────────────────────────────────────────────────
 
 [[resources]]
-id = "prd_subapp_template"
-description = "PRD-SUBAPP artifact template (L1: SubApp level requirements)"
-source = "artifacts/PRD-SUBAPP/template.md"
-default_path = "artifacts/PRD-SUBAPP/template.md"
+id = "prd_miniapp_template"
+description = "PRD-MINIAPP artifact template (L1: MiniApp level requirements)"
+source = "artifacts/PRD-MINIAPP/template.md"
+default_path = "artifacts/PRD-MINIAPP/template.md"
 type = "file"
 user_modifiable = true
 
 [[resources]]
-id = "prd_subapp_rules"
-description = "PRD-SUBAPP validation rules"
-source = "artifacts/PRD-SUBAPP/rules.md"
-default_path = "artifacts/PRD-SUBAPP/rules.md"
+id = "prd_miniapp_rules"
+description = "PRD-MINIAPP validation rules"
+source = "artifacts/PRD-MINIAPP/rules.md"
+default_path = "artifacts/PRD-MINIAPP/rules.md"
 type = "file"
 user_modifiable = true
 
 [[resources]]
-id = "prd_subapp_checklist"
-description = "PRD-SUBAPP review checklist"
-source = "artifacts/PRD-SUBAPP/checklist.md"
-default_path = "artifacts/PRD-SUBAPP/checklist.md"
+id = "prd_miniapp_checklist"
+description = "PRD-MINIAPP review checklist"
+source = "artifacts/PRD-MINIAPP/checklist.md"
+default_path = "artifacts/PRD-MINIAPP/checklist.md"
 type = "file"
 user_modifiable = true
 
@@ -92,29 +92,29 @@ default_path = "artifacts/DESIGN-PLATFORM/checklist.md"
 type = "file"
 user_modifiable = true
 
-# ── DESIGN-SUBAPP artifact files ─────────────────────────────────────────────
+# ── DESIGN-MINIAPP artifact files ─────────────────────────────────────────────
 
 [[resources]]
-id = "design_subapp_template"
-description = "DESIGN-SUBAPP artifact template (L1: SubApp module architecture)"
-source = "artifacts/DESIGN-SUBAPP/template.md"
-default_path = "artifacts/DESIGN-SUBAPP/template.md"
+id = "design_miniapp_template"
+description = "DESIGN-MINIAPP artifact template (L1: MiniApp module architecture)"
+source = "artifacts/DESIGN-MINIAPP/template.md"
+default_path = "artifacts/DESIGN-MINIAPP/template.md"
 type = "file"
 user_modifiable = true
 
 [[resources]]
-id = "design_subapp_rules"
-description = "DESIGN-SUBAPP validation rules"
-source = "artifacts/DESIGN-SUBAPP/rules.md"
-default_path = "artifacts/DESIGN-SUBAPP/rules.md"
+id = "design_miniapp_rules"
+description = "DESIGN-MINIAPP validation rules"
+source = "artifacts/DESIGN-MINIAPP/rules.md"
+default_path = "artifacts/DESIGN-MINIAPP/rules.md"
 type = "file"
 user_modifiable = true
 
 [[resources]]
-id = "design_subapp_checklist"
-description = "DESIGN-SUBAPP review checklist"
-source = "artifacts/DESIGN-SUBAPP/checklist.md"
-default_path = "artifacts/DESIGN-SUBAPP/checklist.md"
+id = "design_miniapp_checklist"
+description = "DESIGN-MINIAPP review checklist"
+source = "artifacts/DESIGN-MINIAPP/checklist.md"
+default_path = "artifacts/DESIGN-MINIAPP/checklist.md"
 type = "file"
 user_modifiable = true
 
@@ -152,7 +152,7 @@ user_modifiable = true
 
 [[resources]]
 id = "decomposition_platform_template"
-description = "DECOMPOSITION-PLATFORM template (Platform → SubApps)"
+description = "DECOMPOSITION-PLATFORM template (Platform → MiniApps)"
 source = "artifacts/DECOMPOSITION-PLATFORM/template.md"
 default_path = "artifacts/DECOMPOSITION-PLATFORM/template.md"
 type = "file"
@@ -174,29 +174,29 @@ default_path = "artifacts/DECOMPOSITION-PLATFORM/checklist.md"
 type = "file"
 user_modifiable = true
 
-# ── DECOMPOSITION-SUBAPP artifact files ──────────────────────────────────────
+# ── DECOMPOSITION-MINIAPP artifact files ──────────────────────────────────────
 
 [[resources]]
-id = "decomposition_subapp_template"
-description = "DECOMPOSITION-SUBAPP template (SubApp → Epics)"
-source = "artifacts/DECOMPOSITION-SUBAPP/template.md"
-default_path = "artifacts/DECOMPOSITION-SUBAPP/template.md"
+id = "decomposition_miniapp_template"
+description = "DECOMPOSITION-MINIAPP template (MiniApp → Epics)"
+source = "artifacts/DECOMPOSITION-MINIAPP/template.md"
+default_path = "artifacts/DECOMPOSITION-MINIAPP/template.md"
 type = "file"
 user_modifiable = true
 
 [[resources]]
-id = "decomposition_subapp_rules"
-description = "DECOMPOSITION-SUBAPP validation rules"
-source = "artifacts/DECOMPOSITION-SUBAPP/rules.md"
-default_path = "artifacts/DECOMPOSITION-SUBAPP/rules.md"
+id = "decomposition_miniapp_rules"
+description = "DECOMPOSITION-MINIAPP validation rules"
+source = "artifacts/DECOMPOSITION-MINIAPP/rules.md"
+default_path = "artifacts/DECOMPOSITION-MINIAPP/rules.md"
 type = "file"
 user_modifiable = true
 
 [[resources]]
-id = "decomposition_subapp_checklist"
-description = "DECOMPOSITION-SUBAPP review checklist"
-source = "artifacts/DECOMPOSITION-SUBAPP/checklist.md"
-default_path = "artifacts/DECOMPOSITION-SUBAPP/checklist.md"
+id = "decomposition_miniapp_checklist"
+description = "DECOMPOSITION-MINIAPP review checklist"
+source = "artifacts/DECOMPOSITION-MINIAPP/checklist.md"
+default_path = "artifacts/DECOMPOSITION-MINIAPP/checklist.md"
 type = "file"
 user_modifiable = true
 

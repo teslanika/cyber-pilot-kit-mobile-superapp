@@ -1,14 +1,14 @@
-# DECOMPOSITION-SUBAPP Rules
+# DECOMPOSITION-MINIAPP Rules
 
-**Artifact**: DECOMPOSITION-SUBAPP  
+**Artifact**: DECOMPOSITION-MINIAPP  
 **Kit**: mobile-superapp  
-**Level**: L1 (SubApp)
+**Level**: L1 (MiniApp)
 
 **Dependencies**:
-- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` — structural reference
-- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` — semantic quality criteria
-- `config/kits/mobile-superapp/artifacts/DESIGN-SUBAPP/template.md` — parent SubApp DESIGN reference
-- `config/kits/mobile-superapp/artifacts/PRD-SUBAPP/template.md` — SubApp PRD reference
+- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/template.md` — structural reference
+- `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/checklist.md` — semantic quality criteria
+- `config/kits/mobile-superapp/artifacts/DESIGN-MINIAPP/template.md` — parent MiniApp DESIGN reference
+- `config/kits/mobile-superapp/artifacts/PRD-MINIAPP/template.md` — MiniApp PRD reference
 
 ## Table of Contents
 
@@ -25,11 +25,11 @@
 
 ### Load Dependencies
 
-- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` for structure
-- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` for semantic guidance
-- [ ] Read SubApp PRD for requirements context
-- [ ] Read SubApp DESIGN for architectural context
-- [ ] Read Platform DECOMPOSITION for SubApp boundaries
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/checklist.md` for semantic guidance
+- [ ] Read MiniApp PRD for requirements context
+- [ ] Read MiniApp DESIGN for architectural context
+- [ ] Read Platform DECOMPOSITION for MiniApp boundaries
 - [ ] Load `config/kits/mobile-superapp/constraints.toml` for kit-level constraints
 - [ ] Load `{cypilot_path}/.core/architecture/specs/traceability.md` for ID formats
 
@@ -39,14 +39,14 @@
 
 ### Structural
 
-- [ ] DECOMPOSITION-SUBAPP follows `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` structure
+- [ ] DECOMPOSITION-MINIAPP follows `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (parent documents reference)
   - Epic Entries (organized by category: Screens, Capabilities, Flows)
   - Epic Dependencies
   - Coverage Matrix (Requirements, Design Components)
   - Implementation Order
-- [ ] All IDs follow `cpt-{subapp}-epic-{slug}` convention
+- [ ] All IDs follow `cpt-{miniapp}-epic-{slug}` convention
 - [ ] Each Epic entry has complete metadata:
   - Category, Purpose, Actors
   - Depends On, Scope (in/out)
@@ -68,11 +68,11 @@
 
 ### Traceability
 
-- [ ] Every Epic traces to SubApp FRs it covers
-- [ ] Design components from SubApp DESIGN are allocated to Epics
+- [ ] Every Epic traces to MiniApp FRs it covers
+- [ ] Design components from MiniApp DESIGN are allocated to Epics
 - [ ] Requirements coverage matrix shows FR → Epic mapping
 - [ ] Design component coverage matrix shows component → Epic mapping
-- [ ] Links to parent documents (SubApp PRD, SubApp DESIGN, Platform DECOMPOSITION)
+- [ ] Links to parent documents (MiniApp PRD, MiniApp DESIGN, Platform DECOMPOSITION)
 
 ### Versioning
 
@@ -85,10 +85,10 @@
 
 ### Phase 1: Setup
 
-- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/template.md` for structure
-- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` for semantic guidance
-- [ ] Read SubApp PRD for requirements
-- [ ] Read SubApp DESIGN for components
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/template.md` for structure
+- [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/checklist.md` for semantic guidance
+- [ ] Read MiniApp PRD for requirements
+- [ ] Read MiniApp DESIGN for components
 - [ ] Identify natural Epic boundaries from screens, capabilities, and flows
 
 ### Phase 2: Content Creation
@@ -113,14 +113,14 @@ For each Epic, document:
 - [ ] Actors (actor IDs)
 - [ ] Depends On (other Epics or "None")
 - [ ] Scope (in-scope and out-of-scope items)
-- [ ] Requirements Covered (SubApp FRs with priority)
-- [ ] Design Components (IDs from SubApp DESIGN)
+- [ ] Requirements Covered (MiniApp FRs with priority)
+- [ ] Design Components (IDs from MiniApp DESIGN)
 - [ ] KMP Modules (if applicable)
 - [ ] Target Release (quarter)
 
 **Partial Completion Handling**:
 
-If DECOMPOSITION-SUBAPP cannot be completed in a single session:
+If DECOMPOSITION-MINIAPP cannot be completed in a single session:
 1. Checkpoint progress with completed Epic entries
 2. Add `status: DRAFT` to document header
 3. Mark incomplete Epics with `INCOMPLETE: {reason}`
@@ -128,17 +128,17 @@ If DECOMPOSITION-SUBAPP cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Generate overall status ID: `cpt-{subapp}-status-overall`
-- [ ] Generate Epic IDs: `cpt-{subapp}-epic-{slug}`
-- [ ] Link to SubApp FR IDs
-- [ ] Link to SubApp component IDs
+- [ ] Generate overall status ID: `cpt-{miniapp}-status-overall`
+- [ ] Generate Epic IDs: `cpt-{miniapp}-epic-{slug}`
+- [ ] Link to MiniApp FR IDs
+- [ ] Link to MiniApp component IDs
 - [ ] Verify uniqueness with `cypilot list-ids`
 
 ### Phase 4: Quality Check
 
-- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` MUST HAVE items
+- [ ] Self-review against `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
-- [ ] Verify all SubApp FRs are covered by at least one Epic
+- [ ] Verify all MiniApp FRs are covered by at least one Epic
 - [ ] Verify all DESIGN components are allocated
 - [ ] Verify Epic boundaries don't overlap significantly
 - [ ] Verify dependency graph supports parallel development where possible
@@ -162,13 +162,13 @@ If DECOMPOSITION-SUBAPP cannot be completed in a single session:
 
 ### Phase 2: Semantic Validation
 
-- [ ] Read `config/kits/mobile-superapp/artifacts/DECOMPOSITION-SUBAPP/checklist.md` in full
+- [ ] Read `config/kits/mobile-superapp/artifacts/DECOMPOSITION-MINIAPP/checklist.md` in full
 - [ ] For each MUST HAVE item: check if requirement is met
 - [ ] For each MUST NOT HAVE item: scan document for violations
 
 ### Phase 3: Decomposition-Specific Validation
 
-- [ ] All SubApp FRs have Epic coverage
+- [ ] All MiniApp FRs have Epic coverage
 - [ ] All DESIGN components are allocated to Epics
 - [ ] Epic categories are appropriate (Screen vs Capability vs Flow)
 - [ ] Dependencies are justified and minimal
@@ -178,7 +178,7 @@ If DECOMPOSITION-SUBAPP cannot be completed in a single session:
 ### Validation Report Format
 
 ```
-DECOMPOSITION-SUBAPP Validation Report
+DECOMPOSITION-MINIAPP Validation Report
 ══════════════════════════════════════
 
 Structural: PASS/FAIL
@@ -186,7 +186,7 @@ Semantic: PASS/FAIL (N issues)
 Decomposition-Specific: PASS/FAIL (N issues)
 
 Coverage:
-- SubApp FRs covered: N/M (X%)
+- MiniApp FRs covered: N/M (X%)
 - DESIGN components allocated: N/M (X%)
 
 Issues:
@@ -197,17 +197,17 @@ Issues:
 
 ## Error Handling
 
-### Missing SubApp DESIGN
+### Missing MiniApp DESIGN
 
-- [ ] If SubApp DESIGN not found:
-  - Option 1: Run `/cypilot-generate DESIGN-SUBAPP` first (recommended)
+- [ ] If MiniApp DESIGN not found:
+  - Option 1: Run `/cypilot-generate DESIGN-MINIAPP` first (recommended)
   - Option 2: Continue without DESIGN (component allocation will be incomplete)
   - Document "DESIGN pending" in DECOMPOSITION header
 
-### Missing SubApp PRD
+### Missing MiniApp PRD
 
-- [ ] If SubApp PRD not found:
-  - Option 1: Run `/cypilot-generate PRD-SUBAPP` first
+- [ ] If MiniApp PRD not found:
+  - Option 1: Run `/cypilot-generate PRD-MINIAPP` first
   - Option 2: Continue without PRD (requirements coverage will be incomplete)
   - Document requirements assumptions made
 
@@ -232,9 +232,9 @@ Issues:
 
 ### Options
 
-- [ ] DECOMPOSITION-SUBAPP complete → `/cypilot-generate PRD-EPIC` — create Epic PRD
-- [ ] DECOMPOSITION-SUBAPP complete → `/cypilot-generate DESIGN-EPIC` — create Epic DESIGN
-- [ ] DESIGN missing → `/cypilot-generate DESIGN-SUBAPP` — create SubApp DESIGN first
-- [ ] PRD missing → `/cypilot-generate PRD-SUBAPP` — create SubApp PRD first
-- [ ] DECOMPOSITION needs revision → continue editing DECOMPOSITION-SUBAPP
+- [ ] DECOMPOSITION-MINIAPP complete → `/cypilot-generate PRD-EPIC` — create Epic PRD
+- [ ] DECOMPOSITION-MINIAPP complete → `/cypilot-generate DESIGN-EPIC` — create Epic DESIGN
+- [ ] DESIGN missing → `/cypilot-generate DESIGN-MINIAPP` — create MiniApp DESIGN first
+- [ ] PRD missing → `/cypilot-generate PRD-MINIAPP` — create MiniApp PRD first
+- [ ] DECOMPOSITION needs revision → continue editing DECOMPOSITION-MINIAPP
 - [ ] Ready for Epic work → create Epic folder structure

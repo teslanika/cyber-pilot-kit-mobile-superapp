@@ -1,6 +1,6 @@
 ---
 name: mobile-superapp
-description: "Mobile SuperApp documentation kit with 4-level hierarchy: Platform → SubApp → Epic → Feature, with cascading requirement traceability"
+description: "Mobile SuperApp documentation kit with 4-level hierarchy: Platform → MiniApp → Epic → Feature, with cascading requirement traceability"
 ---
 
 # Cypilot Skill — Kit `mobile-superapp`
@@ -8,33 +8,33 @@ description: "Mobile SuperApp documentation kit with 4-level hierarchy: Platform
 ## Overview
 
 This kit provides specialized templates for mobile SuperApp development with:
-- **4-Level PRD hierarchy** (Platform → SubApp → Epic → Feature)
-- **Level-specific DESIGN templates** (Platform, SubApp, Epic)
-- **Cascading DECOMPOSITION** (Platform → SubApps, SubApp → Epics, Epic → Features)
+- **4-Level PRD hierarchy** (Platform → MiniApp → Epic → Feature)
+- **Level-specific DESIGN templates** (Platform, MiniApp, Epic)
+- **Cascading DECOMPOSITION** (Platform → MiniApps, MiniApp → Epics, Epic → Features)
 - **Mobile-specific FEATURE template** with KMP/Android/iOS sections
 - **Platform-specific IMPL templates** (KMP, Android, iOS)
 
 ## Artifact Types
 
-### PRD-SUBAPP
-SubApp-level PRD that refines Platform requirements.
+### PRD-MINIAPP
+MiniApp-level PRD that refines Platform requirements.
 
-**Use when**: Creating requirements for a self-contained feature module (e.g., Student SubApp, Proctor SubApp).
+**Use when**: Creating requirements for a self-contained feature module (e.g., Student MiniApp, Proctor MiniApp).
 
 **Contains**:
 - Traces to Platform PRD
-- SubApp-specific functional requirements
-- SubApp-level NFRs (extending Platform NFRs)
+- MiniApp-specific functional requirements
+- MiniApp-level NFRs (extending Platform NFRs)
 - Use cases
 - Platform dependencies
 
 ### PRD-EPIC
-Epic-level PRD that details SubApp requirements for a specific screen/flow/capability.
+Epic-level PRD that details MiniApp requirements for a specific screen/flow/capability.
 
 **Use when**: Creating requirements for a screen, user flow, or cross-cutting capability.
 
 **Contains**:
-- Traces to SubApp PRD
+- Traces to MiniApp PRD
 - Screen states and error handling
 - UI/UX requirements
 - Data requirements
@@ -43,20 +43,20 @@ Epic-level PRD that details SubApp requirements for a specific screen/flow/capab
 ### DESIGN-PLATFORM
 Platform-level architecture design for the entire SuperApp.
 
-**Use when**: Defining overall platform architecture, shared kernel, SubApp container model.
+**Use when**: Defining overall platform architecture, shared kernel, MiniApp container model.
 
 **Contains**:
 - Platform layers (Presentation, Application, Domain, Infrastructure)
 - Cross-platform strategy (Native vs WebView)
 - KMP SDK scope
-- SubApp container model
+- MiniApp container model
 - Shared kernel components (Auth, Storage, Network, Notifications)
 - External integrations
 
-### DESIGN-SUBAPP
-SubApp-level architecture design.
+### DESIGN-MINIAPP
+MiniApp-level architecture design.
 
-**Use when**: Designing a specific SubApp's module structure and internal architecture.
+**Use when**: Designing a specific MiniApp's module structure and internal architecture.
 
 **Contains**:
 - Module structure (KMP, Android, iOS)
@@ -69,7 +69,7 @@ SubApp-level architecture design.
 ### DESIGN-EPIC
 Epic-level (screen/flow/capability) technical design.
 
-**Use when**: Designing a specific screen or feature within a SubApp.
+**Use when**: Designing a specific screen or feature within a MiniApp.
 
 **Contains**:
 - Component architecture
@@ -80,14 +80,14 @@ Epic-level (screen/flow/capability) technical design.
 - Error handling
 
 ### DECOMPOSITION-PLATFORM
-Decomposes Platform DESIGN into SubApps.
+Decomposes Platform DESIGN into MiniApps.
 
-**Use when**: Breaking down the platform into deployable SubApp modules.
+**Use when**: Breaking down the platform into deployable MiniApp modules.
 
-### DECOMPOSITION-SUBAPP
-Decomposes SubApp DESIGN into Epics (screens, capabilities, flows).
+### DECOMPOSITION-MINIAPP
+Decomposes MiniApp DESIGN into Epics (screens, capabilities, flows).
 
-**Use when**: Breaking down a SubApp into implementable epics.
+**Use when**: Breaking down a MiniApp into implementable epics.
 
 ### DECOMPOSITION-EPIC
 Decomposes Epic DESIGN into Features.
@@ -128,7 +128,7 @@ cypilot validate --check=feature-impl-coverage
 python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py
 
 # Check a specific file or directory
-python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py architecture/subapps/student/
+python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py architecture/miniapps/student/
 
 # Quiet mode — violations only, no summary header
 python3 cypilot/config/kits/mobile-superapp/scripts/check-language.py -q architecture/
@@ -161,23 +161,23 @@ cypilot where-used --id <id>
 ### Generate Platform Architecture
 1. Create/update `architecture/PRD.md` (use SDLC PRD)
 2. Create `architecture/DESIGN.md` using DESIGN-PLATFORM template
-3. Create `architecture/DECOMPOSITION.md` listing SubApps
+3. Create `architecture/DECOMPOSITION.md` listing MiniApps
 4. Create `architecture/adr/` for platform decisions
 5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/`
 
-### Generate SubApp
-1. Create `subapps/{subapp}/PRD.md` using PRD-SUBAPP template
-2. Create `subapps/{subapp}/DESIGN.md` using DESIGN-SUBAPP template
-3. Create `subapps/{subapp}/DECOMPOSITION.md` listing Epics
+### Generate MiniApp
+1. Create `miniapps/{miniapp}/PRD.md` using PRD-MINIAPP template
+2. Create `miniapps/{miniapp}/DESIGN.md` using DESIGN-MINIAPP template
+3. Create `miniapps/{miniapp}/DECOMPOSITION.md` listing Epics
 4. Create epics in `screens/`, `capabilities/`, `flows/`
-5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/subapps/{subapp}/`
+5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/miniapps/{miniapp}/`
 
 ### Generate Epic
-1. Create `subapps/{subapp}/{category}/{epic}/PRD.md` using PRD-EPIC template
+1. Create `miniapps/{miniapp}/{category}/{epic}/PRD.md` using PRD-EPIC template
 2. Create `DESIGN.md` using DESIGN-EPIC template
 3. Create `DECOMPOSITION.md` listing Features
 4. Create features in `features/`
-5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/subapps/{subapp}/{category}/{epic}/`
+5. **Run language check**: `python3 {kit_path}/scripts/check-language.py architecture/miniapps/{miniapp}/{category}/{epic}/`
 
 ### Generate Feature
 1. Create `features/{feature}/FEATURE.md` using FEATURE-MOBILE template
@@ -192,11 +192,11 @@ cypilot where-used --id <id>
 | Path Pattern | Level |
 |--------------|-------|
 | `architecture/` | L0: Platform |
-| `subapps/{subapp}/` (direct children) | L1: SubApp |
-| `subapps/{subapp}/screens/{screen}/` | L2: Epic (screen) |
-| `subapps/{subapp}/capabilities/{capability}/` | L2: Epic (capability) |
-| `subapps/{subapp}/flows/{flow}/` | L2: Epic (flow) |
-| `subapps/{subapp}/*/{epic}/features/{feature}/` | L3: Feature |
+| `miniapps/{miniapp}/` (direct children) | L1: MiniApp |
+| `miniapps/{miniapp}/screens/{screen}/` | L2: Epic (screen) |
+| `miniapps/{miniapp}/capabilities/{capability}/` | L2: Epic (capability) |
+| `miniapps/{miniapp}/flows/{flow}/` | L2: Epic (flow) |
+| `miniapps/{miniapp}/*/{epic}/features/{feature}/` | L3: Feature |
 
 ## Traceability Chain
 
@@ -205,13 +205,13 @@ Platform PRD
     ↓ refined-by
 Platform DESIGN + ADR
     ↓ decomposed-by
-Platform DECOMPOSITION (SubApps)
+Platform DECOMPOSITION (MiniApps)
     ↓ detailed-by
-SubApp PRD
+MiniApp PRD
     ↓ designed-by
-SubApp DESIGN + ADR
+MiniApp DESIGN + ADR
     ↓ decomposed-by
-SubApp DECOMPOSITION (Epics)
+MiniApp DECOMPOSITION (Epics)
     ↓ detailed-by
 Epic PRD
     ↓ designed-by

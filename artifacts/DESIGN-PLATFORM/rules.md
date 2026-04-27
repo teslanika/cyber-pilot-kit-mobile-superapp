@@ -40,7 +40,7 @@
 - [ ] All required sections present and non-empty:
   - Platform Architecture Overview (vision, drivers, layers)
   - Cross-Platform Strategy (native vs WebView, KMP scope, code sharing)
-  - SubApp Architecture (container model, lifecycle, communication)
+  - MiniApp Architecture (container model, lifecycle, communication)
   - Shared Kernel (auth, storage, network, notifications)
   - External Integrations
   - Traceability
@@ -60,8 +60,8 @@
 - [ ] Native vs WebView decision matrix provided for all content types
 - [ ] KMP SDK scope clearly defined (included/not included)
 - [ ] Code sharing matrix shows platform coverage
-- [ ] SubApp container model with Kernel integration
-- [ ] SubApp interface contract (Kotlin) documented
+- [ ] MiniApp container model with Kernel integration
+- [ ] MiniApp interface contract (Kotlin) documented
 
 ### Traceability
 
@@ -98,7 +98,7 @@ Apply checklist semantics during creation:
 |-------------------|-----------------|
 | Architecture Overview | Document vision, drivers, layer diagram |
 | Cross-Platform Strategy | Define native/WebView decisions, KMP scope |
-| SubApp Architecture | Design container model, lifecycle, communication |
+| MiniApp Architecture | Design container model, lifecycle, communication |
 | Shared Kernel | Document Auth, Storage, Network, Notifications modules |
 | External Integrations | Define integration points with direction, protocol |
 | Traceability | Link to PRD, ADRs, decomposition |
@@ -158,7 +158,7 @@ If DESIGN-PLATFORM cannot be completed in a single session:
 - [ ] All platform layers are documented
 - [ ] Native vs WebView decision matrix is complete
 - [ ] KMP SDK scope is clearly bounded
-- [ ] SubApp interface contract is implementable
+- [ ] MiniApp interface contract is implementable
 - [ ] All Kernel modules have clear responsibilities
 - [ ] All external integrations have protocol specified
 
@@ -206,9 +206,9 @@ Issues:
 
 ### Options
 
-- [ ] DESIGN-PLATFORM complete → `/cypilot-generate DECOMPOSITION-PLATFORM` — create SubApp manifest
+- [ ] DESIGN-PLATFORM complete → `/cypilot-generate DECOMPOSITION-PLATFORM` — create MiniApp manifest
 - [ ] Need architecture decision → `/cypilot-generate ADR` — document key decision
 - [ ] PRD missing/incomplete → `/cypilot-generate PRD-PLATFORM` — create/update PRD first
 - [ ] DESIGN needs revision → continue editing DESIGN-PLATFORM
-- [ ] Ready for SubApp → `/cypilot-generate PRD-SUBAPP` — create SubApp-level PRD
-- [ ] Ready for SubApp DESIGN → `/cypilot-generate DESIGN-SUBAPP` — create SubApp technical design
+- [ ] Ready for MiniApp → `/cypilot-generate PRD-MINIAPP` — create MiniApp-level PRD
+- [ ] Ready for MiniApp DESIGN → `/cypilot-generate DESIGN-MINIAPP` — create MiniApp technical design

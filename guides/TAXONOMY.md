@@ -13,9 +13,9 @@ graph TB
         DESIGN0 --> DECOMP0[DECOMPOSITION-PLATFORM]
     end
     
-    subgraph L1[Level 1: SubApp]
-        PRD1[PRD-SUBAPP] --> DESIGN1[DESIGN-SUBAPP]
-        DESIGN1 --> DECOMP1[DECOMPOSITION-SUBAPP]
+    subgraph L1[Level 1: MiniApp]
+        PRD1[PRD-MINIAPP] --> DESIGN1[DESIGN-MINIAPP]
+        DESIGN1 --> DECOMP1[DECOMPOSITION-MINIAPP]
     end
     
     subgraph L2[Level 2: Epic]
@@ -49,7 +49,7 @@ graph TB
 
 **Transforms into**:
 - **DESIGN-PLATFORM**: architecture decisions reference PRD FR/NFR IDs
-- **PRD-SUBAPP**: SubApp PRDs reference platform-level requirements
+- **PRD-MINIAPP**: MiniApp PRDs reference platform-level requirements
 
 **Files**:
 - Template: [artifacts/PRD-PLATFORM/template.md](../artifacts/PRD-PLATFORM/template.md)
@@ -71,8 +71,8 @@ graph TB
 - Interfaces: `cpt-platform-interface-{slug}`
 
 **Transforms into**:
-- **DECOMPOSITION-PLATFORM**: SubApps reference platform components
-- **DESIGN-SUBAPP**: SubApp designs inherit platform constraints
+- **DECOMPOSITION-PLATFORM**: MiniApps reference platform components
+- **DESIGN-MINIAPP**: MiniApp designs inherit platform constraints
 
 **Files**:
 - Template: [artifacts/DESIGN-PLATFORM/template.md](../artifacts/DESIGN-PLATFORM/template.md)
@@ -81,10 +81,10 @@ graph TB
 
 #### DECOMPOSITION-PLATFORM
 
-**Purpose**: Break platform into SubApps.
+**Purpose**: Break platform into MiniApps.
 
 **Defines IDs**:
-- SubApps: `cpt-platform-subapp-{slug}`
+- MiniApps: `cpt-platform-miniapp-{slug}`
 - Status tracker: `cpt-platform-status-overall`
 
 **References upstream IDs**:
@@ -92,7 +92,7 @@ graph TB
 - DESIGN-PLATFORM component IDs
 
 **Transforms into**:
-- **PRD-SUBAPP**: Each SubApp entry links to SubApp PRD
+- **PRD-MINIAPP**: Each MiniApp entry links to MiniApp PRD
 
 **Files**:
 - Template: [artifacts/DECOMPOSITION-PLATFORM/template.md](../artifacts/DECOMPOSITION-PLATFORM/template.md)
@@ -101,73 +101,73 @@ graph TB
 
 ---
 
-### Level 1: SubApp
+### Level 1: MiniApp
 
-#### PRD-SUBAPP
+#### PRD-MINIAPP
 
-**Purpose**: SubApp-level product requirements.
+**Purpose**: MiniApp-level product requirements.
 
 **References upstream IDs**:
 - PRD-PLATFORM FR/NFR IDs (cascading requirements)
-- DECOMPOSITION-PLATFORM SubApp ID
+- DECOMPOSITION-PLATFORM MiniApp ID
 
 **Defines IDs**:
-- Actors: `cpt-{subapp}-actor-{slug}`
-- Functional requirements: `cpt-{subapp}-fr-{slug}`
-- Non-functional requirements: `cpt-{subapp}-nfr-{slug}`
-- Use cases: `cpt-{subapp}-usecase-{slug}`
+- Actors: `cpt-{miniapp}-actor-{slug}`
+- Functional requirements: `cpt-{miniapp}-fr-{slug}`
+- Non-functional requirements: `cpt-{miniapp}-nfr-{slug}`
+- Use cases: `cpt-{miniapp}-usecase-{slug}`
 
 **Transforms into**:
-- **DESIGN-SUBAPP**: SubApp architecture
-- **PRD-EPIC**: Epic PRDs reference SubApp requirements
+- **DESIGN-MINIAPP**: MiniApp architecture
+- **PRD-EPIC**: Epic PRDs reference MiniApp requirements
 
 **Files**:
-- Template: [artifacts/PRD-SUBAPP/template.md](../artifacts/PRD-SUBAPP/template.md)
-- Rules: [artifacts/PRD-SUBAPP/rules.md](../artifacts/PRD-SUBAPP/rules.md)
-- Checklist: [artifacts/PRD-SUBAPP/checklist.md](../artifacts/PRD-SUBAPP/checklist.md)
+- Template: [artifacts/PRD-MINIAPP/template.md](../artifacts/PRD-MINIAPP/template.md)
+- Rules: [artifacts/PRD-MINIAPP/rules.md](../artifacts/PRD-MINIAPP/rules.md)
+- Checklist: [artifacts/PRD-MINIAPP/checklist.md](../artifacts/PRD-MINIAPP/checklist.md)
 
-#### DESIGN-SUBAPP
+#### DESIGN-MINIAPP
 
-**Purpose**: SubApp technical architecture.
+**Purpose**: MiniApp technical architecture.
 
 **References upstream IDs**:
-- PRD-SUBAPP FR/NFR IDs
+- PRD-MINIAPP FR/NFR IDs
 - DESIGN-PLATFORM component/module IDs
 
 **Defines IDs**:
-- Components: `cpt-{subapp}-component-{slug}`
-- ViewModels: `cpt-{subapp}-viewmodel-{slug}`
-- Repositories: `cpt-{subapp}-repository-{slug}`
-- Navigation: `cpt-{subapp}-nav-{slug}`
+- Components: `cpt-{miniapp}-component-{slug}`
+- ViewModels: `cpt-{miniapp}-viewmodel-{slug}`
+- Repositories: `cpt-{miniapp}-repository-{slug}`
+- Navigation: `cpt-{miniapp}-nav-{slug}`
 
 **Transforms into**:
-- **DECOMPOSITION-SUBAPP**: Epics reference SubApp components
-- **DESIGN-EPIC**: Epic designs inherit SubApp patterns
+- **DECOMPOSITION-MINIAPP**: Epics reference MiniApp components
+- **DESIGN-EPIC**: Epic designs inherit MiniApp patterns
 
 **Files**:
-- Template: [artifacts/DESIGN-SUBAPP/template.md](../artifacts/DESIGN-SUBAPP/template.md)
-- Rules: [artifacts/DESIGN-SUBAPP/rules.md](../artifacts/DESIGN-SUBAPP/rules.md)
-- Checklist: [artifacts/DESIGN-SUBAPP/checklist.md](../artifacts/DESIGN-SUBAPP/checklist.md)
+- Template: [artifacts/DESIGN-MINIAPP/template.md](../artifacts/DESIGN-MINIAPP/template.md)
+- Rules: [artifacts/DESIGN-MINIAPP/rules.md](../artifacts/DESIGN-MINIAPP/rules.md)
+- Checklist: [artifacts/DESIGN-MINIAPP/checklist.md](../artifacts/DESIGN-MINIAPP/checklist.md)
 
-#### DECOMPOSITION-SUBAPP
+#### DECOMPOSITION-MINIAPP
 
-**Purpose**: Break SubApp into Epics.
+**Purpose**: Break MiniApp into Epics.
 
 **Defines IDs**:
-- Epics: `cpt-{subapp}-epic-{slug}`
-- Status tracker: `cpt-{subapp}-status-overall`
+- Epics: `cpt-{miniapp}-epic-{slug}`
+- Status tracker: `cpt-{miniapp}-status-overall`
 
 **References upstream IDs**:
-- PRD-SUBAPP FR/NFR IDs (coverage)
-- DESIGN-SUBAPP component IDs
+- PRD-MINIAPP FR/NFR IDs (coverage)
+- DESIGN-MINIAPP component IDs
 
 **Transforms into**:
 - **PRD-EPIC**: Each Epic entry links to Epic PRD
 
 **Files**:
-- Template: [artifacts/DECOMPOSITION-SUBAPP/template.md](../artifacts/DECOMPOSITION-SUBAPP/template.md)
-- Rules: [artifacts/DECOMPOSITION-SUBAPP/rules.md](../artifacts/DECOMPOSITION-SUBAPP/rules.md)
-- Checklist: [artifacts/DECOMPOSITION-SUBAPP/checklist.md](../artifacts/DECOMPOSITION-SUBAPP/checklist.md)
+- Template: [artifacts/DECOMPOSITION-MINIAPP/template.md](../artifacts/DECOMPOSITION-MINIAPP/template.md)
+- Rules: [artifacts/DECOMPOSITION-MINIAPP/rules.md](../artifacts/DECOMPOSITION-MINIAPP/rules.md)
+- Checklist: [artifacts/DECOMPOSITION-MINIAPP/checklist.md](../artifacts/DECOMPOSITION-MINIAPP/checklist.md)
 
 ---
 
@@ -178,12 +178,12 @@ graph TB
 **Purpose**: Epic-level user requirements.
 
 **References upstream IDs**:
-- PRD-SUBAPP FR/NFR IDs (cascading)
-- DECOMPOSITION-SUBAPP Epic ID
+- PRD-MINIAPP FR/NFR IDs (cascading)
+- DECOMPOSITION-MINIAPP Epic ID
 
 **Defines IDs**:
-- User stories: `cpt-{subapp}-{epic}-story-{slug}`
-- Acceptance criteria: `cpt-{subapp}-{epic}-ac-{slug}`
+- User stories: `cpt-{miniapp}-{epic}-story-{slug}`
+- Acceptance criteria: `cpt-{miniapp}-{epic}-ac-{slug}`
 
 **Transforms into**:
 - **DESIGN-EPIC**: Epic technical design
@@ -200,12 +200,12 @@ graph TB
 
 **References upstream IDs**:
 - PRD-EPIC story/AC IDs
-- DESIGN-SUBAPP component IDs
+- DESIGN-MINIAPP component IDs
 
 **Defines IDs**:
-- Components: `cpt-{subapp}-{epic}-component-{slug}`
-- Sequences: `cpt-{subapp}-{epic}-seq-{slug}`
-- Data models: `cpt-{subapp}-{epic}-model-{slug}`
+- Components: `cpt-{miniapp}-{epic}-component-{slug}`
+- Sequences: `cpt-{miniapp}-{epic}-seq-{slug}`
+- Data models: `cpt-{miniapp}-{epic}-model-{slug}`
 
 **Transforms into**:
 - **DECOMPOSITION-EPIC**: Features reference Epic components
@@ -221,8 +221,8 @@ graph TB
 **Purpose**: Break Epic into Features.
 
 **Defines IDs**:
-- Features: `cpt-{subapp}-{epic}-feature-{slug}`
-- Status tracker: `cpt-{subapp}-{epic}-status-overall`
+- Features: `cpt-{miniapp}-{epic}-feature-{slug}`
+- Status tracker: `cpt-{miniapp}-{epic}-status-overall`
 
 **References upstream IDs**:
 - PRD-EPIC story/AC IDs (coverage)
@@ -248,13 +248,13 @@ graph TB
 - DECOMPOSITION-EPIC feature ID
 - PRD-EPIC story/AC IDs
 - DESIGN-EPIC component/sequence IDs
-- Cascading: PRD-SUBAPP, PRD-PLATFORM FR IDs
+- Cascading: PRD-MINIAPP, PRD-PLATFORM FR IDs
 
 **Defines IDs** (code-traceable kinds):
-- Flow: `cpt-{subapp}-flow-{feature-slug}-{slug}`
-- Algorithm: `cpt-{subapp}-algo-{feature-slug}-{slug}`
-- State machine: `cpt-{subapp}-state-{feature-slug}-{slug}`
-- Definition-of-done: `cpt-{subapp}-dod-{feature-slug}-{slug}`
+- Flow: `cpt-{miniapp}-flow-{feature-slug}-{slug}`
+- Algorithm: `cpt-{miniapp}-algo-{feature-slug}-{slug}`
+- State machine: `cpt-{miniapp}-state-{feature-slug}-{slug}`
+- Definition-of-done: `cpt-{miniapp}-dod-{feature-slug}-{slug}`
 
 **Mobile-specific sections**:
 - MVI State/Intent/Effect definitions
@@ -319,16 +319,16 @@ graph TB
 | Platform | FR | `cpt-platform-fr-{slug}` |
 | Platform | NFR | `cpt-platform-nfr-{slug}` |
 | Platform | Component | `cpt-platform-component-{slug}` |
-| Platform | SubApp | `cpt-platform-subapp-{slug}` |
-| SubApp | FR | `cpt-{subapp}-fr-{slug}` |
-| SubApp | Component | `cpt-{subapp}-component-{slug}` |
-| SubApp | Epic | `cpt-{subapp}-epic-{slug}` |
-| Epic | Story | `cpt-{subapp}-{epic}-story-{slug}` |
-| Epic | Feature | `cpt-{subapp}-{epic}-feature-{slug}` |
-| Feature | Flow | `cpt-{subapp}-flow-{feature}-{slug}` |
-| Feature | Algo | `cpt-{subapp}-algo-{feature}-{slug}` |
-| Feature | State | `cpt-{subapp}-state-{feature}-{slug}` |
-| Feature | DoD | `cpt-{subapp}-dod-{feature}-{slug}` |
+| Platform | MiniApp | `cpt-platform-miniapp-{slug}` |
+| MiniApp | FR | `cpt-{miniapp}-fr-{slug}` |
+| MiniApp | Component | `cpt-{miniapp}-component-{slug}` |
+| MiniApp | Epic | `cpt-{miniapp}-epic-{slug}` |
+| Epic | Story | `cpt-{miniapp}-{epic}-story-{slug}` |
+| Epic | Feature | `cpt-{miniapp}-{epic}-feature-{slug}` |
+| Feature | Flow | `cpt-{miniapp}-flow-{feature}-{slug}` |
+| Feature | Algo | `cpt-{miniapp}-algo-{feature}-{slug}` |
+| Feature | State | `cpt-{miniapp}-state-{feature}-{slug}` |
+| Feature | DoD | `cpt-{miniapp}-dod-{feature}-{slug}` |
 
 ---
 

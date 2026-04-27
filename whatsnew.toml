@@ -7,7 +7,7 @@ summary = "Initial release of Mobile SuperApp Kit"
 
 [[releases.changes]]
 type = "added"
-description = "4-level documentation hierarchy: Platform → SubApp → Epic → Feature"
+description = "4-level documentation hierarchy: Platform → MiniApp → Epic → Feature"
 
 [[releases.changes]]
 type = "added"

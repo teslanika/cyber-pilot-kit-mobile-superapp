@@ -8,7 +8,7 @@ Cypilot Mobile SuperApp works through the `cypilot` skill — enable it with `cy
 
 ## What You'll Learn
 
-1. **4-Level Hierarchy** — Platform → SubApp → Epic → Feature
+1. **4-Level Hierarchy** — Platform → MiniApp → Epic → Feature
 2. **Exact prompts to type** — copy-paste into your AI chat
 3. **Mobile-specific pipeline** — from requirements to KMP/Android/iOS code
 4. **Cascading traceability** — requirements flow down all levels
@@ -27,10 +27,10 @@ flowchart LR
         DECOMP0[DECOMPOSITION-PLATFORM]
     end
     
-    subgraph L1[SubApp Level]
-        PRD1[PRD-SUBAPP]
-        DESIGN1[DESIGN-SUBAPP]
-        DECOMP1[DECOMPOSITION-SUBAPP]
+    subgraph L1[MiniApp Level]
+        PRD1[PRD-MINIAPP]
+        DESIGN1[DESIGN-MINIAPP]
+        DECOMP1[DECOMPOSITION-MINIAPP]
     end
     
     subgraph L2[Epic Level]
@@ -53,7 +53,7 @@ flowchart LR
 | Level | Artifacts | Purpose |
 |-------|-----------|---------|
 | **L0: Platform** | PRD-PLATFORM, DESIGN-PLATFORM, DECOMPOSITION-PLATFORM | Overall mobile platform architecture |
-| **L1: SubApp** | PRD-SUBAPP, DESIGN-SUBAPP, DECOMPOSITION-SUBAPP | Individual mini-app (Learn, Assess, etc.) |
+| **L1: MiniApp** | PRD-MINIAPP, DESIGN-MINIAPP, DECOMPOSITION-MINIAPP | Individual mini-app (Learn, Assess, etc.) |
 | **L2: Epic** | PRD-EPIC, DESIGN-EPIC, DECOMPOSITION-EPIC | User-facing capability group |
 | **L3: Feature** | FEATURE-MOBILE, IMPL | Single implementable behavior |
 
@@ -87,17 +87,17 @@ cpt kit install mobile-superapp
 | `cypilot make PRD-PLATFORM` | Creates platform PRD with actors, capabilities, NFRs |
 | `cypilot make PRD-PLATFORM for Constructor SuperApp` | Generates PRD with context |
 | `cypilot make DESIGN-PLATFORM` | Creates platform architecture (KMP, modules, navigation) |
-| `cypilot make DECOMPOSITION-PLATFORM` | Breaks platform into SubApps |
+| `cypilot make DECOMPOSITION-PLATFORM` | Breaks platform into MiniApps |
 | `cypilot validate PRD-PLATFORM` | Full validation |
 
-### SubApp Level (L1)
+### MiniApp Level (L1)
 
 | Prompt | What the agent does |
 |--------|---------------------|
-| `cypilot make PRD-SUBAPP for learn` | Creates Learn SubApp requirements |
-| `cypilot make DESIGN-SUBAPP for learn` | Creates Learn SubApp architecture |
-| `cypilot make DECOMPOSITION-SUBAPP for learn` | Breaks SubApp into Epics |
-| `cypilot validate DESIGN-SUBAPP for learn` | Validates SubApp design |
+| `cypilot make PRD-MINIAPP for learn` | Creates Learn MiniApp requirements |
+| `cypilot make DESIGN-MINIAPP for learn` | Creates Learn MiniApp architecture |
+| `cypilot make DECOMPOSITION-MINIAPP for learn` | Breaks MiniApp into Epics |
+| `cypilot validate DESIGN-MINIAPP for learn` | Validates MiniApp design |
 
 ### Epic Level (L2)
 
@@ -178,7 +178,7 @@ Requirements cascade through all four levels:
 ```
 Platform FR: cpt-platform-fr-offline-support
     ↓ referenced by
-SubApp FR: cpt-learn-fr-offline-courses
+MiniApp FR: cpt-learn-fr-offline-courses
     ↓ referenced by
 Epic FR: cpt-course-catalog-fr-cache-courses
     ↓ referenced by
@@ -205,7 +205,7 @@ Code: @cpt-flow:cpt-course-list-flow-load-cached:p1
 | Prompt | What happens |
 |--------|--------------|
 | `cypilot validate PRD-PLATFORM` | Platform requirements validation |
-| `cypilot validate DESIGN-SUBAPP for learn` | SubApp architecture validation |
+| `cypilot validate DESIGN-MINIAPP for learn` | MiniApp architecture validation |
 | `cypilot validate FEATURE-MOBILE for course-list` | Feature validation (CDSL, MVI, DoD) |
 | `cypilot validate code for course-list` | Code marker validation |
 
@@ -236,9 +236,9 @@ Append to any `validate` command:
 | 1 | `cypilot make PRD-PLATFORM for {app-name}` |
 | 2 | `cypilot make DESIGN-PLATFORM` |
 | 3 | `cypilot make DECOMPOSITION-PLATFORM` |
-| 4 | `cypilot make PRD-SUBAPP for {subapp}` |
-| 5 | `cypilot make DESIGN-SUBAPP for {subapp}` |
-| 6 | `cypilot make DECOMPOSITION-SUBAPP for {subapp}` |
+| 4 | `cypilot make PRD-MINIAPP for {miniapp}` |
+| 5 | `cypilot make DESIGN-MINIAPP for {miniapp}` |
+| 6 | `cypilot make DECOMPOSITION-MINIAPP for {miniapp}` |
 | 7 | `cypilot make PRD-EPIC for {epic}` |
 | 8 | `cypilot make DESIGN-EPIC for {epic}` |
 | 9 | `cypilot make DECOMPOSITION-EPIC for {epic}` |

@@ -6,7 +6,7 @@ The Mobile SuperApp Kit uses a 4-level documentation hierarchy designed for larg
 
 ```
 L0: Platform     → Entire app, shared infrastructure
-L1: SubApp       → Single mini-app domain  
+L1: MiniApp       → Single mini-app domain  
 L2: Epic         → User-facing capability
 L3: Feature      → Single implementable behavior
 ```
@@ -18,10 +18,10 @@ L3: Feature      → Single implementable behavior
 │ L0: PLATFORM                                                │
 │ PRD-PLATFORM → DESIGN-PLATFORM → DECOMPOSITION-PLATFORM     │
 └─────────────────────────┬───────────────────────────────────┘
-                          │ contains SubApps
+                          │ contains MiniApps
 ┌─────────────────────────▼───────────────────────────────────┐
-│ L1: SUBAPP (Learn, Assess, Communicate, ...)                │
-│ PRD-SUBAPP → DESIGN-SUBAPP → DECOMPOSITION-SUBAPP           │
+│ L1: MINIAPP (Learn, Assess, Communicate, ...)                │
+│ PRD-MINIAPP → DESIGN-MINIAPP → DECOMPOSITION-MINIAPP           │
 └─────────────────────────┬───────────────────────────────────┘
                           │ contains Epics
 ┌─────────────────────────▼───────────────────────────────────┐
@@ -49,7 +49,7 @@ L3: Feature      → Single implementable behavior
 |----------|---------|
 | `PRD-PLATFORM` | Platform-wide requirements (actors, FRs, NFRs) |
 | `DESIGN-PLATFORM` | Platform architecture (KMP modules, shared components) |
-| `DECOMPOSITION-PLATFORM` | Platform → SubApps breakdown |
+| `DECOMPOSITION-PLATFORM` | Platform → MiniApps breakdown |
 
 ### Create
 
@@ -70,32 +70,32 @@ architecture/
 
 ---
 
-## L1: SubApp
+## L1: MiniApp
 
 **Scope**: Single mini-app domain  
 **Team**: Feature team  
-**Example**: "Student SubApp needs course access"
+**Example**: "Student MiniApp needs course access"
 
 ### Artifacts
 
 | Artifact | Purpose |
 |----------|---------|
-| `PRD-SUBAPP` | SubApp domain requirements |
-| `DESIGN-SUBAPP` | SubApp architecture (ViewModels, repositories) |
-| `DECOMPOSITION-SUBAPP` | SubApp → Epics breakdown |
+| `PRD-MINIAPP` | MiniApp domain requirements |
+| `DESIGN-MINIAPP` | MiniApp architecture (ViewModels, repositories) |
+| `DECOMPOSITION-MINIAPP` | MiniApp → Epics breakdown |
 
 ### Create
 
 ```bash
-cypilot make PRD-SUBAPP for learn
-cypilot make DESIGN-SUBAPP for learn
-cypilot make DECOMPOSITION-SUBAPP for learn
+cypilot make PRD-MINIAPP for learn
+cypilot make DESIGN-MINIAPP for learn
+cypilot make DECOMPOSITION-MINIAPP for learn
 ```
 
 ### File Location
 
 ```
-subapps/learn/
+miniapps/learn/
 ├── PRD.md
 ├── DESIGN.md
 └── DECOMPOSITION.md
@@ -128,7 +128,7 @@ cypilot make DECOMPOSITION-EPIC for course-catalog
 ### File Location
 
 ```
-subapps/learn/capabilities/course-catalog/
+miniapps/learn/capabilities/course-catalog/
 ├── PRD.md
 ├── DESIGN.md
 └── DECOMPOSITION.md
@@ -161,7 +161,7 @@ cypilot implement course-list
 ### File Location
 
 ```
-subapps/learn/capabilities/course-catalog/features/course-list/
+miniapps/learn/capabilities/course-catalog/features/course-list/
 └── FEATURE.md
 ```
 
@@ -173,7 +173,7 @@ Standard SDLC (PRD → DESIGN → FEATURE → CODE) works for monolithic apps, b
 
 | Challenge | How 4-Level Solves It |
 |-----------|----------------------|
-| **Scale**: 5-10+ mini-apps, 10-50+ features each | Each SubApp has isolated documentation |
-| **Team Structure**: Different teams own different SubApps | Clear ownership at each level |
+| **Scale**: 5-10+ mini-apps, 10-50+ features each | Each MiniApp has isolated documentation |
+| **Team Structure**: Different teams own different MiniApps | Clear ownership at each level |
 | **Requirements Cascade**: Platform requirements must reach code | Explicit traceability links at each level |
 | **Shared vs Domain**: Auth is shared, courses are domain-specific | L0 for shared, L1-L3 for domain |

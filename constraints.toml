@@ -6,16 +6,16 @@
 # - codebase/rules.md (traceability rules)
 # - AGENTS.md (agent navigation rules)
 #
-# The complex 4-level hierarchy (Platform → SubApp → Epic → Feature)
+# The complex 4-level hierarchy (Platform → MiniApp → Epic → Feature)
 # is enforced through templates and documented conventions rather than
 # constraints.toml validation, as Cypilot's constraint system is
 # designed for single-level artifact validation.
 #
 # KEY ID PATTERNS (for reference):
 # - Platform FR: cpt-{platform}-fr-{slug}
-# - SubApp FR: cpt-{subapp}-fr-{slug}  
-# - Epic FR: cpt-{subapp}-epic-{epic}-fr-{slug}
-# - Feature: cpt-{subapp}-feature-{slug}
+# - MiniApp FR: cpt-{miniapp}-fr-{slug}  
+# - Epic FR: cpt-{miniapp}-epic-{epic}-fr-{slug}
+# - Feature: cpt-{miniapp}-feature-{slug}
 # - KMP Impl: cpt-kmp-{module}-{type}-{slug}
 # - Android Impl: cpt-android-{module}-{type}-{slug}
 # - iOS Impl: cpt-ios-{module}-{type}-{slug}

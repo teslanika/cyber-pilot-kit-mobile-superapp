@@ -6,7 +6,7 @@
 |-------|-------|
 | Feature ID | `cpt-learn-course-catalog-feature-course-list` |
 | Epic | Course Catalog (`cpt-learn-epic-course-catalog`) |
-| SubApp | Learn (`cpt-platform-subapp-learn`) |
+| MiniApp | Learn (`cpt-platform-miniapp-learn`) |
 | Status | `DESIGNED` |
 | Version | 1.0 |
 
@@ -22,8 +22,8 @@ Display a paginated list of available courses with search and filtering capabili
 |-------|-----|-------------|
 | Platform FR | `cpt-platform-fr-course-discovery` | Users can discover available courses |
 | Platform FR | `cpt-platform-fr-offline-support` | Core features work offline |
-| SubApp FR | `cpt-learn-fr-browse-courses` | Students can browse course catalog |
-| SubApp FR | `cpt-learn-fr-offline-courses` | Cached courses available offline |
+| MiniApp FR | `cpt-learn-fr-browse-courses` | Students can browse course catalog |
+| MiniApp FR | `cpt-learn-fr-offline-courses` | Cached courses available offline |
 | Epic Story | `cpt-learn-course-catalog-story-view-courses` | As a student, I want to view available courses |
 | Epic AC | `cpt-learn-course-catalog-ac-list-pagination` | List supports infinite scroll pagination |
 
@@ -100,7 +100,7 @@ sealed class CourseListEffect {
 ### Flow: Load Courses `cpt-learn-flow-course-list-load` `to_code="true"`
 
 **Actor**: Student  
-**Precondition**: User opens Learn SubApp  
+**Precondition**: User opens Learn MiniApp  
 **Postcondition**: Course list displayed or error shown
 
 ```cdsl

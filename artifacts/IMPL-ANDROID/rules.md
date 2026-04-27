@@ -43,7 +43,7 @@
 - [ ] IMPL-ANDROID follows `config/kits/mobile-superapp/artifacts/IMPL-ANDROID/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (module path)
-  - References (Feature, Epic DESIGN, SubApp DESIGN)
+  - References (Feature, Epic DESIGN, MiniApp DESIGN)
   - Scope (what Android module implements)
   - Implementation Notes
   - Traceability Table
@@ -108,7 +108,7 @@ Apply checklist semantics during creation:
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
 | Overview | Document module path |
-| References | Link to FEATURE, Epic DESIGN, SubApp DESIGN |
+| References | Link to FEATURE, Epic DESIGN, MiniApp DESIGN |
 | Scope | Describe what this Android module implements |
 | Implementation Notes | Document Compose patterns, navigation setup |
 | Traceability Table | Map design IDs → code files → impl IDs |
@@ -120,9 +120,9 @@ Apply checklist semantics during creation:
 
 | Design Component ID | Code File | Implementation ID |
 |---------------------|-----------|-------------------|
-| `cpt-{subapp}-{epic}-screen-{slug}` | `ui/{feature}/{Feature}Screen.kt` | `@cpt-impl cpt-android-{module}-screen-{slug}` |
-| `cpt-{subapp}-{epic}-widget-{slug}` | `ui/{feature}/components/{Widget}.kt` | `@cpt-impl cpt-android-{module}-widget-{slug}` |
-| `cpt-{subapp}-{epic}-nav` | `navigation/{Feature}NavGraph.kt` | `@cpt-impl cpt-android-{module}-nav-{slug}` |
+| `cpt-{miniapp}-{epic}-screen-{slug}` | `ui/{feature}/{Feature}Screen.kt` | `@cpt-impl cpt-android-{module}-screen-{slug}` |
+| `cpt-{miniapp}-{epic}-widget-{slug}` | `ui/{feature}/components/{Widget}.kt` | `@cpt-impl cpt-android-{module}-widget-{slug}` |
+| `cpt-{miniapp}-{epic}-nav` | `navigation/{Feature}NavGraph.kt` | `@cpt-impl cpt-android-{module}-nav-{slug}` |
 
 **Partial Completion Handling**:
 
@@ -133,9 +133,9 @@ If IMPL-ANDROID cannot be completed in a single session:
 
 ### Phase 3: IDs and References
 
-- [ ] Link to FEATURE ID: `cpt-{subapp}-feature-{slug}`
-- [ ] Link to Epic DESIGN ID: `cpt-{subapp}-epic-{epic}`
-- [ ] Link to SubApp DESIGN ID: `cpt-{subapp}-design`
+- [ ] Link to FEATURE ID: `cpt-{miniapp}-feature-{slug}`
+- [ ] Link to Epic DESIGN ID: `cpt-{miniapp}-epic-{epic}`
+- [ ] Link to MiniApp DESIGN ID: `cpt-{miniapp}-design`
 - [ ] Generate implementation IDs:
   - Screens: `@cpt-impl cpt-android-{module}-screen-{slug}`
   - Widgets: `@cpt-impl cpt-android-{module}-widget-{slug}`

@@ -41,12 +41,12 @@
 - [ ] DECOMPOSITION-PLATFORM follows `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/template.md` structure
 - [ ] All required sections present and non-empty:
   - Overview (parent documents reference)
-  - SubApp Entries (all SubApps with full details)
+  - MiniApp Entries (all MiniApps with full details)
   - Shared Kernel Components
-  - SubApp Dependencies
+  - MiniApp Dependencies
   - Release Roadmap
-- [ ] All IDs follow `cpt-{platform}-subapp-{slug}` convention
-- [ ] Each SubApp entry has complete metadata:
+- [ ] All IDs follow `cpt-{platform}-miniapp-{slug}` convention
+- [ ] Each MiniApp entry has complete metadata:
   - Purpose, Target Users, Depends On
   - Scope (in/out), Requirements Covered
   - Platform Components, Integration Points
@@ -56,24 +56,24 @@
 
 ### Mobile-Specific
 
-- [ ] Each SubApp documents Kernel dependencies (Auth, Storage, Network)
+- [ ] Each MiniApp documents Kernel dependencies (Auth, Storage, Network)
 - [ ] Platform components reference DESIGN-PLATFORM IDs
 - [ ] Integration points match DESIGN-PLATFORM integrations
-- [ ] SubApps are self-contained (loosely coupled)
-- [ ] Communication between SubApps via deep links and events only
+- [ ] MiniApps are self-contained (loosely coupled)
+- [ ] Communication between MiniApps via deep links and events only
 
 ### Traceability
 
-- [ ] Every SubApp traces to Platform FRs it covers
-- [ ] Platform components from DESIGN are allocated to SubApps
-- [ ] Shared Kernel components table shows which SubApps use each
+- [ ] Every MiniApp traces to Platform FRs it covers
+- [ ] Platform components from DESIGN are allocated to MiniApps
+- [ ] Shared Kernel components table shows which MiniApps use each
 - [ ] Requirements coverage is explicit (with priority)
 - [ ] Links to parent documents (PRD, DESIGN)
 
 ### Versioning
 
 - [ ] When editing existing DECOMPOSITION: increment version in document header
-- [ ] When adding/removing SubApp: document rationale
+- [ ] When adding/removing MiniApp: document rationale
 
 ---
 
@@ -85,7 +85,7 @@
 - [ ] Load `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` for semantic guidance
 - [ ] Read Platform PRD for requirements
 - [ ] Read Platform DESIGN for components and integrations
-- [ ] Identify natural SubApp boundaries from user actors and capabilities
+- [ ] Identify natural MiniApp boundaries from user actors and capabilities
 
 ### Phase 2: Content Creation
 
@@ -94,17 +94,17 @@ Apply checklist semantics during creation:
 | Checklist Category | Generation Task |
 |-------------------|-----------------|
 | Overview | Link to parent PRD and DESIGN |
-| SubApp Entries | Create entry for each SubApp with full metadata |
-| Shared Kernel | Document Kernel components and which SubApps use them |
+| MiniApp Entries | Create entry for each MiniApp with full metadata |
+| Shared Kernel | Document Kernel components and which MiniApps use them |
 | Dependencies | Create dependency diagram, document rationale |
 | Release Roadmap | Plan quarterly releases with milestones |
 
-**SubApp Entry Checklist**:
+**MiniApp Entry Checklist**:
 
-For each SubApp, document:
+For each MiniApp, document:
 - [ ] Purpose (few sentences)
 - [ ] Target Users (actor ID)
-- [ ] Depends On (Kernel + other SubApps if any)
+- [ ] Depends On (Kernel + other MiniApps if any)
 - [ ] Scope (in-scope and out-of-scope items)
 - [ ] Requirements Covered (Platform FRs with priority)
 - [ ] Platform Components (IDs from DESIGN)
@@ -114,15 +114,15 @@ For each SubApp, document:
 **Partial Completion Handling**:
 
 If DECOMPOSITION-PLATFORM cannot be completed in a single session:
-1. Checkpoint progress with completed SubApp entries
+1. Checkpoint progress with completed MiniApp entries
 2. Add `status: DRAFT` to document header
-3. Mark incomplete SubApps with `INCOMPLETE: {reason}`
+3. Mark incomplete MiniApps with `INCOMPLETE: {reason}`
 4. Document resumption point
 
 ### Phase 3: IDs and References
 
 - [ ] Generate overall status ID: `cpt-{platform}-status-overall`
-- [ ] Generate SubApp IDs: `cpt-{platform}-subapp-{slug}`
+- [ ] Generate MiniApp IDs: `cpt-{platform}-miniapp-{slug}`
 - [ ] Link to Platform FR IDs
 - [ ] Link to Platform component IDs
 - [ ] Link to Platform integration IDs
@@ -132,9 +132,9 @@ If DECOMPOSITION-PLATFORM cannot be completed in a single session:
 
 - [ ] Self-review against `config/kits/mobile-superapp/artifacts/DECOMPOSITION-PLATFORM/checklist.md` MUST HAVE items
 - [ ] Ensure no MUST NOT HAVE violations
-- [ ] Verify all Platform FRs are covered by at least one SubApp
+- [ ] Verify all Platform FRs are covered by at least one MiniApp
 - [ ] Verify all DESIGN components are allocated
-- [ ] Verify SubApp boundaries don't overlap
+- [ ] Verify MiniApp boundaries don't overlap
 - [ ] Verify dependency graph is acyclic (except Kernel)
 
 ### Phase 5: Table of Contents
@@ -162,9 +162,9 @@ If DECOMPOSITION-PLATFORM cannot be completed in a single session:
 
 ### Phase 3: Decomposition-Specific Validation
 
-- [ ] All Platform FRs have SubApp coverage
-- [ ] All DESIGN components are allocated to SubApps or Kernel
-- [ ] SubApp dependencies are justified
+- [ ] All Platform FRs have MiniApp coverage
+- [ ] All DESIGN components are allocated to MiniApps or Kernel
+- [ ] MiniApp dependencies are justified
 - [ ] No circular dependencies (except through Kernel)
 - [ ] Release roadmap is realistic
 - [ ] Kernel components are shared correctly
@@ -205,9 +205,9 @@ Issues:
   - Option 2: Continue without PRD (requirements coverage will be incomplete)
   - Document requirements assumptions made
 
-### SubApp Boundary Uncertainty
+### MiniApp Boundary Uncertainty
 
-- [ ] If uncertain about SubApp boundaries:
+- [ ] If uncertain about MiniApp boundaries:
   - Ask user for guidance
   - Consider user actor boundaries (Student, Instructor, Admin)
   - Consider capability groupings (Learn, Assess, Communicate)
@@ -215,7 +215,7 @@ Issues:
 
 ### Escalation
 
-- [ ] Ask user when SubApp scope is unclear
+- [ ] Ask user when MiniApp scope is unclear
 - [ ] Ask user when release priorities conflict
 - [ ] Ask user when dependency decisions need business input
 
@@ -225,9 +225,9 @@ Issues:
 
 ### Options
 
-- [ ] DECOMPOSITION-PLATFORM complete → `/cypilot-generate PRD-SUBAPP` — create SubApp PRD
-- [ ] DECOMPOSITION-PLATFORM complete → `/cypilot-generate DESIGN-SUBAPP` — create SubApp DESIGN
+- [ ] DECOMPOSITION-PLATFORM complete → `/cypilot-generate PRD-MINIAPP` — create MiniApp PRD
+- [ ] DECOMPOSITION-PLATFORM complete → `/cypilot-generate DESIGN-MINIAPP` — create MiniApp DESIGN
 - [ ] DESIGN missing → `/cypilot-generate DESIGN-PLATFORM` — create Platform DESIGN first
 - [ ] PRD missing → `/cypilot-generate PRD-PLATFORM` — create Platform PRD first
 - [ ] DECOMPOSITION needs revision → continue editing DECOMPOSITION-PLATFORM
-- [ ] Ready for SubApp work → create SubApp folder structure
+- [ ] Ready for MiniApp work → create MiniApp folder structure

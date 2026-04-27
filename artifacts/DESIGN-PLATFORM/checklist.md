@@ -31,7 +31,7 @@ The Platform DESIGN MUST include:
 - [ ] Design philosophy
 - [ ] ADR references following `cpt-{platform}-adr-{slug}` pattern
 
-**Why it matters**: Vision aligns all SubApp implementations with Platform goals.
+**Why it matters**: Vision aligns all MiniApp implementations with Platform goals.
 
 ### ARCH-PLATFORM-002: Architecture Drivers
 
@@ -85,22 +85,22 @@ The DESIGN MUST define KMP boundaries:
 - [ ] Code sharing matrix (module, Android, iOS, KMP Shared)
 - [ ] Principle ID `cpt-{platform}-principle-kmp-scope`
 
-**Why it matters**: KMP scope affects code organization for all SubApps.
+**Why it matters**: KMP scope affects code organization for all MiniApps.
 
-### ARCH-PLATFORM-006: SubApp Architecture
+### ARCH-PLATFORM-006: MiniApp Architecture
 
 **Priority**: CRITICAL
 
-The DESIGN MUST define SubApp model:
+The DESIGN MUST define MiniApp model:
 
-- [ ] SubApp container diagram
-- [ ] SubApp interface contract (code snippet)
+- [ ] MiniApp container diagram
+- [ ] MiniApp interface contract (code snippet)
 - [ ] Lifecycle methods (initialize, start, handleDeepLink, onBackground, onForeground, dispose)
-- [ ] Component ID `cpt-{platform}-component-subapp-container`
+- [ ] Component ID `cpt-{platform}-component-miniapp-container`
 
-**Why it matters**: SubApp model is the foundation for all SubApp integrations.
+**Why it matters**: MiniApp model is the foundation for all MiniApp integrations.
 
-### ARCH-PLATFORM-007: SubApp Lifecycle
+### ARCH-PLATFORM-007: MiniApp Lifecycle
 
 **Priority**: HIGH
 
@@ -109,7 +109,7 @@ The DESIGN MUST document lifecycle:
 - [ ] States defined (REGISTERED, INITIALIZING, READY, ACTIVE, BACKGROUND, DISPOSED)
 - [ ] Initial state specified
 - [ ] State transitions documented
-- [ ] State ID `cpt-{platform}-state-subapp-lifecycle`
+- [ ] State ID `cpt-{platform}-state-miniapp-lifecycle`
 
 **Why it matters**: Lifecycle management ensures proper resource handling.
 
@@ -125,7 +125,7 @@ The DESIGN MUST specify kernel modules:
 - [ ] Notifications module (responsibilities, technology, location)
 - [ ] Component IDs for each kernel module
 
-**Why it matters**: Kernel modules are shared by all SubApps.
+**Why it matters**: Kernel modules are shared by all MiniApps.
 
 ### ARCH-PLATFORM-009: External Integrations
 
@@ -151,7 +151,7 @@ The DESIGN MUST include traceability:
 - [ ] Link to Platform PRD
 - [ ] Link to ADRs folder
 - [ ] Link to DECOMPOSITION
-- [ ] Link to SubApps folder
+- [ ] Link to MiniApps folder
 
 **Why it matters**: Traceability enables navigation and validation.
 
@@ -159,15 +159,15 @@ The DESIGN MUST include traceability:
 
 ## SHOULD HAVE Requirements
 
-### ARCH-PLATFORM-011: SubApp Communication
+### ARCH-PLATFORM-011: MiniApp Communication
 
 **Priority**: MEDIUM
 
 The DESIGN SHOULD document:
 
-- [ ] Inter-SubApp navigation via deep links
-- [ ] Event bus for cross-SubApp notifications
-- [ ] No direct SubApp-to-SubApp calls policy
+- [ ] Inter-MiniApp navigation via deep links
+- [ ] Event bus for cross-MiniApp notifications
+- [ ] No direct MiniApp-to-MiniApp calls policy
 - [ ] Router component ID
 
 ### ARCH-PLATFORM-012: Technology Stack Details
@@ -196,17 +196,17 @@ The DESIGN SHOULD include:
 
 ## MUST NOT HAVE (Violations)
 
-### ARCH-PLATFORM-NO-001: No SubApp Details
+### ARCH-PLATFORM-NO-001: No MiniApp Details
 
 **Priority**: HIGH
 
 The DESIGN MUST NOT contain:
 
-- [ ] SubApp-specific module structures (belongs in DESIGN-SUBAPP)
-- [ ] SubApp navigation graphs (belongs in DESIGN-SUBAPP)
-- [ ] SubApp-specific state management (belongs in DESIGN-SUBAPP)
+- [ ] MiniApp-specific module structures (belongs in DESIGN-MINIAPP)
+- [ ] MiniApp navigation graphs (belongs in DESIGN-MINIAPP)
+- [ ] MiniApp-specific state management (belongs in DESIGN-MINIAPP)
 
-**Why it matters**: Platform DESIGN defines patterns, not SubApp specifics.
+**Why it matters**: Platform DESIGN defines patterns, not MiniApp specifics.
 
 ### ARCH-PLATFORM-NO-002: No Implementation Code
 
@@ -298,7 +298,7 @@ Platform DESIGN MUST define:
 
 Platform DESIGN MUST specify:
 
-- [ ] Deep link format (`constructor://{subapp}/{path}`)
+- [ ] Deep link format (`constructor://{miniapp}/{path}`)
 - [ ] Deep link routing mechanism
 - [ ] Parameter handling
 
