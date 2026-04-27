@@ -8,7 +8,7 @@ This guide defines what each artifact/code kind is at each hierarchy level, how 
 
 ```mermaid
 graph TB
-    subgraph L0[Level 0: Platform]
+    subgraph L0[Level 0: Platform / HostApp]
         PRD0[PRD-PLATFORM] --> DESIGN0[DESIGN-PLATFORM]
         DESIGN0 --> DECOMP0[DECOMPOSITION-PLATFORM]
     end
@@ -18,7 +18,7 @@ graph TB
         DESIGN1 --> DECOMP1[DECOMPOSITION-MINIAPP]
     end
     
-    subgraph L2[Level 2: Epic]
+    subgraph L2[Level 2: Epic / Capability]
         PRD2[PRD-EPIC] --> DESIGN2[DESIGN-EPIC]
         DESIGN2 --> DECOMP2[DECOMPOSITION-EPIC]
     end
@@ -27,10 +27,24 @@ graph TB
         FEATURE[FEATURE-MOBILE] --> IMPL[IMPL]
     end
     
+    DECOMP0 -.->|HostApp capabilities| PRD2
     DECOMP0 -.->|contains| PRD1
-    DECOMP1 -.->|contains| PRD2
+    DECOMP1 -.->|MiniApp capabilities| PRD2
     DECOMP2 -.->|contains| FEATURE
 ```
+
+### HostApp vs MiniApp Capabilities
+
+Epics (L2) can belong to either the HostApp or a MiniApp:
+
+| Capability Type | Location | Parent | Example |
+|---|---|---|---|
+| **HostApp capability** | `architecture/capabilities/<slug>/` | Platform (L0) | Authorization, Push Notifications |
+| **MiniApp capability** | `architecture/miniapps/<miniapp>/capabilities/<slug>/` | MiniApp (L1) | Home, Courses, Calendar |
+
+**HostApp capabilities** are cross-cutting concerns managed at the Kernel layer. They are shared by all MiniApps and execute before any MiniApp loads. Authorization is the canonical example: it gates access to the entire app, not a single MiniApp.
+
+**MiniApp capabilities** are scoped to a specific MiniApp's domain.
 
 ## Kinds by Level
 
