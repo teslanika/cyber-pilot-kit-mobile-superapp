@@ -3,7 +3,7 @@
 
 [manifest]
 version = "1.0"
-root = "{cypilot_path}/config/kits/{slug}"
+root = "config/kits/{slug}"
 user_modifiable = true
 
 # ══════════════════════════════════════════════════════════════════════════════
